@@ -717,18 +717,42 @@ footer p {
     h2 {
         font-size: 1.5rem;
     }
+    h3 {
+        font-size: 1.1rem;
+    }
+    p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
     .nuestro-apartado {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
     .nuestro-card {
         max-width: 100%;
+        padding: 1rem;
+    }
+    .nuestro-card-content h4 {
+        font-size: 1rem;
+    }
+    .nuestro-card-content p {
+        font-size: 0.9rem;
     }
     .testimonials-container {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     .testimonial-card {
         padding: 1rem;
+    }
+    .testimonial-content p {
+        font-size: 0.9rem;
+    }
+    .testimonial-author h5 {
+        font-size: 1rem;
+    }
+    .testimonial-author span {
+        font-size: 0.85rem;
     }
     .hero-content h1 {
         font-size: 2rem;
@@ -739,11 +763,115 @@ footer p {
     .hero-section {
         height: 30vh;
     }
+    .hero-content {
+        padding: 1.5rem;
+    }
+    .btn-hero {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
     footer {
         text-align: center;
         padding: 1rem;
     }
     footer p {
         font-size: 0.9rem;
+    }
+    .menu-barra {
+        padding: 0.5rem 1rem;
+    }
+    .menu-navegacion {
+        gap: 1rem;
+    }
+    .submenu-desplegable {
+        min-width: 200px;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+    main {
+        padding: 0.5rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    p {
+        font-size: 0.9rem;
+    }
+    .nuestro-card {
+        padding: 0.8rem;
+    }
+    .nuestro-card-content h4 {
+        font-size: 0.95rem;
+    }
+    .nuestro-card-content p {
+        font-size: 0.85rem;
+    }
+    .testimonial-card {
+        padding: 0.8rem;
+    }
+    .testimonial-content p {
+        font-size: 0.85rem;
+    }
+    .testimonial-author h5 {
+        font-size: 0.95rem;
+    }
+    .testimonial-author span {
+        font-size: 0.8rem;
+    }
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+    .hero-section {
+        height: 25vh;
+    }
+    .hero-content {
+        padding: 1rem;
+    }
+    .btn-hero {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.95rem;
+    }
+    .menu-navegacion {
+        gap: 0.8rem;
+    }
+    .menu-navegacion > li > a {
+        font-size: 1rem;
+        padding: 0.6rem 0.7rem;
+    }
+    footer p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .nuestro-apartado {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    .testimonials-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    .btn-hero {
+        font-size: 1.1rem;
     }
 }
