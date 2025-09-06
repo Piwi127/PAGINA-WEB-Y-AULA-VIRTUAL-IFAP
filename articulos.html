@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artículos y Publicaciones - IFAP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="menu-superior">
+        <div class="menu-barra">
+            <div class="logo-menu">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Archivo_icono.png" alt="Logo IFAP" class="logo-img">
+                <span class="logo-titulo">IFAP</span>
+            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="nav-menu">
+                <ul class="menu-navegacion">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="submenu">
+                        <a href="cursos.html"><i class="fas fa-book"></i> Cursos <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul>
+                                <li><a href="carreras.html">Carreras Archivísticas</a></li>
+                                <li><a href="cursos.html">Cursos Especializados</a></li>
+                                <li><a href="talleres.html">Talleres y Seminarios</a></li>
+                                <li><a href="biblioteca.html">Biblioteca Virtual</a></li>
+                                <li><a href="normas.html">Normas y Legislación</a></li>
+                                <li><span class="active">Artículos y Publicaciones</span></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-building"></i> Institución <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul>
+                                <li><a href="historia.html">Historia</a></li>
+                                <li><a href="equipo-docente.html">Equipo Docente</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="inscribirse.html"><i class="fas fa-user-plus"></i> Inscríbete aquí</a></li>
+                    <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+                    <li><a href="iniciar-sesion.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Artículos y Publicaciones</h1>
+            <p>Lee nuestros artículos académicos, publicaciones y contribuciones al campo de la archivística.</p>
+            <a href="#articulos" class="btn-hero">Ver Artículos</a>
+        </div>
+    </section>
+    <main>
+        <section id="articulos">
+            <h2>Publicaciones del IFAP</h2>
+            <p>Artículos y publicaciones que contribuyen al avance de la archivística en el Perú y Latinoamérica.</p>
+            <div class="nuestro-apartado">
+                <div class="nuestro-card">
+                    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-articulo-cientifico_114360-1037.jpg" alt="Digitalización en Archivos Históricos">
+                    <div class="nuestro-card-content">
+                        <h4>Digitalización en Archivos Históricos</h4>
+                        <p>Análisis de mejores prácticas para la digitalización de documentos coloniales peruanos.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-user"></i> Dr. Ana López</span>
+                            <span><i class="fas fa-calendar"></i> 2023</span>
+                            <span><i class="fas fa-file-pdf"></i> PDF disponible</span>
+                        </div>
+                        <button class="nuestro-btn-info blue">Leer Artículo</button>
+                    </div>
+                </div>
+                <div class="nuestro-card">
+                    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-publicacion_114360-1038.jpg" alt="Gestión Documental en la Era Digital">
+                    <div class="nuestro-card-content">
+                        <h4>Gestión Documental en la Era Digital</h4>
+                        <p>Desafíos y oportunidades de la archivística en entornos digitales.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-user"></i> Lic. Carlos Ruiz</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                            <span><i class="fas fa-external-link-alt"></i> Enlace externo</span>
+                        </div>
+                        <button class="nuestro-btn-info blue">Leer Artículo</button>
+                    </div>
+                </div>
+                <div class="nuestro-card">
+                    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-revista_114360-1039.jpg" alt="Revista Archivística Peruana">
+                    <div class="nuestro-card-content">
+                        <h4>Revista Archivística Peruana</h4>
+                        <p>Publicación trimestral con artículos sobre archivística, historia y gestión documental.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-newspaper"></i> Volumen 15</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                            <span><i class="fas fa-download"></i> Descargar</span>
+                        </div>
+                        <button class="nuestro-btn-info blue">Leer Revista</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 IFAP - Instituto de Formación Archivística del Perú. Todos los derechos reservados.</p>
+        <p>Dirección: Av. Los Archivos 123, Lima, Perú</p>
+        <p>Correo: contacto@ifap.edu.pe | Teléfono: +123 456 789</p>
+    </footer>
+</body>
+</html>

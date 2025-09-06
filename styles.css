@@ -249,6 +249,12 @@ ul {
     color: #3b82f6;
     text-decoration: underline;
 }
+.active {
+    color: #2563eb;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: default;
+}
 @media (max-width: 900px) {
     .menu-barra {
         flex-direction: column;

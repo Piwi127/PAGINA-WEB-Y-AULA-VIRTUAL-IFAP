@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normas y Legislación - IFAP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="menu-superior">
+        <div class="menu-barra">
+            <div class="logo-menu">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Archivo_icono.png" alt="Logo IFAP" class="logo-img">
+                <span class="logo-titulo">IFAP</span>
+            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="nav-menu">
+                <ul class="menu-navegacion">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="submenu">
+                        <a href="cursos.html"><i class="fas fa-book"></i> Cursos <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul>
+                                <li><a href="carreras.html">Carreras Archivísticas</a></li>
+                                <li><a href="cursos.html">Cursos Especializados</a></li>
+                                <li><a href="talleres.html">Talleres y Seminarios</a></li>
+                                <li><a href="biblioteca.html">Biblioteca Virtual</a></li>
+                                <li><span class="active">Normas y Legislación</span></li>
+                                <li><a href="articulos.html">Artículos y Publicaciones</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-building"></i> Institución <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul>
+                                <li><a href="historia.html">Historia</a></li>
+                                <li><a href="equipo-docente.html">Equipo Docente</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="inscribirse.html"><i class="fas fa-user-plus"></i> Inscríbete aquí</a></li>
+                    <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+                    <li><a href="iniciar-sesion.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Normas y Legislación</h1>
+            <p>Conoce las leyes y normativas que regulan la archivística en el Perú y su aplicación práctica.</p>
+            <a href="#normas" class="btn-hero">Ver Normas</a>
+        </div>
+    </section>
+    <main>
+        <section id="normas">
+            <h2>Marco Legal Archivístico en Perú</h2>
+            <p>Información detallada sobre las normas y legislación que rigen la gestión documental en el Perú.</p>
+            <div class="nuestro-apartado">
+                <div class="nuestro-card">
+                    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-ley-archivos_114360-1034.jpg" alt="Ley del Sistema Nacional de Archivos">
+                    <div class="nuestro-card-content">
+                        <h4>Ley del Sistema Nacional de Archivos</h4>
+                        <p>Marco legal principal que regula la creación, organización y conservación de archivos en el Perú.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-gavel"></i> Ley N° 27804</span>
+                            <span><i class="fas fa-calendar"></i> 2002</span>
+                            <span><i class="fas fa-file-pdf"></i> Descargar PDF</span>
+                        </div>
+                        <button class="nuestro-btn-info blue">Leer Más</button>
+                    </div>
+                </div>
+                <div class="nuestro-card">
+                    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-normas-tecnicas_114360-1035.jpg" alt="Normas Técnicas">
+                    <div class="nuestro-card-content">
+                        <h4>Normas Técnicas de Archivística</h4>
+                        <p>Estándares técnicos para la gestión, preservación y acceso a los documentos archivísticos.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-cogs"></i> DS N° 043-2008</span>
+                            <span><i class="fas fa-calendar"></i> 2008</span>
+                            <span><i class="fas fa-list"></i> Detalladas</span>
+                        </div>
+                        <button class="nuestro-btn-info blue">Leer Más</button>
+                    </div>
+                </div>
+                <div class="nuestro-card">
+                    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-reglamentos_114360-1036.jpg" alt="Reglamentos Complementarios">
+                    <div class="nuestro-card-content">
+                        <h4>Reglamentos Complementarios</h4>
+                        <p>Reglamentos que complementan la legislación principal en materia de archivos públicos y privados.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-book"></i> Varios decretos</span>
+                            <span><i class="fas fa-calendar"></i> Actualizados</span>
+                            <span><i class="fas fa-link"></i> Enlaces oficiales</span>
+                        </div>
+                        <button class="nuestro-btn-info blue">Leer Más</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 IFAP - Instituto de Formación Archivística del Perú. Todos los derechos reservados.</p>
+        <p>Dirección: Av. Los Archivos 123, Lima, Perú</p>
+        <p>Correo: contacto@ifap.edu.pe | Teléfono: +123 456 789</p>
+    </footer>
+</body>
+</html>

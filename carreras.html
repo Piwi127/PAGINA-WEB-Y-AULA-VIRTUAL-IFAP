@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carreras Archivísticas - IFAP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="menu-superior">
+        <div class="menu-barra">
+            <div class="logo-menu">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Archivo_icono.png" alt="Logo IFAP" class="logo-img">
+                <span class="logo-titulo">IFAP</span>
+            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="nav-menu">
+                <ul class="menu-navegacion">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="submenu">
+                        <a href="cursos.html"><i class="fas fa-book"></i> Cursos <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul>
+                                <li><span class="active">Carreras Archivísticas</span></li>
+                                <li><a href="cursos.html">Cursos Especializados</a></li>
+                                <li><a href="talleres.html">Talleres y Seminarios</a></li>
+                                <li><a href="biblioteca.html">Biblioteca Virtual</a></li>
+                                <li><a href="normas.html">Normas y Legislación</a></li>
+                                <li><a href="articulos.html">Artículos y Publicaciones</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-building"></i> Institución <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul>
+                                <li><a href="historia.html">Historia</a></li>
+                                <li><a href="equipo-docente.html">Equipo Docente</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="inscribirse.html"><i class="fas fa-user-plus"></i> Inscríbete aquí</a></li>
+                    <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+                    <li><a href="iniciar-sesion.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Carreras Archivísticas</h1>
+            <p>Descubre las carreras universitarias y profesionales en archivística disponibles en el Perú y cómo el IFAP te prepara para ellas.</p>
+            <a href="#carreras" class="btn-hero">Ver Carreras</a>
+        </div>
+    </section>
+    <main>
+        <section id="carreras">
+            <h2>Carreras en Archivística</h2>
+            <p>El IFAP ofrece preparación para diversas carreras relacionadas con la archivística, desde licenciaturas hasta especializaciones profesionales.</p>
+            <div class="nuestro-apartado">
+                <div class="nuestro-card">
+                    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-carrera-universitaria_114360-1018.jpg" alt="Licenciatura en Archivística">
+                    <div class="nuestro-card-content">
+                        <h4>Licenciatura en Archivística</h4>
+                        <p>Formación integral en gestión documental, preservación y legislación archivística. Duración: 5 años.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-university"></i> Universidades asociadas</span>
+                            <span><i class="fas fa-clock"></i> 5 años</span>
+                            <span><i class="fas fa-graduation-cap"></i> Título profesional</span>
+                        </div>
+                        <button class="nuestro-btn-info blue">Más Información</button>
+                    </div>
+                </div>
+                <div class="nuestro-card">
+                    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-maestria_114360-1021.jpg" alt="Maestría en Gestión Documental">
+                    <div class="nuestro-card-content">
+                        <h4>Maestría en Gestión Documental</h4>
+                        <p>Especialización avanzada en sistemas de gestión documental y archivos digitales. Duración: 2 años.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-book"></i> Investigación aplicada</span>
+                            <span><i class="fas fa-clock"></i> 2 años</span>
+                            <span><i class="fas fa-user-tie"></i> Profesionales</span>
+                        </div>
+                        <button class="nuestro-btn-info blue">Más Información</button>
+                    </div>
+                </div>
+                <div class="nuestro-card">
+                    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-diplomado_114360-1019.jpg" alt="Diplomado en Archivística Digital">
+                    <div class="nuestro-card-content">
+                        <h4>Diplomado en Archivística Digital</h4>
+                        <p>Curso intensivo sobre tecnologías digitales para la gestión de archivos. Duración: 6 meses.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-laptop"></i> En línea</span>
+                            <span><i class="fas fa-clock"></i> 6 meses</span>
+                            <span><i class="fas fa-certificate"></i> Certificación</span>
+                        </div>
+                        <button class="nuestro-btn-info blue">Más Información</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 IFAP - Instituto de Formación Archivística del Perú. Todos los derechos reservados.</p>
+        <p>Dirección: Av. Los Archivos 123, Lima, Perú</p>
+        <p>Correo: contacto@ifap.edu.pe | Teléfono: +123 456 789</p>
+    </footer>
+</body>
+</html>

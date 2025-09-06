@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual - IFAP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="menu-superior">
+        <div class="menu-barra">
+            <div class="logo-menu">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Archivo_icono.png" alt="Logo IFAP" class="logo-img">
+                <span class="logo-titulo">IFAP</span>
+            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="nav-menu">
+                <ul class="menu-navegacion">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="submenu">
+                        <a href="cursos.html"><i class="fas fa-book"></i> Cursos <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul>
+                                <li><a href="carreras.html">Carreras Archivísticas</a></li>
+                                <li><a href="cursos.html">Cursos Especializados</a></li>
+                                <li><a href="talleres.html">Talleres y Seminarios</a></li>
+                                <li><span class="active">Biblioteca Virtual</span></li>
+                                <li><a href="normas.html">Normas y Legislación</a></li>
+                                <li><a href="articulos.html">Artículos y Publicaciones</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-building"></i> Institución <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul>
+                                <li><a href="historia.html">Historia</a></li>
+                                <li><a href="equipo-docente.html">Equipo Docente</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="inscribirse.html"><i class="fas fa-user-plus"></i> Inscríbete aquí</a></li>
+                    <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+                    <li><a href="iniciar-sesion.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Biblioteca Virtual</h1>
+            <p>Accede a una colección de recursos digitales sobre archivística: libros, artículos, guías y más.</p>
+            <a href="#biblioteca" class="btn-hero">Explorar Biblioteca</a>
+        </div>
+    </section>
+    <main>
+        <section id="biblioteca">
+            <h2>Recursos de la Biblioteca Virtual</h2>
+            <p>Nuestra biblioteca virtual ofrece acceso gratuito a materiales especializados en archivística y gestión documental.</p>
+            <div class="nuestro-apartado">
+                <div class="nuestro-card">
+                    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-libro-electronico_114360-1031.jpg" alt="Libros Digitales">
+                    <div class="nuestro-card-content">
+                        <h4>Libros Digitales</h4>
+                        <p>Colección de libros electrónicos sobre archivística, desde clásicos hasta publicaciones recientes.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-book-open"></i> 200+ títulos</span>
+                            <span><i class="fas fa-download"></i> Descarga gratuita</span>
+                            <span><i class="fas fa-search"></i> Búsqueda avanzada</span>
+                        </div>
+                        <button class="nuestro-btn-info blue">Acceder</button>
+                    </div>
+                </div>
+                <div class="nuestro-card">
+                    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-articulos_114360-1032.jpg" alt="Artículos Académicos">
+                    <div class="nuestro-card-content">
+                        <h4>Artículos Académicos</h4>
+                        <p>Base de datos de artículos científicos y revisiones sobre gestión documental y preservación.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-file-alt"></i> 500+ artículos</span>
+                            <span><i class="fas fa-university"></i> Revisados por pares</span>
+                            <span><i class="fas fa-tags"></i> Categorizados</span>
+                        </div>
+                        <button class="nuestro-btn-info blue">Acceder</button>
+                    </div>
+                </div>
+                <div class="nuestro-card">
+                    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-guias_114360-1033.jpg" alt="Guías y Manuales">
+                    <div class="nuestro-card-content">
+                        <h4>Guías y Manuales</h4>
+                        <p>Manuales prácticos y guías para la implementación de sistemas archivísticos.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-list"></i> 50+ guías</span>
+                            <span><i class="fas fa-tools"></i> Prácticos</span>
+                            <span><i class="fas fa-language"></i> En español</span>
+                        </div>
+                        <button class="nuestro-btn-info blue">Acceder</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 IFAP - Instituto de Formación Archivística del Perú. Todos los derechos reservados.</p>
+        <p>Dirección: Av. Los Archivos 123, Lima, Perú</p>
+        <p>Correo: contacto@ifap.edu.pe | Teléfono: +123 456 789</p>
+    </footer>
+</body>
+</html>
