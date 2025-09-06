@@ -344,6 +344,59 @@ main {
     to { opacity: 1; transform: none; }
 }
 
+#testimonials {
+    text-align: center;
+}
+
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(59, 130, 246, 0.10);
+    padding: 2rem;
+    text-align: left;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
+}
+
+.testimonial-content p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.testimonial-author i {
+    color: #2563eb;
+    font-size: 3rem;
+}
+
+.testimonial-author h5 {
+    margin: 0;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.testimonial-author span {
+    color: #777;
+    font-size: 0.9rem;
+}
+
 h1, h2, h3 {
     font-family: 'Roboto', sans-serif;
     color: #2563eb;
