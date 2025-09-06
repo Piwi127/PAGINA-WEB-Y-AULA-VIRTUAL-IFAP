@@ -189,14 +189,19 @@ ul {
     text-decoration: none;
     padding: 0.7rem 0.8rem;
     border-radius: 6px;
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
     display: flex;
     align-items: center;
-    gap: 0.3em;
+    gap: 0.5rem;
 }
 .menu-navegacion > li > a:hover, .menu-navegacion > li.active > a {
     background: #fff;
     color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+.menu-navegacion > li > a i {
+    font-size: 1.1rem;
 }
 .flecha {
     font-size: 0.8em;
@@ -624,5 +629,69 @@ footer p {
     }
     .hero-section {
         height: 50vh;
+    }
+}
+
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.testimonial-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(59, 130, 246, 0.10);
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e0e7ff;
+    position: relative;
+}
+.testimonial-card::before {
+    content: '"';
+    font-size: 4rem;
+    color: #2563eb;
+    position: absolute;
+    top: -10px;
+    left: 1rem;
+    font-family: 'Georgia', serif;
+}
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
+}
+.testimonial-content p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #2563eb;
+}
+.testimonial-author h5 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin: 0;
+}
+.testimonial-author span {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+@media (max-width: 768px) {
+    .testimonials-container {
+        grid-template-columns: 1fr;
     }
 }

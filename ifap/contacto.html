@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - IFAP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="menu-superior">
+        <div class="menu-barra">
+            <div class="logo-menu">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Archivo_icono.png" alt="Logo IFAP" class="logo-img">
+                <span class="logo-titulo">IFAP</span>
+            </div>
+            <nav>
+                <ul class="menu-navegacion">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="submenu">
+                        <a href="index.html#cursos"><i class="fas fa-book"></i> Cursos <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul>
+                                <li><a href="index.html#carreras">Carreras Archivísticas</a></li>
+                                <li><a href="index.html#cursos">Cursos Especializados</a></li>
+                                <li><a href="index.html#talleres">Talleres y Seminarios</a></li>
+                                <li><a href="index.html#biblioteca">Biblioteca Virtual</a></li>
+                                <li><a href="index.html#normas">Normas y Legislación</a></li>
+                                <li><a href="index.html#articulos">Artículos y Publicaciones</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="submenu">
+                        <a href="index.html#historia"><i class="fas fa-building"></i> Institución <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul>
+                                <li><a href="index.html#historia">Historia</a></li>
+                                <li><a href="index.html#equipo">Equipo Docente</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="contact-hero">
+            <h1>Contáctanos</h1>
+            <p>Estamos aquí para ayudarte. Envíanos tus preguntas, comentarios o solicitudes de información.</p>
+        </section>
+
+        <section id="contact-form">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Información de Contacto</h2>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Dirección</h3>
+                            <p>Av. Los Archivos 123, San Isidro<br>Lima, Perú</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+51 1 456 7890<br>+51 987 654 321</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>contacto@ifap.edu.pe<br>info@ifap.edu.pe</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Horario de Atención</h3>
+                            <p>Lunes a Viernes: 8:00 AM - 6:00 PM<br>Sábados: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <h2>Envíanos un Mensaje</h2>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+                        <div class="form-group">
+                            <label for="asunto">Asunto *</label>
+                            <select id="asunto" name="asunto" required>
+                                <option value="">Selecciona un asunto</option>
+                                <option value="informacion">Solicitud de Información</option>
+                                <option value="matricula">Matrícula en Cursos</option>
+                                <option value="soporte">Soporte Técnico</option>
+                                <option value="comentarios">Comentarios Generales</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" rows="6" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 IFAP - Instituto de Formación Archivística del Perú. Todos los derechos reservados.</p>
+        <p>Dirección: Av. Los Archivos 123, Lima, Perú</p>
+        <p>Correo: contacto@ifap.edu.pe | Teléfono: +51 1 456 7890</p>
+    </footer>
+
+    <style>
+        #contact-hero {
+            background: linear-gradient(rgba(37, 99, 235, 0.8), rgba(59, 130, 246, 0.8)), url('https://img.freepik.com/vector-gratis/ilustracion-concepto-archivo-digital_114360-1012.jpg') no-repeat center center;
+            background-size: cover;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 2rem;
+        }
+        #contact-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        #contact-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+        .contact-info h2, .contact-form-section h2 {
+            color: #2563eb;
+            margin-bottom: 2rem;
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .info-item i {
+            color: #2563eb;
+            font-size: 1.5rem;
+            margin-top: 0.2rem;
+        }
+        .info-item h3 {
+            color: #2563eb;
+            margin: 0 0 0.5rem 0;
+        }
+        .info-item p {
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+        }
+        .btn-submit {
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-submit:hover {
+            background: linear-gradient(90deg, #1d4ed8, #2563eb);
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            #contact-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</body>
+</html>
