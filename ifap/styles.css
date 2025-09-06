@@ -542,3 +542,21 @@ footer p {
     transform: scale(1.06);
     box-shadow: 0 4px 16px rgba(59, 130, 246, 0.13);
 }
+
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.7em;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+.course-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+.course-meta i {
+    color: #2563eb;
+}
