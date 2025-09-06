@@ -57,14 +57,14 @@
         <div class="hero-content">
             <h1>Mi Aula Virtual</h1>
             <p>Bienvenido a tu espacio de aprendizaje en archivística. Accede a tus cursos, materiales y herramientas de estudio.</p>
-            <a href="dashboard.html" class="btn-hero">Ir al Dashboard</a>
+            <a href="#inicio" class="btn-hero">Comenzar</a>
         </div>
     </section>
     <main class="aula-main">
         <aside class="sidebar">
             <h3>Navegación</h3>
             <ul>
-                <li><span class="active"><i class="fas fa-home"></i> Inicio del Aula</span></li>
+                <li><a href="#inicio" class="active"><i class="fas fa-home"></i> Inicio del Aula</a></li>
                 <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                 <li><a href="mis-cursos.html"><i class="fas fa-book"></i> Mis Cursos</a></li>
                 <li><a href="tareas.html"><i class="fas fa-tasks"></i> Tareas</a></li>
@@ -74,126 +74,116 @@
             </ul>
         </aside>
         <div class="content">
-            <section id="dashboard">
-                <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
-                <p>Resumen de tu progreso académico.</p>
-                <div class="dashboard-grid">
-                    <div class="dashboard-card">
-                        <i class="fas fa-book fa-3x"></i>
-                        <h4>Cursos Inscritos</h4>
-                        <p>3 cursos activos</p>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 80%;"></div>
+            <section id="inicio">
+                <div class="bienvenida">
+                    <h2><i class="fas fa-graduation-cap"></i> ¡Bienvenido al Aula Virtual IFAP!</h2>
+                    <p>Tu espacio de aprendizaje en archivística. Aquí encontrarás todos los recursos, cursos y herramientas necesarias para tu formación profesional en el campo de la gestión documental y archivística.</p>
+                    <div class="bienvenida-stats">
+                        <div class="stat">
+                            <i class="fas fa-book"></i>
+                            <span>15+</span>
+                            <p>Cursos Disponibles</p>
                         </div>
-                        <span>80% completado</span>
-                    </div>
-                    <div class="dashboard-card">
-                        <i class="fas fa-tasks fa-3x"></i>
-                        <h4>Tareas Pendientes</h4>
-                        <p>2 tareas por entregar</p>
-                        <span>Fecha límite: 15/09/2025</span>
-                    </div>
-                    <div class="dashboard-card">
-                        <i class="fas fa-envelope fa-3x"></i>
-                        <h4>Mensajes</h4>
-                        <p>1 mensaje nuevo</p>
-                        <span>De: Dr. Ana López</span>
-                    </div>
-                    <div class="dashboard-card">
-                        <i class="fas fa-calendar fa-3x"></i>
-                        <h4>Próxima Clase</h4>
-                        <p>Seminario Digital</p>
-                        <span>10/09/2025 - 10:00 AM</span>
-                    </div>
-                </div>
-            </section>
-            <section id="mis-cursos">
-                <h2><i class="fas fa-book"></i> Mis Cursos</h2>
-                <p>Cursos en los que estás inscrito.</p>
-                <div class="nuestro-apartado">
-                    <div class="nuestro-card">
-                        <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-archivo-digital_114360-1012.jpg" alt="Archivística Básica">
-                        <div class="nuestro-card-content">
-                            <h4>Archivística Básica</h4>
-                            <p>Progreso: 80%</p>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 80%;"></div>
-                            </div>
-                            <div class="course-meta">
-                                <span><i class="fas fa-play"></i> Ver Módulo 5</span>
-                                <span><i class="fas fa-file-alt"></i> Materiales</span>
-                            </div>
-                            <button class="nuestro-btn-info blue">Acceder</button>
+                        <div class="stat">
+                            <i class="fas fa-users"></i>
+                            <span>500+</span>
+                            <p>Estudiantes Activos</p>
                         </div>
-                    </div>
-                    <div class="nuestro-card">
-                        <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-documentos_114360-1037.jpg" alt="Gestión Documental">
-                        <div class="nuestro-card-content">
-                            <h4>Gestión Documental en el Sector Público</h4>
-                            <p>Progreso: 60%</p>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 60%;"></div>
-                            </div>
-                            <div class="course-meta">
-                                <span><i class="fas fa-play"></i> Ver Módulo 3</span>
-                                <span><i class="fas fa-file-alt"></i> Materiales</span>
-                            </div>
-                            <button class="nuestro-btn-info blue">Acceder</button>
+                        <div class="stat">
+                            <i class="fas fa-certificate"></i>
+                            <span>98%</span>
+                            <p>Tasa de Éxito</p>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section id="tareas">
-                <h2><i class="fas fa-tasks"></i> Tareas y Evaluaciones</h2>
-                <p>Gestiona tus entregas y revisa calificaciones.</p>
-                <div class="nuestro-apartado">
-                    <div class="nuestro-card">
-                        <div class="nuestro-card-content">
-                            <h4>Tarea: Catalogación Práctica</h4>
-                            <p>Entregar antes del 15/09/2025</p>
-                            <div class="course-meta">
-                                <span><i class="fas fa-upload"></i> Subir Archivo</span>
-                                <span><i class="fas fa-star"></i> Calificación: Pendiente</span>
+
+                <section class="noticias">
+                    <h3><i class="fas fa-newspaper"></i> Noticias Institucionales</h3>
+                    <div class="noticias-container">
+                        <div class="noticias-grid">
+                            <div class="noticia-card" data-index="0">
+                                <div class="noticia-icon">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <h4>Nuevo Estándar Internacional para Digitalización</h4>
+                                <p>IFAP adopta estándares ISO para preservación digital de documentos históricos.</p>
+                                <span class="noticia-fecha">6 Sep 2025</span>
                             </div>
-                            <button class="nuestro-btn-info blue">Subir Tarea</button>
+                            <div class="noticia-card" data-index="1">
+                                <div class="noticia-icon">
+                                    <i class="fas fa-archive"></i>
+                                </div>
+                                <h4>Descubrimiento de Archivos Perdidos</h4>
+                                <p>Hallazgo de documentos coloniales en archivos provinciales del Perú.</p>
+                                <span class="noticia-fecha">5 Sep 2025</span>
+                            </div>
+                            <div class="noticia-card" data-index="2">
+                                <div class="noticia-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h4>IA en Catalogación Automática</h4>
+                                <p>Implementación de inteligencia artificial para clasificación de documentos.</p>
+                                <span class="noticia-fecha">4 Sep 2025</span>
+                            </div>
+                            <div class="noticia-card" data-index="3">
+                                <div class="noticia-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <h4>Conferencia Internacional</h4>
+                                <p>IFAP organiza evento sobre preservación digital en Lima.</p>
+                                <span class="noticia-fecha">3 Sep 2025</span>
+                            </div>
+                            <div class="noticia-card" data-index="4">
+                                <div class="noticia-icon">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                                <h4>Nueva Ley de Protección Archivística</h4>
+                                <p>Aprobada ley para salvaguarda de archivos públicos en Perú.</p>
+                                <span class="noticia-fecha">2 Sep 2025</span>
+                            </div>
+                            <div class="noticia-card" data-index="5">
+                                <div class="noticia-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <h4>Colaboración con UNESCO</h4>
+                                <p>IFAP y UNESCO firman acuerdo para capacitación archivística regional.</p>
+                                <span class="noticia-fecha">1 Sep 2025</span>
+                            </div>
+                            <div class="noticia-card" data-index="6">
+                                <div class="noticia-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <h4>Innovación en Gestión Documental</h4>
+                                <p>Nuevo sistema de gestión documental implementado en instituciones públicas.</p>
+                                <span class="noticia-fecha">31 Ago 2025</span>
+                            </div>
+                            <div class="noticia-card" data-index="7">
+                                <div class="noticia-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <h4>Exposición Virtual de Archivos</h4>
+                                <p>Disponible exposición digital de archivos históricos peruanos.</p>
+                                <span class="noticia-fecha">30 Ago 2025</span>
+                            </div>
+                            <div class="noticia-card" data-index="8">
+                                <div class="noticia-icon">
+                                    <i class="fas fa-chalkboard-teacher"></i>
+                                </div>
+                                <h4>Capacitación para Funcionarios</h4>
+                                <p>Programa especial de formación archivística para sector público.</p>
+                                <span class="noticia-fecha">29 Ago 2025</span>
+                            </div>
+                            <div class="noticia-card" data-index="9">
+                                <div class="noticia-icon">
+                                    <i class="fas fa-scroll"></i>
+                                </div>
+                                <h4>Proyecto de Digitalización Masiva</h4>
+                                <p>Iniciativa para digitalizar archivos coloniales del siglo XVI.</p>
+                                <span class="noticia-fecha">28 Ago 2025</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section id="foros">
-                <h2><i class="fas fa-comments"></i> Foros de Discusión</h2>
-                <p>Interactúa con compañeros e instructores.</p>
-                <div class="nuestro-apartado">
-                    <div class="nuestro-card">
-                        <div class="nuestro-card-content">
-                            <h4>Foro de Archivística Básica</h4>
-                            <p>Discusiones sobre principios fundamentales.</p>
-                            <div class="course-meta">
-                                <span><i class="fas fa-comments"></i> 15 mensajes</span>
-                                <span><i class="fas fa-user"></i> Moderado por Dr. Ana López</span>
-                            </div>
-                            <button class="nuestro-btn-info blue">Entrar al Foro</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="mensajes">
-                <h2><i class="fas fa-envelope"></i> Mensajes</h2>
-                <p>Comunicación con instructores.</p>
-                <div class="message-list">
-                    <div class="message">
-                        <strong>Dr. Ana López:</strong> Revisa el módulo 5 para la próxima clase.
-                        <span>Fecha: 05/09/2025</span>
-                    </div>
-                </div>
-            </section>
-            <section id="calendario">
-                <h2><i class="fas fa-calendar"></i> Calendario Académico</h2>
-                <p>Fechas importantes.</p>
-                <div class="calendar">
-                    <p>Próxima: Seminario Digital - 10/09/2025</p>
-                    <p>Entrega Tarea: 15/09/2025</p>
-                </div>
+                </section>
             </section>
         </div>
     </main>
@@ -202,5 +192,58 @@
         <p>Dirección: Av. Los Archivos 123, Lima, Perú</p>
         <p>Correo: contacto@ifap.edu.pe | Teléfono: +123 456 789</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const noticiaCards = document.querySelectorAll('.noticia-card');
+            let currentStartIndex = 0;
+            const totalNoticias = noticiaCards.length;
+
+            // Determinar cuántas tarjetas mostrar según el tamaño de pantalla
+            function getVisibleCount() {
+                return window.innerWidth <= 768 ? 1 : 3;
+            }
+
+            let visibleCount = getVisibleCount();
+
+            // Función para mostrar las siguientes noticias consecutivas
+            function rotateNoticias() {
+                // Remover clase active de todas las tarjetas
+                noticiaCards.forEach(card => {
+                    card.classList.remove('active');
+                });
+
+                // Agregar clase active a las siguientes tarjetas consecutivas
+                for (let i = 0; i < visibleCount; i++) {
+                    const index = (currentStartIndex + i) % totalNoticias;
+                    noticiaCards[index].classList.add('active');
+                }
+
+                // Avanzar al siguiente grupo
+                currentStartIndex = (currentStartIndex + 1) % totalNoticias;
+            }
+
+            // Actualizar visibleCount cuando cambie el tamaño de pantalla
+            window.addEventListener('resize', function() {
+                const newVisibleCount = getVisibleCount();
+                if (newVisibleCount !== visibleCount) {
+                    visibleCount = newVisibleCount;
+                    // Reiniciar la rotación con el nuevo número de tarjetas visibles
+                    currentStartIndex = 0;
+                    rotateNoticias();
+                }
+            });
+
+            // Iniciar rotación automática cada 4 segundos
+            setInterval(rotateNoticias, 4000);
+
+            // Mostrar las primeras noticias al cargar (después de un pequeño delay para asegurar que el DOM esté listo)
+            setTimeout(function() {
+                for (let i = 0; i < visibleCount; i++) {
+                    noticiaCards[i].classList.add('active');
+                }
+            }, 100);
+        });
+    </script>
 </body>
 </html>
