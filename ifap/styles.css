@@ -560,3 +560,69 @@ footer p {
 .course-meta i {
     color: #2563eb;
 }
+
+.hero-section {
+    background: linear-gradient(rgba(37, 99, 235, 0.8), rgba(59, 130, 246, 0.8)), url('https://img.freepik.com/vector-gratis/ilustracion-concepto-archivo-digital_114360-1012.jpg') no-repeat center center;
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    animation: fadeInHero 1.5s;
+}
+@keyframes fadeInHero {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: none; }
+}
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+.btn-hero {
+    display: inline-block;
+    background: #fff;
+    color: #2563eb;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+.btn-hero:hover {
+    background: #2563eb;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px rgba(37, 99, 235, 0.3);
+}
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    .hero-section {
+        height: 50vh;
+    }
+}
