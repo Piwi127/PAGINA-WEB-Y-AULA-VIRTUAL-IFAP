@@ -134,9 +134,9 @@ ul {
 }
 .menu-superior {
     width: 100%;
-    background: linear-gradient(90deg, #2563eb 80%, #3b82f6 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #1d4ed8 100%);
     color: #fff;
-    box-shadow: 0 2px 12px rgba(37,99,235,0.13);
+    box-shadow: 0 2px 12px rgba(37,99,235,0.2);
     position: relative;
     z-index: 100;
     border-bottom-left-radius: 18px;
@@ -150,26 +150,30 @@ ul {
     margin: 0 auto;
     padding: 0.5rem 2rem;
 }
-.logo-menu {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
+.menu-toggle {
+    display: none;
 }
-.logo-img {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+.menu-hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+.menu-hamburger:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+.menu-hamburger span {
+    width: 25px;
+    height: 3px;
     background: #fff;
-    object-fit: contain;
-    box-shadow: 0 2px 8px rgba(124,29,29,0.13);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
 }
-.logo-titulo {
-    font-size: 2.1rem;
-    font-weight: 900;
-    letter-spacing: 2px;
-    color: #fffbe7;
-    font-family: 'Roboto', sans-serif;
-    text-shadow: 1px 2px 8px rgba(37,99,235,0.10);
+.nav-menu {
+    display: flex;
 }
 .menu-navegacion {
     display: flex;
@@ -251,13 +255,40 @@ ul {
         align-items: flex-start;
         padding: 0.5rem 1rem;
     }
+    .menu-hamburger {
+        display: flex;
+        order: 2;
+    }
+    .nav-menu {
+        display: none;
+        width: 100%;
+        order: 3;
+    }
+    .menu-toggle:checked ~ .nav-menu {
+        display: block;
+    }
     .menu-navegacion {
+        flex-direction: column;
         gap: 1.2rem;
+        width: 100%;
+    }
+    .menu-navegacion > li {
+        width: 100%;
+    }
+    .menu-navegacion > li > a {
+        width: 100%;
+        justify-content: flex-start;
     }
     .submenu-desplegable {
-        left: 0;
-        min-width: 180px;
-        padding: 1rem 1rem 1rem 1rem;
+        position: static;
+        display: none;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+    }
+    .submenu:hover .submenu-desplegable, .submenu:focus-within .submenu-desplegable {
+        display: block;
     }
 }
 
