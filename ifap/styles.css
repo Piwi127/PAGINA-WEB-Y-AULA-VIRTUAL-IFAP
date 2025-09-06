@@ -726,3 +726,24 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+.btn-login {
+    background: #fff;
+    color: #2563eb;
+    border: 2px solid #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+.btn-login:hover {
+    background: #2563eb;
+    color: #fff;
+    border-color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+.btn-login i {
+    margin-right: 0.5rem;
+}
