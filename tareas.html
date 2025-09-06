@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas - Aula Virtual IFAP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="menu-superior">
+        <div class="menu-barra">
+            <div class="logo-menu">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Archivo_icono.png" alt="Logo IFAP" class="logo-img">
+                <span class="logo-titulo">IFAP</span>
+            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="nav-menu">
+                <ul class="menu-navegacion">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="submenu">
+                        <a href="cursos.html"><i class="fas fa-book"></i> Cursos <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul>
+                                <li><a href="carreras.html">Carreras Archivísticas</a></li>
+                                <li><a href="cursos.html">Cursos Especializados</a></li>
+                                <li><a href="talleres.html">Talleres y Seminarios</a></li>
+                                <li><a href="biblioteca.html">Biblioteca Virtual</a></li>
+                                <li><a href="normas.html">Normas y Legislación</a></li>
+                                <li><a href="articulos.html">Artículos y Publicaciones</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-building"></i> Institución <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul>
+                                <li><a href="historia.html">Historia</a></li>
+                                <li><a href="equipo-docente.html">Equipo Docente</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="inscribirse.html"><i class="fas fa-user-plus"></i> Inscríbete aquí</a></li>
+                    <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+                    <li><a href="aula-virtual.html" class="btn-aula"><i class="fas fa-school"></i> Aula Virtual</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero-section" style="background: linear-gradient(rgba(37, 99, 235, 0.8), rgba(59, 130, 246, 0.8)), url('https://img.freepik.com/vector-gratis/ilustracion-concepto-aula-virtual_114360-1040.jpg') no-repeat center center; background-size: cover;">
+        <div class="hero-content">
+            <h1>Tareas y Evaluaciones</h1>
+            <p>Gestiona tus entregas y revisa calificaciones en el aula virtual.</p>
+        </div>
+    </section>
+    <main class="aula-main">
+        <aside class="sidebar">
+            <h3>Navegación</h3>
+            <ul>
+                <li><a href="aula-virtual.html"><i class="fas fa-home"></i> Inicio del Aula</a></li>
+                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="mis-cursos.html"><i class="fas fa-book"></i> Mis Cursos</a></li>
+                <li><span class="active"><i class="fas fa-tasks"></i> Tareas</span></li>
+                <li><a href="foros.html"><i class="fas fa-comments"></i> Foros</a></li>
+                <li><a href="mensajes.html"><i class="fas fa-envelope"></i> Mensajes</a></li>
+                <li><a href="calendario.html"><i class="fas fa-calendar"></i> Calendario</a></li>
+            </ul>
+        </aside>
+        <div class="content">
+            <section id="tareas">
+                <h2><i class="fas fa-tasks"></i> Tareas y Evaluaciones</h2>
+                <p>Gestiona tus entregas y revisa calificaciones.</p>
+                <div class="nuestro-apartado">
+                    <div class="nuestro-card">
+                        <div class="nuestro-card-content">
+                            <h4>Tarea: Catalogación Práctica</h4>
+                            <p>Entregar antes del 15/09/2025</p>
+                            <div class="course-meta">
+                                <span><i class="fas fa-upload"></i> Subir Archivo</span>
+                                <span><i class="fas fa-star"></i> Calificación: Pendiente</span>
+                            </div>
+                            <button class="nuestro-btn-info blue">Subir Tarea</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 IFAP - Instituto de Formación Archivística del Perú. Todos los derechos reservados.</p>
+        <p>Dirección: Av. Los Archivos 123, Lima, Perú</p>
+        <p>Correo: contacto@ifap.edu.pe | Teléfono: +123 456 789</p>
+    </footer>
+</body>
+</html>
