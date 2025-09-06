@@ -1,0 +1,352 @@
+/* ===== MENÚ SUPERIOR ESTILO UNMSM ===== */
+.menu-superior {
+    width: 100%;
+    background: #7c1d1d url('https://www.unmsm.edu.pe/themes/custom/unmsm/images/bg-header.png') repeat-x top;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(124,29,29,0.08);
+    position: relative;
+    z-index: 100;
+}
+.menu-barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.18);
+        padding-left: 1.2em;
+        margin-bottom: 1.2em;
+    }
+
+    footer {
+        text-align: center;
+        padding: 2rem 0 1.2rem 0;
+        background: linear-gradient(90deg, #3b82f6 60%, #6366f1 100%);
+        color: #fff;
+        width: 100%;
+        margin-top: auto;
+        font-size: 1.05rem;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+        box-shadow: 0 -2px 12px rgba(59, 130, 246, 0.10);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 100vw;
+    }
+    footer p {
+        margin: 0.3em 0;
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+}
+.tarjeta-curso img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+.tarjeta-curso .contenido {
+    padding: 1.1rem 1rem 0.5rem 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.tarjeta-curso h4 {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 0.5em 0;
+}
+.tarjeta-curso p {
+    font-size: 0.98rem;
+    color: #444;
+    margin: 0 0 0.7em 0;
+}
+.tarjeta-curso .info-extra {
+    font-size: 0.93rem;
+    color: #6366f1;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+}
+.tarjeta-curso .btn-info {
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    border-radius: 0 0 18px 18px;
+    padding: 0.9em 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.10);
+}
+.tarjeta-curso .btn-info:hover {
+    background: #3b82f6;
+}
+.carrusel-titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.carrusel-ver-todo {
+    margin-top: 0.5rem;
+    text-align: right;
+    width: 100%;
+}
+.carrusel-ver-todo a {
+    color: #2563eb;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.carrusel-ver-todo a:hover {
+    color: #6366f1;
+    text-decoration: underline;
+}
+body {
+    /* Animación de entrada */
+    animation: fadeInBody 1.2s;
+}
+
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #e0e7ff 0%, #f4f4f4 100%);
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: linear-gradient(90deg, #3b82f6 60%, #6366f1 100%);
+    color: #fff;
+    padding: 1.5rem 0 1rem 0;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.08);
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+}
+
+header .menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+header .menu li {
+    margin: 0 1rem;
+}
+
+header .menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    transition: color 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+header .menu a:hover {
+    text-decoration: none;
+    color: #3b82f6;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.10);
+    font-weight: bold;
+}
+
+main {
+    background: rgba(255,255,255,0.8);
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(59, 130, 246, 0.07);
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    animation: fadeInMain 1.2s;
+}
+
+@keyframes fadeInMain {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: none; }
+}
+    padding: 2.5rem 1rem 2rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+section {
+    margin-bottom: 2.5rem;
+.section {
+    background: #fff;
+    padding: 2rem 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(59, 130, 246, 0.08);
+    border: 1px solid #e0e7ff;
+}
+
+h1, h2, h3 {
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(59, 130, 246, 0.07);
+}
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    color: #3b82f6;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.7em;
+    line-height: 1.15;
+}
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+h2 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 0.7em;
+}
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #6366f1;
+    margin-bottom: 0.5em;
+}
+    animation: fadeInSection 1.2s;
+}
+
+@keyframes fadeInSection {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: none; }
+}
+    border-radius: 22px;
+    box-shadow: 0 4px 24px rgba(59, 130, 246, 0.13);
+    overflow: hidden;
+    animation: fadeInCard 1.2s;
+}
+
+@keyframes fadeInCard {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: none; }
+}
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.07);
+}
+    background: linear-gradient(90deg, #6366f1 60%, #3b82f6 100%);
+    border-radius: 0 0 22px 22px;
+    font-size: 1.08rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+    background: linear-gradient(90deg, #3b82f6 60%, #6366f1 100%);
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.13);
+}
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #6366f1;
+}
+ul {
+    padding-left: 1.2em;
+    margin-bottom: 1.2em;
+}
+.course {
+    background: #f1f5ff;
+    border: 1px solid #c7d2fe;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(99, 102, 241, 0.07);
+    padding: 1.2rem 1rem 1rem 1rem;
+    margin-bottom: 1.2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.course:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 6px 24px rgba(59, 130, 246, 0.13);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0 1.2rem 0;
+    background: linear-gradient(90deg, #3b82f6 60%, #6366f1 100%);
+    color: #fff;
+    width: 100%;
+    margin-top: auto;
+    font-size: 1.05rem;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    box-shadow: 0 -2px 12px rgba(59, 130, 246, 0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100vw;
+}
+}
+footer p {
+    margin: 0.3em 0;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+}
+/* Botón de contacto (opcional, si se agrega en el HTML) */
+.btn-contact {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+    display: inline-block;
+    background: linear-gradient(90deg, #6366f1 60%, #3b82f6 100%);
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.10);
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 1rem;
+}
+.btn-contact:hover {
+    background: linear-gradient(90deg, #3b82f6 60%, #6366f1 100%);
+    transform: scale(1.06);
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.13);
+}
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #7c1d1d;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(124,29,29,0.07);
+}
+    transition: color 0.2s, text-shadow 0.2s;
+    text-shadow: 0 2px 8px rgba(59, 130, 246, 0.07);
+}
+    text-shadow: 0 4px 16px rgba(59, 130, 246, 0.13);
+}
+    background: linear-gradient(90deg, #3b82f6 60%, #6366f1 100%);
+    transform: scale(1.04);
+}
