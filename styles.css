@@ -380,7 +380,11 @@ body, html { font-family: var(--ifap-font-sans); color: var(--ifap-text); backgr
 }
 
 /* Nav links in mobile overlay */
-.menu-navegacion { flex-direction: column; gap: 0.8rem; }
+#menu-toggle:checked ~ .menu-hamburger + .nav-menu .menu-navegacion,
+#menu-toggle:checked ~ .nav-menu .menu-navegacion {
+    flex-direction: column;
+    gap: 0.8rem;
+}
 .menu-navegacion > li > a { color: #fff; padding: 0.7rem 0.5rem; }
 
 /* Hero adjustments */
