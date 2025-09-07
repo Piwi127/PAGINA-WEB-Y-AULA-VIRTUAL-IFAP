@@ -75,17 +75,155 @@
         <div class="content">
             <section id="foros">
                 <h2><i class="fas fa-comments"></i> Foros de Discusión</h2>
-                <p>Interactúa con compañeros e instructores.</p>
-                <div class="nuestro-apartado">
-                    <div class="nuestro-card">
-                        <div class="nuestro-card-content">
-                            <h4>Foro de Archivística Básica</h4>
-                            <p>Discusiones sobre principios fundamentales.</p>
-                            <div class="course-meta">
-                                <span><i class="fas fa-comments"></i> 15 mensajes</span>
-                                <span><i class="fas fa-user"></i> Moderado por Dr. Ana López</span>
+                <p>Interactúa con compañeros e instructores en temas específicos de archivística.</p>
+                
+                <div class="foro-actions">
+                    <button class="btn-nuevo-tema">
+                        <i class="fas fa-plus"></i> Nuevo Tema
+                    </button>
+                    <div class="foro-filtros">
+                        <select class="filtro-categoria">
+                            <option value="todos">Todas las Categorías</option>
+                            <option value="archivistica-basica">Archivística Básica</option>
+                            <option value="digitalizacion">Digitalización</option>
+                            <option value="normativas">Normativas</option>
+                            <option value="tecnologia">Tecnología</option>
+                            <option value="carrera">Carrera Profesional</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="foro-categorias">
+                    <div class="categoria-card">
+                        <div class="categoria-header">
+                            <div class="categoria-icon">
+                                <i class="fas fa-book"></i>
                             </div>
-                            <button class="nuestro-btn-info blue">Entrar al Foro</button>
+                            <div class="categoria-info">
+                                <h4>Archivística Básica</h4>
+                                <p>Principios fundamentales, teoría y conceptos básicos</p>
+                            </div>
+                        </div>
+                        <div class="categoria-stats">
+                            <span><i class="fas fa-comments"></i> 45 temas</span>
+                            <span><i class="fas fa-reply"></i> 234 respuestas</span>
+                            <span><i class="fas fa-clock"></i> Último: hace 2h</span>
+                        </div>
+                        <button class="btn-categoria">Ver Temas</button>
+                    </div>
+
+                    <div class="categoria-card">
+                        <div class="categoria-header">
+                            <div class="categoria-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div class="categoria-info">
+                                <h4>Digitalización y Tecnología</h4>
+                                <p>Herramientas digitales, software y preservación electrónica</p>
+                            </div>
+                        </div>
+                        <div class="categoria-stats">
+                            <span><i class="fas fa-comments"></i> 32 temas</span>
+                            <span><i class="fas fa-reply"></i> 156 respuestas</span>
+                            <span><i class="fas fa-clock"></i> Último: hace 5h</span>
+                        </div>
+                        <button class="btn-categoria">Ver Temas</button>
+                    </div>
+
+                    <div class="categoria-card">
+                        <div class="categoria-header">
+                            <div class="categoria-icon">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <div class="categoria-info">
+                                <h4>Normativas y Legislación</h4>
+                                <p>Leyes, regulaciones y estándares archivísticos</p>
+                            </div>
+                        </div>
+                        <div class="categoria-stats">
+                            <span><i class="fas fa-comments"></i> 28 temas</span>
+                            <span><i class="fas fa-reply"></i> 98 respuestas</span>
+                            <span><i class="fas fa-clock"></i> Último: hace 1d</span>
+                        </div>
+                        <button class="btn-categoria">Ver Temas</button>
+                    </div>
+
+                    <div class="categoria-card">
+                        <div class="categoria-header">
+                            <div class="categoria-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="categoria-info">
+                                <h4>Carrera Profesional</h4>
+                                <p>Oportunidades laborales, certificaciones y desarrollo profesional</p>
+                            </div>
+                        </div>
+                        <div class="categoria-stats">
+                            <span><i class="fas fa-comments"></i> 19 temas</span>
+                            <span><i class="fas fa-reply"></i> 67 respuestas</span>
+                            <span><i class="fas fa-clock"></i> Último: hace 3d</span>
+                        </div>
+                        <button class="btn-categoria">Ver Temas</button>
+                    </div>
+
+                    <div class="categoria-card">
+                        <div class="categoria-header">
+                            <div class="categoria-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="categoria-info">
+                                <h4>Estudio en Grupo</h4>
+                                <p>Grupos de estudio, proyectos colaborativos y networking</p>
+                            </div>
+                        </div>
+                        <div class="categoria-stats">
+                            <span><i class="fas fa-comments"></i> 12 temas</span>
+                            <span><i class="fas fa-reply"></i> 45 respuestas</span>
+                            <span><i class="fas fa-clock"></i> Último: hace 1d</span>
+                        </div>
+                        <button class="btn-categoria">Ver Temas</button>
+                    </div>
+
+                    <div class="categoria-card">
+                        <div class="categoria-header">
+                            <div class="categoria-icon">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <div class="categoria-info">
+                                <h4>Preguntas Generales</h4>
+                                <p>Dudas sobre cursos, plataforma y soporte técnico</p>
+                            </div>
+                        </div>
+                        <div class="categoria-stats">
+                            <span><i class="fas fa-comments"></i> 56 temas</span>
+                            <span><i class="fas fa-reply"></i> 178 respuestas</span>
+                            <span><i class="fas fa-clock"></i> Último: hace 30min</span>
+                        </div>
+                        <button class="btn-categoria">Ver Temas</button>
+                    </div>
+                </div>
+
+                <div class="foro-moderacion">
+                    <h3><i class="fas fa-shield-alt"></i> Moderación y Comunidad</h3>
+                    <div class="moderacion-info">
+                        <div class="moderador-card">
+                            <div class="moderador-avatar">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <div class="moderador-info">
+                                <h5>Dr. Ana López</h5>
+                                <p>Moderadora Principal</p>
+                                <span class="moderador-status online">En línea</span>
+                            </div>
+                        </div>
+                        <div class="reglas-comunidad">
+                            <h5>Reglas de la Comunidad</h5>
+                            <ul>
+                                <li>Respeta a todos los miembros</li>
+                                <li>Mantén las discusiones relevantes al tema</li>
+                                <li>No compartas información confidencial</li>
+                                <li>Usa un lenguaje apropiado</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
