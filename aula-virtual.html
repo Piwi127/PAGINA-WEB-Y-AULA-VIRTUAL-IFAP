@@ -50,7 +50,6 @@
                     <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
                     <li><a href="aula-virtual.html" class="btn-aula"><i class="fas fa-school"></i> Aula Virtual</a></li>
                     <li><a href="iniciar-sesion.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
-                    <li><a href="aula-virtual.html" class="btn-aula"><i class="fas fa-school"></i> Aula Virtual</a></li>
                 </ul>
             </nav>
         </div>
@@ -386,6 +385,9 @@
 
                 <section class="noticias">
                     <h3><i class="fas fa-newspaper"></i> Noticias Institucionales</h3>
+                    <div id="noticias-status" style="background: #f0f0f0; padding: 10px; margin-bottom: 1rem; border-radius: 5px; font-size: 12px; color: #666;">
+                        Estado: Inicializando sistema de noticias...
+                    </div>
                     <div class="noticias-container">
                         <div class="noticias-grid">
                             <div class="noticia-card" data-index="0">
@@ -483,9 +485,14 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const statusDiv = document.getElementById('noticias-status');
+            statusDiv.textContent = 'Estado: Sistema de noticias cargado. Encontrando elementos...';
+
             const noticiaCards = document.querySelectorAll('.noticia-card');
-            let currentStartIndex = 0;
+            statusDiv.textContent = `Estado: Encontradas ${noticiaCards.length} noticias. Inicializando sistema...`;
             const totalNoticias = noticiaCards.length;
+            let currentIndices = [];
+            let isTransitioning = false;
 
             // Determinar cuántas tarjetas mostrar según el tamaño de pantalla
             function getVisibleCount() {
@@ -494,21 +501,78 @@
 
             let visibleCount = getVisibleCount();
 
-            // Función para mostrar las siguientes noticias consecutivas
-            function rotateNoticias() {
-                // Remover clase active de todas las tarjetas
-                noticiaCards.forEach(card => {
-                    card.classList.remove('active');
-                });
+            // Función para obtener índices aleatorios únicos
+            function getRandomIndices(count) {
+                const indices = [];
+                const available = Array.from({length: totalNoticias}, (_, i) => i);
 
-                // Agregar clase active a las siguientes tarjetas consecutivas
-                for (let i = 0; i < visibleCount; i++) {
-                    const index = (currentStartIndex + i) % totalNoticias;
-                    noticiaCards[index].classList.add('active');
+                for (let i = 0; i < count; i++) {
+                    const randomIndex = Math.floor(Math.random() * available.length);
+                    indices.push(available.splice(randomIndex, 1)[0]);
                 }
 
-                // Avanzar al siguiente grupo
-                currentStartIndex = (currentStartIndex + 1) % totalNoticias;
+                return indices;
+            }
+
+            // Función para aplicar efecto de desvanecimiento
+            function fadeOutElements(elements) {
+                return new Promise(resolve => {
+                    elements.forEach(element => {
+                        element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                        element.style.opacity = '0';
+                        element.style.transform = 'translateY(-20px) scale(0.95)';
+                    });
+
+                    setTimeout(resolve, 600);
+                });
+            }
+
+            function fadeInElements(elements) {
+                return new Promise(resolve => {
+                    elements.forEach(element => {
+                        element.style.transition = 'opacity 0.8s ease-in, transform 0.8s ease-in';
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0) scale(1)';
+                    });
+
+                    setTimeout(resolve, 800);
+                });
+            }
+
+            // Función principal para rotar noticias aleatoriamente
+            async function rotateNoticiasRandom() {
+                if (isTransitioning) return;
+                isTransitioning = true;
+
+                // Obtener elementos actualmente visibles
+                const currentElements = currentIndices.map(index => noticiaCards[index]);
+
+                // Desvanecer elementos actuales
+                if (currentElements.length > 0) {
+                    await fadeOutElements(currentElements);
+                }
+
+                // Remover clase active de todos los elementos
+                noticiaCards.forEach(card => {
+                    card.classList.remove('active');
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px) scale(0.95)';
+                });
+
+                // Obtener nuevos índices aleatorios
+                currentIndices = getRandomIndices(visibleCount);
+
+                // Agregar clase active a los nuevos elementos seleccionados
+                const newElements = currentIndices.map(index => noticiaCards[index]);
+                newElements.forEach(element => {
+                    element.classList.add('active');
+                });
+
+                // Pequeño delay antes de hacer fade in
+                setTimeout(async () => {
+                    await fadeInElements(newElements);
+                    isTransitioning = false;
+                }, 200);
             }
 
             // Actualizar visibleCount cuando cambie el tamaño de pantalla
@@ -516,20 +580,44 @@
                 const newVisibleCount = getVisibleCount();
                 if (newVisibleCount !== visibleCount) {
                     visibleCount = newVisibleCount;
-                    // Reiniciar la rotación con el nuevo número de tarjetas visibles
-                    currentStartIndex = 0;
-                    rotateNoticias();
+                    // Reiniciar con nuevos índices aleatorios
+                    currentIndices = getRandomIndices(visibleCount);
+                    rotateNoticiasRandom();
                 }
             });
 
-            // Iniciar rotación automática cada 4 segundos
-            setInterval(rotateNoticias, 4000);
+            // Iniciar rotación automática cada 5 segundos
+            setInterval(rotateNoticiasRandom, 5000);
 
-            // Mostrar las primeras noticias al cargar (después de un pequeño delay para asegurar que el DOM esté listo)
+            // Mostrar las primeras noticias al cargar
             setTimeout(function() {
-                for (let i = 0; i < visibleCount; i++) {
-                    noticiaCards[i].classList.add('active');
-                }
+                statusDiv.textContent = 'Estado: Seleccionando noticias aleatorias...';
+                currentIndices = getRandomIndices(visibleCount);
+                const initialElements = currentIndices.map(index => noticiaCards[index]);
+
+                statusDiv.textContent = `Estado: Mostrando ${initialElements.length} noticias seleccionadas...`;
+
+                // Primero ocultar todas las noticias
+                noticiaCards.forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px) scale(0.95)';
+                    card.classList.remove('active');
+                });
+
+                // Luego mostrar solo las seleccionadas
+                initialElements.forEach((element, i) => {
+                    element.classList.add('active');
+                    // Staggered animation for initial load
+                    setTimeout(() => {
+                        element.style.transition = 'opacity 0.8s ease-in, transform 0.8s ease-in';
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0) scale(1)';
+                    }, i * 200);
+                });
+
+                setTimeout(() => {
+                    statusDiv.textContent = 'Estado: Sistema de noticias operativo. Las noticias rotarán cada 5 segundos.';
+                }, 1000);
             }, 100);
 
             // Sidebar: smooth expand/collapse with ARIA updates
