@@ -60,8 +60,21 @@
             <a href="#inicio" class="btn-hero">Comenzar</a>
         </div>
     </section>
+    <div class="aula-wrapper">
+        <div class="topbar">
+            <div class="topbar-left">
+                <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Mostrar/ocultar menú"><i class="fas fa-bars"></i></button>
+                <h3 class="top-title">Aula Virtual</h3>
+            </div>
+            <div class="acciones">
+                <button title="Notificaciones"><i class="fas fa-bell"></i></button>
+                <button title="Perfil"><i class="fas fa-user-circle"></i></button>
+            </div>
+        </div>
+
+    <div class="overlay" id="overlay"></div>
     <main class="aula-main">
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
             <h3>Navegación</h3>
             <ul>
                 <li><a href="#inicio" class="active"><i class="fas fa-home"></i> Inicio del Aula</a></li>
@@ -186,7 +199,8 @@
                 </section>
             </section>
         </div>
-    </main>
+        </main>
+    </div>
     <footer>
         <p>&copy; 2025 IFAP - Instituto de Formación Archivística del Perú. Todos los derechos reservados.</p>
         <p>Dirección: Av. Los Archivos 123, Lima, Perú</p>
@@ -243,6 +257,126 @@
                     noticiaCards[i].classList.add('active');
                 }
             }, 100);
+
+            // Sidebar: smooth expand/collapse with ARIA updates
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebar = document.getElementById('sidebar');
+
+            // Helper functions to open/close with measured max-height animation
+            function openSidebar() {
+                // remove collapsed class so it's visible
+                sidebar.classList.remove('collapsed');
+                // measure full height
+                const height = sidebar.scrollHeight;
+                // prepare for animation
+                sidebar.style.maxHeight = '0px';
+                sidebar.style.opacity = '0';
+                sidebar.style.transform = 'translateY(-8px)';
+                // force reflow
+                sidebar.getBoundingClientRect();
+                sidebar.style.transition = 'max-height 280ms ease, opacity 280ms ease, transform 280ms ease';
+                sidebar.style.maxHeight = height + 'px';
+                sidebar.style.opacity = '1';
+                sidebar.style.transform = 'translateY(0)';
+                sidebar.setAttribute('aria-hidden', 'false');
+                sidebarToggle.setAttribute('aria-expanded', 'true');
+                // cleanup after transition so height can grow naturally later
+                setTimeout(() => {
+                    sidebar.style.maxHeight = '';
+                    sidebar.style.transition = '';
+                }, 320);
+            }
+
+            function closeSidebar() {
+                // set current height then collapse
+                const height = sidebar.scrollHeight;
+                sidebar.style.maxHeight = height + 'px';
+                // force reflow
+                sidebar.getBoundingClientRect();
+                sidebar.style.transition = 'max-height 260ms ease, opacity 260ms ease, transform 260ms ease';
+                sidebar.style.maxHeight = '0px';
+                sidebar.style.opacity = '0';
+                sidebar.style.transform = 'translateY(-8px)';
+                sidebar.setAttribute('aria-hidden', 'true');
+                sidebarToggle.setAttribute('aria-expanded', 'false');
+                // keep class collapsed after animation ends
+                setTimeout(() => {
+                    sidebar.classList.add('collapsed');
+                    sidebar.style.transition = '';
+                }, 280);
+            }
+
+            // Initialize ARIA and visual state
+            if (sidebar.classList.contains('collapsed')) {
+                sidebar.setAttribute('aria-hidden', 'true');
+                sidebarToggle.setAttribute('aria-expanded', 'false');
+                sidebar.style.maxHeight = '0px';
+                sidebar.style.opacity = '0';
+                sidebar.style.transform = 'translateY(-8px)';
+            } else {
+                sidebar.setAttribute('aria-hidden', 'false');
+                sidebarToggle.setAttribute('aria-expanded', 'true');
+                sidebar.style.opacity = '1';
+                sidebar.style.transform = 'translateY(0)';
+            }
+
+            sidebarToggle.addEventListener('click', function() {
+                if (sidebar.classList.contains('collapsed')) {
+                    openSidebar();
+                    overlay.classList.add('visible');
+                } else {
+                    closeSidebar();
+                    overlay.classList.remove('visible');
+                }
+            });
+
+            // Close sidebar when a navigation link is clicked on small screens
+            const sidebarLinks = sidebar.querySelectorAll('a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 900 && !sidebar.classList.contains('collapsed')) {
+                        closeSidebar();
+                        overlay.classList.remove('visible');
+                    }
+                });
+            });
+
+            // Close sidebar with Escape key for accessibility
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 'Escape' || e.key === 'Esc') && !sidebar.classList.contains('collapsed')) {
+                    closeSidebar();
+                    sidebarToggle.focus();
+                    overlay.classList.remove('visible');
+                }
+            });
+
+            // Overlay click closes the sidebar on mobile
+            const overlay = document.getElementById('overlay');
+            overlay.addEventListener('click', function() {
+                if (!sidebar.classList.contains('collapsed')) {
+                    closeSidebar();
+                    overlay.classList.remove('visible');
+                }
+            });
+
+            // Back to top button behavior
+            const backToTop = document.createElement('button');
+            backToTop.className = 'back-to-top';
+            backToTop.setAttribute('aria-label', 'Volver arriba');
+            backToTop.innerHTML = '<i class="fas fa-chevron-up"></i>';
+            document.body.appendChild(backToTop);
+
+            function checkScrollForTop() {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            }
+            window.addEventListener('scroll', checkScrollForTop);
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
         });
     </script>
 </body>
