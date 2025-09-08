@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="menu-superior">
+        <header class="menu-superior">
         <div class="menu-barra">
             <div class="logo-menu">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Archivo_icono.png" alt="Logo IFAP" class="logo-img">
+                <i class="fas fa-archive logo-img"></i>
                 <span class="logo-titulo">IFAP</span>
             </div>
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
@@ -31,10 +31,17 @@
                                 <li><a href="carreras.html">Carreras Archivísticas</a></li>
                                 <li><a href="cursos.html">Cursos Especializados</a></li>
                                 <li><a href="talleres.html">Talleres y Seminarios</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-folder-open"></i> Recursos <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul>
                                 <li><a href="biblioteca.html">Biblioteca Virtual</a></li>
                                 <li><a href="normas.html">Normas y Legislación</a></li>
-                                <li><span class="active">Artículos y Publicaciones</span></li>
-                                <li><a href="inscribirse.html">Inscríbete aquí</a></li>
+                                <li><a href="articulos.html">Artículos y Publicaciones</a></li>
+                                <li><a href="galeria.html">Galería</a></li>
                             </ul>
                         </div>
                     </li>
@@ -48,12 +55,27 @@
                         </div>
                     </li>
                     <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
-                    <li><a href="iniciar-sesion.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
-                    <li><a href="aula-virtual.html" class="btn-aula"><i class="fas fa-school"></i> Aula Virtual</a></li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-user-circle"></i> Acceso <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul class="access-submenu-list">
+                                <li><a href="inscribirse.html">Inscríbete aquí</a></li>
+                                <li><a href="iniciar-sesion.html">Iniciar Sesión</a></li>
+                                <li><a href="aula-virtual.html">Aula Virtual</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="search-box">
+                            <input type="text" id="search-input" placeholder="Buscar...">
+                            <button id="search-button"><i class="fas fa-search"></i></button>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
+
     <section class="hero-section" style="background: linear-gradient(rgba(37, 99, 235, 0.8), rgba(59, 130, 246, 0.8)), url('https://img.freepik.com/vector-gratis/ilustracion-concepto-archivo-digital_114360-1012.jpg') no-repeat center center; background-size: cover;">
         <div class="hero-content">
             <h1>Artículos y Publicaciones</h1>
@@ -115,3 +137,4 @@
     </footer>
 </body>
 </html>
+
