@@ -103,14 +103,17 @@
                         <div class="form-group">
                             <label for="nombre">Nombre Completo *</label>
                             <input type="text" id="nombre" name="nombre" required>
+                            <div class="error-message"></div>
                         </div>
                         <div class="form-group">
                             <label for="email">Correo Electrónico *</label>
                             <input type="email" id="email" name="email" required>
+                            <div class="error-message"></div>
                         </div>
                         <div class="form-group">
                             <label for="telefono">Teléfono</label>
                             <input type="tel" id="telefono" name="telefono">
+                            <div class="error-message"></div>
                         </div>
                         <div class="form-group">
                             <label for="asunto">Asunto *</label>
@@ -122,10 +125,12 @@
                                 <option value="comentarios">Comentarios Generales</option>
                                 <option value="otros">Otros</option>
                             </select>
+                            <div class="error-message"></div>
                         </div>
                         <div class="form-group">
                             <label for="mensaje">Mensaje *</label>
                             <textarea id="mensaje" name="mensaje" rows="6" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                            <div class="error-message"></div>
                         </div>
                         <button type="submit" class="btn-submit">Enviar Mensaje</button>
                     </form>
@@ -140,110 +145,6 @@
         <p>Correo: contacto@ifap.edu.pe | Teléfono: +51 1 456 7890</p>
     </footer>
 
-    <style>
-        #contact-hero {
-            background: linear-gradient(rgba(37, 99, 235, 0.8), rgba(59, 130, 246, 0.8)), url('https://img.freepik.com/vector-gratis/ilustracion-concepto-archivo-digital_114360-1012.jpg') no-repeat center center;
-            background-size: cover;
-            height: 40vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            padding: 2rem;
-        }
-        #contact-hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        #contact-hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 1rem;
-        }
-        .contact-info h2, .contact-form-section h2 {
-            color: #2563eb;
-            margin-bottom: 2rem;
-        }
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        .info-item i {
-            color: #2563eb;
-            font-size: 1.5rem;
-            margin-top: 0.2rem;
-        }
-        .info-item h3 {
-            color: #2563eb;
-            margin: 0 0 0.5rem 0;
-        }
-        .info-item p {
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #333;
-        }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: 'Roboto', sans-serif;
-        }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: #2563eb;
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
-        }
-        .btn-submit {
-            background: linear-gradient(90deg, #2563eb, #3b82f6);
-            color: #fff;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .btn-submit:hover {
-            background: linear-gradient(90deg, #1d4ed8, #2563eb);
-        }
-
-        @media (max-width: 768px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .info-item {
-                flex-direction: column;
-                text-align: center;
-            }
-            #contact-hero h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <script src="assets/js/formValidation.js"></script>
 </body>
 </html>

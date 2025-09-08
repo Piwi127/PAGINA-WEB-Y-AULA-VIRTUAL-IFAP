@@ -2205,6 +2205,163 @@ footer p {
     font-size: 1rem;
 }
 
+/* === ESTILOS PARA FORMULARIO DE CONTACTO (contacto.html) === */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+.contact-info h2, .contact-form-section h2 {
+    color: #2563eb;
+    margin-bottom: 2rem;
+}
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.info-item i {
+    color: #2563eb;
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+}
+.info-item h3 {
+    color: #2563eb;
+    margin: 0 0 0.5rem 0;
+}
+.info-item p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* === ESTILOS GENERALES PARA FORMULARIOS === */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+.btn-submit {
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn-submit:hover {
+    background: linear-gradient(90deg, #1d4ed8, #2563eb);
+}
+
+/* === ESTILOS RESPONSIVOS PARA FORMULARIO DE CONTACTO === */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .info-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    #contact-hero h1 { /* Este estilo estaba en contacto.html, lo mantengo aquí */
+        font-size: 2rem;
+    }
+}
+
+/* === ESTILOS PARA FORMULARIO DE REGISTRO (inscribirse.html) === */
+.registro-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(59, 130, 246, 0.10);
+}
+.registro-container h2 {
+    text-align: center;
+    color: #2563eb;
+    margin-bottom: 2rem;
+}
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.form-row .form-group {
+    flex: 1;
+}
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-top: 0.2rem;
+}
+.checkbox-group label {
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+/* === ESTILOS RESPONSIVOS PARA FORMULARIO DE REGISTRO === */
+@media (max-width: 768px) {
+    .registro-container {
+        padding: 2rem 1rem;
+    }
+    .form-row {
+        flex-direction: column;
+    }
+    .btn-submit {
+        width: 100%;
+    }
+}
+
+/* === ESTILOS PARA MENSAJES DE ERROR DE FORMULARIO === */
+.form-group .error-message {
+    color: #dc3545; /* Rojo para errores */
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+    display: none; /* Oculto por defecto, se muestra con JS */
+}
+
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+    border-color: #dc3545; /* Borde rojo para campos inválidos */
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.form-group input.invalid:focus,
+.form-group select.invalid:focus,
+.form-group textarea.invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
 .moderador-info p {
     color: #64748b;
     margin: 0 0 0.5rem 0;
