@@ -565,109 +565,134 @@ body, html { font-family: var(--ifap-font-sans); color: var(--ifap-text); backgr
 /* Mobile overlay nav when checkbox is checked */
 #menu-toggle:checked ~ .menu-hamburger + .nav-menu,
 #menu-toggle:checked ~ .nav-menu {
-    display: block;
+    display: flex; /* Change to flex for better control */
+    flex-direction: column; /* Stack items vertically */
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(37,99,235,0.95);
+    background: linear-gradient(90deg, var(--ifap-primary), var(--ifap-primary-600)); /* Use gradient background */
     padding: 1.5rem 1.5rem;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 4px 16px rgba(37,99,235,0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0 0 var(--ifap-radius-lg) var(--ifap-radius-lg); /* Use theme variable */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* More prominent shadow */
+    border: none; /* Remove border */
+    transform-origin: top;
+    animation: expandMobileMenu 0.3s ease-out forwards; /* New animation */
 }
 
-@keyframes slideDownMobile {
+@keyframes expandMobileMenu {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: scaleY(0);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: scaleY(1);
     }
 }
 
-@media (max-width: 768px) {
-    .menu-barra {
-        padding: 0.4rem 0.8rem;
+/* Default state for .nav-menu (visible on large screens) */
+.nav-menu {
+    display: flex; /* Always display as flex by default */
+}
+
+/* Hide mobile menu when not checked (only on mobile) */
+@media (max-width: 900px) {
+    .nav-menu {
+        display: none; /* Hide by default on mobile */
     }
-    .logo-titulo {
-        font-size: 1.1rem;
+
+    /* Show mobile menu when checked */
+    #menu-toggle:checked ~ .nav-menu {
+        display: flex; /* Show when checked */
     }
-    .logo-img {
-        width: 40px;
-        height: 40px;
-    }
+}
+
+@media (max-width: 900px) {
+    /* Responsive adjustments for menu items */
     .menu-navegacion {
-        gap: 0.8rem;
+        flex-direction: column;
+        gap: 0.8rem; /* Tighter gap for mobile */
+        width: 100%;
+        align-items: flex-start; /* Align text to the left */
     }
+
+    .menu-navegacion > li {
+        width: 100%;
+    }
+
     .menu-navegacion > li > a {
-        font-size: 0.9rem;
-        padding: 0.5rem 0.6rem;
+        padding: 0.8rem 1rem; /* Adjust padding for mobile links */
+        font-size: 1rem;
+        justify-content: flex-start; /* Align text to the left */
     }
-    .btn-aula, .btn-login {
-        padding: 0.6rem 0.9rem !important;
-        font-size: 0.85rem !important;
-    }
+
     .submenu-desplegable {
-        min-width: 180px;
-        padding: 0.8rem;
+        position: static; /* Submenus stack below parent on mobile */
+        width: 100%;
+        min-width: unset; /* Remove min-width constraint */
+        box-shadow: none; /* Remove shadow */
+        border: none; /* Remove border */
+        background: rgba(255, 255, 255, 0.1); /* Lighter background for nested mobile submenus */
+        border-radius: var(--ifap-radius); /* Use theme variable */
+        padding: 0.5rem 1rem; /* Adjusted padding */
+        margin-top: 0.5rem; /* Space from parent */
+        animation: none; /* No animation for nested submenus */
     }
+
     .submenu-desplegable ul li a {
+        padding: 0.6rem 0.8rem; /* Adjusted padding for submenu items */
         font-size: 0.9rem;
-        padding: 0.4rem 0.6rem;
+    }
+
+    /* Adjust logo and title for smaller screens */
+    .logo-menu {
+        gap: 0.5rem;
+    }
+
+    .logo-img {
+        font-size: 1.8rem; /* Smaller icon for mobile */
+    }
+
+    .logo-titulo {
+        font-size: 1.2rem; /* Smaller title for mobile */
+    }
+
+    /* Search box adjustments for mobile */
+    .search-box {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 1rem;
+        padding: 6px 12px;
+    }
+
+    .search-box input {
+        font-size: 0.9rem;
+    }
+
+    .search-box button {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
     }
 }
 
+/* Further adjustments for very small screens */
 @media (max-width: 480px) {
     .menu-superior {
-        border-bottom-left-radius: 12px;
-        border-bottom-right-radius: 12px;
+        border-bottom-left-radius: var(--ifap-radius);
+        border-bottom-right-radius: var(--ifap-radius);
     }
     .menu-barra {
         padding: 0.3rem 0.6rem;
     }
+    .logo-img {
+        font-size: 1.5rem;
+    }
     .logo-titulo {
         font-size: 1rem;
     }
-    .logo-img {
-        width: 35px;
-        height: 35px;
-    }
-    .menu-navegacion {
-        gap: 0.5rem;
-    }
-    .menu-navegacion > li > a {
-        font-size: 0.85rem;
-        padding: 0.4rem 0.5rem;
-    }
-    .submenu-desplegable {
-        min-width: 160px;
-        padding: 0.6rem;
-    }
-    .submenu-desplegable ul {
-        grid-template-columns: 1fr;
-        gap: 0.4rem;
-    }
-    .submenu-desplegable ul li a {
-        font-size: 0.8rem;
-        padding: 0.3rem 0.5rem;
-    }
-    .btn-aula, .btn-login {
-        padding: 0.5rem 0.8rem !important;
-        font-size: 0.8rem !important;
-    }
 }
-
-/* Nav links in mobile overlay */
-#menu-toggle:checked ~ .menu-hamburger + .nav-menu .menu-navegacion,
-#menu-toggle:checked ~ .nav-menu .menu-navegacion {
-    flex-direction: column;
-    gap: 0.8rem;
-    align-items: flex-start;
-}
-.menu-navegacion > li > a { color: #fff; padding: 0.7rem 0.5rem; }
 
 /* Hero Carousel Styles */
 .hero-carousel {
@@ -897,117 +922,138 @@ body, html { font-family: var(--ifap-font-sans); color: var(--ifap-text); backgr
 
 /* Small polish for footer */
 footer { text-align: center; padding: 1.6rem; color: var(--ifap-muted); background: transparent; }
+/* General Menu Navigation Styling */
 .menu-navegacion {
     display: flex;
     align-items: center;
-    gap: 1.8rem;
+    gap: 1.5rem; /* Adjusted gap for a more spacious look */
     list-style: none;
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .menu-navegacion > li {
     position: relative;
 }
+
 .menu-navegacion > li > a {
     color: #fff;
-    font-size: 1.13rem;
+    font-size: 1.05rem; /* Slightly smaller for a cleaner look */
     font-weight: 500;
     text-decoration: none;
-    padding: 0.8rem 1rem;
+    padding: 0.7rem 1rem; /* Adjusted padding */
     border-radius: 8px;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease; /* Smoother transitions */
     display: flex;
     align-items: center;
     gap: 0.5rem;
     position: relative;
+    overflow: hidden; /* For the animated underline effect */
 }
 
-.menu-navegacion > li > a:hover, .menu-navegacion > li.active > a {
-    background: rgba(255, 255, 255, 0.1);
+/* Animated Underline Effect */
+.menu-navegacion > li > a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; /* Thickness of the underline */
+    background: var(--ifap-accent); /* Color of the underline */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    transition: transform 0.3s ease;
+}
+
+.menu-navegacion > li > a:hover::before,
+.menu-navegacion > li.active > a::before {
+    transform: translateX(0); /* Slide in from the left */
+}
+
+.menu-navegacion > li > a:hover {
+    background: rgba(255, 255, 255, 0.15); /* Slightly more prominent hover background */
     color: #fff;
+    transform: translateY(-2px); /* Subtle lift effect */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Subtle shadow on hover */
 }
 
-@keyframes pulse {
-    0%, 100% { transform: translateY(-2px); }
-    50% { transform: translateY(-4px); }
+.menu-navegacion > li.active > a {
+    background: rgba(255, 255, 255, 0.2); /* More prominent active background */
+    color: #fff;
+    font-weight: 600; /* Bolder for active state */
 }
 
-/* === ESTILOS PARA BOTONES ESPECIALES === */
-.btn-aula, .btn-login {
-    background: #2563eb;
-    color: #fff !important;
-    font-weight: 600 !important;
-    font-size: 0.9rem !important;
-    padding: 0.6rem 1rem !important;
-    border-radius: 8px !important;
-    transition: all 0.2s ease !important;
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    position: relative !important;
-}
-
-.btn-aula:hover, .btn-login:hover {
-    background: #1d4ed8 !important;
-    transform: translateY(-1px) !important;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
-}
-
-.btn-login {
-    background: #3b82f6 !important;
-    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2) !important;
-}
-
-.btn-login:hover {
-    background: #2563eb !important;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
-}
 .menu-navegacion > li > a i {
-    font-size: 1.1rem;
+    font-size: 1rem; /* Slightly smaller icon size */
     color: inherit;
 }
+
 .flecha {
-    font-size: 0.8em;
-    margin-left: 0.2em;
+    font-size: 0.7em; /* Smaller arrow */
+    margin-left: 0.1em; /* Reduced margin */
+    transition: transform 0.2s ease;
 }
+
+/* Submenu Styling */
 .submenu-desplegable {
-    display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background: rgba(255, 255, 255, 0.95);
-    color: #222;
-    min-width: 280px;
-    box-shadow: 0 4px 16px rgba(37,99,235,0.1);
-    border-radius: 0 0 12px 12px;
-    padding: 1.5rem 2rem 1.5rem 1.8rem;
+    background: var(--ifap-card); /* Use theme variable for background */
+    color: var(--ifap-text); /* Use theme variable for text color */
+    min-width: 240px; /* Slightly smaller min-width */
+    box-shadow: var(--ifap-elev-1); /* Use theme variable for shadow */
+    border-radius: var(--ifap-radius-lg); /* Use theme variable for border-radius */
+    padding: 1rem; /* Adjusted padding */
     z-index: 10;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(16,24,40,0.05); /* Lighter border */
+
+    /* Animation properties for smooth appearance */
+    opacity: 0;
+    transform: translateY(10px);
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    pointer-events: none; /* Disable interaction when hidden */
 }
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-.submenu:hover .submenu-desplegable, .submenu:focus-within .submenu-desplegable {
-    display: block;
+/* Show submenu on hover/focus */
+.submenu:hover .submenu-desplegable,
+.submenu:focus-within .submenu-desplegable {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto; /* Enable interaction when visible */
 }
 
 .submenu-desplegable ul {
     list-style: none;
     margin: 0;
-    padding: 1rem; /* Ajustar padding para todos los submenús */
+    padding: 0; /* Remove padding from ul, apply to li a */
     display: grid;
-    gap: 0.5em; /* Reducir el espacio entre elementos para todos los submenús */
-    grid-template-columns: 1fr; /* Una sola columna para todos los submenús */
+    grid-template-columns: 1fr; /* Single column for all submenus */
+    gap: 0.4rem; /* Tighter gap between submenu items */
+}
+
+.submenu-desplegable ul li {
+    margin: 0; /* Remove default margin */
+}
+
+.submenu-desplegable ul li a {
+    color: var(--ifap-text);
+    text-decoration: none;
+    font-size: 0.95rem; /* Slightly smaller font size */
+    font-weight: 500;
+    padding: 0.6rem 0.8rem; /* Adjusted padding */
+    border-radius: 6px; /* Slightly smaller border-radius */
+    display: block; /* Make the whole area clickable */
+    transition: all 0.2s ease;
+}
+
+.submenu-desplegable ul li a:hover {
+    background: rgba(37,99,235,0.08); /* Subtle blue background on hover */
+    color: var(--ifap-primary-600); /* Darker blue text on hover */
+    transform: translateX(3px); /* Subtle slide effect */
 }
 
 .submenu-desplegable ul li {
