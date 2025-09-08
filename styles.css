@@ -437,11 +437,17 @@ body, html { font-family: var(--ifap-font-sans); color: var(--ifap-text); backgr
         max-width: 100%;
     }
     .menu-navegacion {
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
     .menu-navegacion > li > a {
-        font-size: 1.1rem;
-        padding: 0.7rem 0.9rem;
+        font-size: 1rem;
+        padding: 0.6rem 0.8rem;
+    }
+    .logo-titulo {
+        font-size: 1.4rem;
+    }
+    .submenu-desplegable {
+        min-width: 220px;
     }
 }
 
@@ -459,6 +465,14 @@ body, html { font-family: var(--ifap-font-sans); color: var(--ifap-text); backgr
     .menu-superior {
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
+    }
+    .menu-navegacion > li > a {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.7rem;
+    }
+    .submenu-desplegable {
+        min-width: 200px;
+        padding: 1rem;
     }
 }
 
@@ -495,16 +509,28 @@ body, html { font-family: var(--ifap-font-sans); color: var(--ifap-text); backgr
     .logo-titulo {
         font-size: 1.1rem;
     }
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
     .menu-navegacion {
-        gap: 1rem;
+        gap: 0.8rem;
     }
     .menu-navegacion > li > a {
-        font-size: 1rem;
-        padding: 0.6rem 0.7rem;
+        font-size: 0.9rem;
+        padding: 0.5rem 0.6rem;
     }
     .btn-aula, .btn-login {
-        padding: 0.7rem 1rem !important;
-        font-size: 0.9rem !important;
+        padding: 0.6rem 0.9rem !important;
+        font-size: 0.85rem !important;
+    }
+    .submenu-desplegable {
+        min-width: 180px;
+        padding: 0.8rem;
+    }
+    .submenu-desplegable ul li a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.6rem;
     }
 }
 
@@ -519,20 +545,32 @@ body, html { font-family: var(--ifap-font-sans); color: var(--ifap-text); backgr
     .logo-titulo {
         font-size: 1rem;
     }
+    .logo-img {
+        width: 35px;
+        height: 35px;
+    }
     .menu-navegacion {
         gap: 0.5rem;
     }
     .menu-navegacion > li > a {
-        font-size: 0.9rem;
-        padding: 0.5rem 0.6rem;
+        font-size: 0.85rem;
+        padding: 0.4rem 0.5rem;
     }
     .submenu-desplegable {
-        min-width: 250px;
-        padding: 1rem 1.5rem 1rem 1.2rem;
+        min-width: 160px;
+        padding: 0.6rem;
     }
     .submenu-desplegable ul {
         grid-template-columns: 1fr;
-        gap: 0.6rem;
+        gap: 0.4rem;
+    }
+    .submenu-desplegable ul li a {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.5rem;
+    }
+    .btn-aula, .btn-login {
+        padding: 0.5rem 0.8rem !important;
+        font-size: 0.8rem !important;
     }
 }
 
@@ -541,6 +579,7 @@ body, html { font-family: var(--ifap-font-sans); color: var(--ifap-text); backgr
 #menu-toggle:checked ~ .nav-menu .menu-navegacion {
     flex-direction: column;
     gap: 0.8rem;
+    align-items: flex-start;
 }
 .menu-navegacion > li > a { color: #fff; padding: 0.7rem 0.5rem; }
 
@@ -633,10 +672,12 @@ footer { text-align: center; padding: 1.6rem; color: var(--ifap-muted); backgrou
 .menu-navegacion {
     display: flex;
     align-items: center;
-    gap: 2.2rem;
+    gap: 1.8rem;
     list-style: none;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .menu-navegacion > li {
     position: relative;
@@ -670,7 +711,8 @@ footer { text-align: center; padding: 1.6rem; color: var(--ifap-muted); backgrou
     background: #2563eb;
     color: #fff !important;
     font-weight: 600 !important;
-    padding: 0.8rem 1.2rem !important;
+    font-size: 0.9rem !important;
+    padding: 0.6rem 1rem !important;
     border-radius: 8px !important;
     transition: all 0.2s ease !important;
     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2) !important;
