@@ -1992,3 +1992,92 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+/* === ESTILOS PARA HERO CONTENT === */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero-texto {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-texto h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.hero-texto p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #e0e7ff;
+}
+
+/* === ESTILOS PARA PERFIL DEL ALUMNO EN HERO === */
+.perfil-alumno {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    max-width: 300px;
+}
+
+.foto-carnet {
+    width: 100px;
+    height: 120px;
+    border: 3px solid #2563eb;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.foto-carnet i {
+    margin-bottom: 0.3rem;
+    font-size: 2rem;
+}
+
+.datos-alumno {
+    text-align: center;
+}
+
+.datos-alumno h2 {
+    margin: 0 0 1rem 0;
+    color: #1e40af;
+    font-size: 1.3rem;
+}
+
+.datos-alumno p {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+.datos-alumno strong {
+    color: #1f2937;
+}
+
+/* === ESTILOS PARA BARRA DE PROGRESO ANIMADA === */
+#progress-bar-archivistica {
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #e0e7ff;
+}
