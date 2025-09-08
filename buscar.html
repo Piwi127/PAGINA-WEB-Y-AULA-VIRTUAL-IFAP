@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IFAP - Galería de Imágenes</title>
+    <title>IFAP - Resultados de Búsqueda</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="assets/css/gallery.css">
+    <link rel="stylesheet" href="assets/css/search.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -79,64 +79,11 @@
 
     <main>
         <section class="section">
-            <h1>Galería de Imágenes y Multimedia</h1>
-            <p>Explora nuestras fotos de eventos, cursos e instalaciones.</p>
-            
-            <div class="gallery-controls">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="eventos">Eventos</button>
-                <button class="filter-btn" data-filter="cursos">Cursos</button>
-                <button class="filter-btn" data-filter="instalaciones">Instalaciones</button>
+            <h1>Resultados de Búsqueda</h1>
+            <div id="search-results-container">
+                <!-- Los resultados de la búsqueda se inyectarán aquí por JavaScript -->
+                <p id="no-results" style="display: none;">No se encontraron resultados para su búsqueda.</p>
             </div>
-
-            <div class="gallery-grid">
-                <div class="gallery-item" data-category="eventos">
-                    <img src="https://via.placeholder.com/300x200/0000FF/FFFFFF?text=Evento+1" alt="Evento 1">
-                    <div class="gallery-caption">Evento 1: Conferencia Anual</div>
-                </div>
-                <div class="gallery-item" data-category="cursos">
-                    <img src="https://via.placeholder.com/300x200/FF0000/FFFFFF?text=Curso+1" alt="Curso 1">
-                    <div class="gallery-caption">Curso: Gestión Documental</div>
-                </div>
-                <div class="gallery-item" data-category="instalaciones">
-                    <img src="https://via.placeholder.com/300x200/00FF00/FFFFFF?text=Instalacion+1" alt="Instalación 1">
-                    <div class="gallery-caption">Biblioteca IFAP</div>
-                </div>
-                <div class="gallery-item" data-category="eventos">
-                    <img src="https://via.placeholder.com/300x200/0000FF/FFFFFF?text=Evento+2" alt="Evento 2">
-                    <div class="gallery-caption">Evento 2: Taller de Digitalización</div>
-                </div>
-                <div class="gallery-item" data-category="cursos">
-                    <img src="https://via.placeholder.com/300x200/FF0000/FFFFFF?text=Curso+2" alt="Curso 2">
-                    <div class="gallery-caption">Curso: Archivística Avanzada</div>
-                </div>
-                <div class="gallery-item" data-category="instalaciones">
-                    <img src="https://via.placeholder.com/300x200/00FF00/FFFFFF?text=Instalacion+2" alt="Instalación 2">
-                    <div class="gallery-caption">Aula de Capacitación</div>
-                </div>
-                <div class="gallery-item" data-category="eventos">
-                    <img src="https://via.placeholder.com/300x200/0000FF/FFFFFF?text=Evento+3" alt="Evento 3">
-                    <div class="gallery-caption">Evento 3: Ceremonia de Graduación</div>
-                </div>
-                <div class="gallery-item" data-category="cursos">
-                    <img src="https://via.placeholder.com/300x200/FF0000/FFFFFF?text=Curso+3" alt="Curso 3">
-                    <div class="gallery-caption">Curso: Conservación Preventiva</div>
-                </div>
-                <div class="gallery-item" data-category="instalaciones">
-                    <img src="https://via.placeholder.com/300x200/00FF00/FFFFFF?text=Instalacion+3" alt="Instalación 3">
-                    <div class="gallery-caption">Laboratorio de Restauración</div>
-                </div>
-            </div>
-
-            <div class="lightbox-overlay">
-                <div class="lightbox-content">
-                    <img src="" alt="Imagen de la galería" class="lightbox-image">
-                    <button class="lightbox-close">&times;</button>
-                    <button class="lightbox-prev">&#10094;</button>
-                    <button class="lightbox-next">&#10095;</button>
-                </div>
-            </div>
-
         </section>
     </main>
 
@@ -145,6 +92,6 @@
         <p>Dirección: Av. Los Archivos 123, Lima, Perú</p>
         <p>Correo: contacto@ifap.edu.pe | Teléfono: +123 456 789</p>
     </footer>
-    <script src="assets/js/gallery.js"></script>
+    <script src="assets/js/search.js"></script>
 </body>
 </html>

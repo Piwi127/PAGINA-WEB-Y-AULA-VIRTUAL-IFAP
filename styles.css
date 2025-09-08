@@ -430,10 +430,14 @@ body, html { font-family: var(--ifap-font-sans); color: var(--ifap-text); backgr
 }
 
 .logo-img {
-    width: 45px;
-    height: 45px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 2.2rem; /* Tamaño del icono */
+    color: #fff; /* Color blanco */
+    padding: 0.2rem; /* Pequeño padding */
+    transition: transform 0.2s ease; /* Transición para un efecto al pasar el ratón */
+}
+
+.logo-img:hover {
+    transform: scale(1.1); /* Ligeramente más grande al pasar el ratón */
 }
 
 .logo-titulo {
@@ -1000,10 +1004,10 @@ footer { text-align: center; padding: 1.6rem; color: var(--ifap-muted); backgrou
 .submenu-desplegable ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 1rem; /* Ajustar padding para todos los submenús */
     display: grid;
-    gap: 0.8em 2.5em;
-    grid-template-columns: 1fr 1fr;
+    gap: 0.5em; /* Reducir el espacio entre elementos para todos los submenús */
+    grid-template-columns: 1fr; /* Una sola columna para todos los submenús */
 }
 
 .submenu-desplegable ul li {
