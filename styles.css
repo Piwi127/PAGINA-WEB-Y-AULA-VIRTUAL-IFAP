@@ -16,11 +16,24 @@
 }
 .nuestro-card img, .noticia-card img {
     width: 100%;
-    height: 180px; /* Aumentar altura de la imagen */
+    height: 180px;
     object-fit: cover;
     background: #f3f4f6;
     border-top-left-radius: var(--ifap-radius-lg);
     border-top-right-radius: var(--ifap-radius-lg);
+}
+
+/* Responsive adjustments for images */
+@media (max-width: 768px) {
+    .nuestro-card img, .noticia-card img {
+        height: 150px; /* Reduce height for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .nuestro-card img, .noticia-card img {
+        height: 120px; /* Further reduce height for mobile */
+    }
 }
 .nuestro-card-content, .noticia-card-content {
     padding: 1.5rem 1.2rem 1.2rem 1.2rem; /* Aumentar padding */
@@ -29,6 +42,37 @@
     gap: 0.8rem; /* Ajustar gap */
     align-items: center;
     text-align: center;
+}
+
+/* Responsive adjustments for card padding and icons */
+@media (max-width: 768px) {
+    .nuestro-card-content, .noticia-card-content {
+        padding: 1rem 0.8rem; /* Reduce padding for tablets */
+        gap: 0.6rem;
+    }
+    .recurso-card, .herramienta-card {
+        padding: 1rem;
+    }
+    .recurso-icon, .herramienta-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nuestro-card-content, .noticia-card-content {
+        padding: 0.8rem 0.6rem; /* Further reduce padding for mobile */
+        gap: 0.5rem;
+    }
+    .recurso-card, .herramienta-card {
+        padding: 0.8rem;
+    }
+    .recurso-icon, .herramienta-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
 }
 .nuestro-card-content h4, .noticia-card-content h4 {
     font-size: 1.25rem; /* Fuente más grande */
@@ -1318,6 +1362,41 @@ main {
     to { opacity: 1; transform: none; }
 }
 
+/* Responsive adjustments for general spacing */
+@media (max-width: 768px) {
+    main {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        padding: 1.5rem 0.8rem;
+    }
+
+    .section {
+        padding: 1.5rem 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .nuestro-apartado, .noticias-grid, .recursos-grid, .herramientas-grid, .dashboard-grid, .testimonials-container, .foro-categorias, .progreso-stats, .cert-grid, .contact-container, .form-row {
+        gap: 1rem; /* Reduce gap in grids/flex containers */
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .section {
+        padding: 1rem 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .nuestro-apartado, .noticias-grid, .recursos-grid, .herramientas-grid, .dashboard-grid, .testimonials-container, .foro-categorias, .progreso-stats, .cert-grid, .contact-container, .form-row {
+        gap: 0.8rem; /* Further reduce gap */
+    }
+}
+
 #testimonials {
     text-align: center;
 }
@@ -1400,6 +1479,69 @@ h3 {
 ul {
     padding-left: 1.2em;
     margin-bottom: 1.2em;
+}
+
+/* Optimize font sizes for mobile */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.1rem; }
+    p { font-size: 0.95rem; line-height: 1.5; }
+    .logo-titulo { font-size: 1.2rem; }
+    .menu-navegacion > li > a { font-size: 0.95rem; }
+    .nuestro-card-content h4 { font-size: 1.1rem; }
+    .nuestro-card-content p { font-size: 0.9rem; }
+    .course-meta { font-size: 0.85rem; }
+    .bienvenida h2 { font-size: 2rem; }
+    .bienvenida p { font-size: 1rem; }
+    .noticias h3 { font-size: 1.5rem; }
+    .recursos-aprendizaje h3 { font-size: 1.5rem; }
+    .recursos-aprendizaje p { font-size: 1rem; }
+    .herramientas-estudio h3 { font-size: 1.5rem; }
+    .herramientas-estudio p { font-size: 1rem; }
+    .progreso-estudiante h3 { font-size: 1.5rem; }
+    .progreso-estudiante p { font-size: 1rem; }
+    .stat-info h4 { font-size: 1.5rem; }
+    .stat-info p { font-size: 0.85rem; }
+    .progreso-detallado h4 { font-size: 1.1rem; }
+    .cert-info h5 { font-size: 0.95rem; }
+    .cert-info p { font-size: 0.8rem; }
+    .foro-moderacion h3 { font-size: 1.2rem; }
+    .moderador-info h5 { font-size: 0.9rem; }
+    .moderador-info p { font-size: 0.8rem; }
+    .reglas-comunidad h5 { font-size: 1rem; }
+    .reglas-comunidad li { font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.2rem; }
+    h3 { font-size: 0.9rem; }
+    p { font-size: 0.85rem; line-height: 1.4; }
+    .logo-titulo { font-size: 1rem; }
+    .menu-navegacion > li > a { font-size: 0.85rem; }
+    .nuestro-card-content h4 { font-size: 1rem; }
+    .nuestro-card-content p { font-size: 0.8rem; }
+    .course-meta { font-size: 0.75rem; }
+    .bienvenida h2 { font-size: 1.5rem; }
+    .bienvenida p { font-size: 0.9rem; }
+    .noticias h3 { font-size: 1.2rem; }
+    .recursos-aprendizaje h3 { font-size: 1.2rem; }
+    .recursos-aprendizaje p { font-size: 0.9rem; }
+    .herramientas-estudio h3 { font-size: 1.2rem; }
+    .herramientas-estudio p { font-size: 0.9rem; }
+    .progreso-estudiante h3 { font-size: 1.2rem; }
+    .progreso-estudiante p { font-size: 0.9rem; }
+    .stat-info h4 { font-size: 1.2rem; }
+    .stat-info p { font-size: 0.75rem; }
+    .progreso-detallado h4 { font-size: 1rem; }
+    .cert-info h5 { font-size: 0.85rem; }
+    .cert-info p { font-size: 0.7rem; }
+    .foro-moderacion h3 { font-size: 1rem; }
+    .moderador-info h5 { font-size: 0.8rem; }
+    .moderador-info p { font-size: 0.7rem; }
+    .reglas-comunidad h5 { font-size: 0.9rem; }
+    .reglas-comunidad li { font-size: 0.8rem; }
 }
 
 .tarjeta-curso {
@@ -1576,6 +1718,47 @@ footer p {
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
+}
+
+/* Refine Flexbox and Grid adaptation for mobile */
+@media (max-width: 768px) {
+    .bienvenida-stats {
+        flex-direction: column; /* Stack vertically */
+        gap: 1rem;
+    }
+
+    .noticias-grid, .recursos-grid, .herramientas-grid, .dashboard-grid, .testimonials-container, .foro-categorias, .progreso-stats, .cert-grid {
+        grid-template-columns: 1fr; /* Single column for grids */
+        gap: 1rem;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .bienvenida-stats {
+        gap: 0.8rem;
+    }
+
+    .noticias-grid, .recursos-grid, .herramientas-grid, .dashboard-grid, .testimonials-container, .foro-categorias, .progreso-stats, .cert-grid {
+        gap: 0.8rem;
+    }
+
+    .contact-container {
+        gap: 1rem;
+    }
+
+    .form-row {
+        gap: 0.5rem;
+    }
 }
 
 .bienvenida-stats .stat {
@@ -2439,13 +2622,55 @@ footer p {
 /* === ESTILOS RESPONSIVOS PARA FORMULARIO DE REGISTRO === */
 @media (max-width: 768px) {
     .registro-container {
-        padding: 2rem 1rem;
+        padding: 1.5rem 0.8rem; /* Reduce padding for tablets */
     }
     .form-row {
         flex-direction: column;
+        gap: 0.8rem; /* Reduce gap */
+    }
+    .form-group {
+        margin-bottom: 1rem; /* Reduce margin */
+    }
+    .form-group label {
+        font-size: 0.9rem;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+        padding: 0.7rem;
+        font-size: 0.9rem;
     }
     .btn-submit {
         width: 100%;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+    .checkbox-group label {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .registro-container {
+        padding: 1rem 0.5rem; /* Further reduce padding for mobile */
+    }
+    .form-row {
+        gap: 0.5rem;
+    }
+    .form-group {
+        margin-bottom: 0.8rem;
+    }
+    .form-group label {
+        font-size: 0.8rem;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+    }
+    .btn-submit {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    .checkbox-group label {
+        font-size: 0.75rem;
     }
 }
 

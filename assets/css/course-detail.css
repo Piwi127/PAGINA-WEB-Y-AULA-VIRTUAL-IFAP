@@ -67,6 +67,19 @@
     margin-bottom: 2rem; /* Mayor margen inferior */
 }
 
+/* Responsive adjustments for images */
+@media (max-width: 768px) {
+    .course-detail-hero {
+        height: 300px; /* Reduce height for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .course-detail-hero {
+        height: 250px; /* Further reduce height for mobile */
+    }
+}
+
 /* Sección de información del curso */
 .course-info-section {
     padding: 2.5rem; /* Mayor padding */
