@@ -2,15 +2,18 @@
 .course-detail-hero {
     position: relative;
     width: 100%;
-    height: 350px;
+    height: 400px; /* Aumentar altura para mayor impacto */
     overflow: hidden;
-    background: linear-gradient(rgba(37, 99, 235, 0.8), rgba(59, 130, 246, 0.8));
+    background: linear-gradient(135deg, var(--ifap-primary-600), var(--ifap-accent)); /* Usar gradiente de tema */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: #fff;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem; /* Aumentar margen inferior */
+    border-bottom-left-radius: var(--ifap-radius-lg); /* Bordes redondeados */
+    border-bottom-right-radius: var(--ifap-radius-lg);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2); /* Sombra más pronunciada */
 }
 
 .course-image-placeholder img {
@@ -21,92 +24,148 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    filter: brightness(0.6); /* Oscurece la imagen para que el texto sea legible */
+    /* Usar un overlay rgba para un control más preciso del brillo y color */
+    filter: brightness(0.7) grayscale(0.2); /* Ligeramente más brillante y con tono gris */
+}
+
+.course-detail-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(37, 99, 235, 0.6); /* Overlay de color azul semi-transparente */
+    z-index: 1;
 }
 
 .course-detail-hero .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
-    padding: 2rem;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 0 20px rgba(0,0,0,0.5);
+    max-width: 900px; /* Aumentar ancho máximo */
+    padding: 3rem 2rem; /* Mayor padding */
+    text-shadow: 0 3px 10px rgba(0,0,0,0.8); /* Sombra de texto más intensa */
+    animation: fadeInScale 0.8s ease-out forwards; /* Animación de entrada */
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 .course-detail-hero h1 {
-    font-size: 2.5rem;
-    margin: 0 0 0.8rem 0;
+    font-size: 3.2rem; /* Fuente más grande para el título */
+    margin: 0 0 1rem 0; /* Ajustar margen */
     color: #fff;
-    font-weight: 800;
+    font-weight: 900; /* Más audaz */
+    line-height: 1.1;
 }
 
 .course-detail-hero p {
-    font-size: 1.1rem;
-    color: rgba(255,255,255,0.95);
-    margin-bottom: 1.5rem;
+    font-size: 1.3rem; /* Fuente más grande para la descripción */
+    color: rgba(255,255,255,0.9); /* Ligeramente más transparente */
+    margin-bottom: 2rem; /* Mayor margen inferior */
 }
 
 /* Sección de información del curso */
 .course-info-section {
-    padding: 2rem;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    margin-bottom: 2rem;
+    padding: 2.5rem; /* Mayor padding */
+    background: var(--ifap-card);
+    border-radius: var(--ifap-radius-lg);
+    box-shadow: var(--ifap-elev-1); /* Usar variable */
+    margin-bottom: 2.5rem; /* Mayor margen inferior */
 }
 
 .course-info-section h2 {
     text-align: center;
     color: var(--ifap-primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem; /* Mayor margen inferior */
+    font-size: 1.8rem; /* Fuente más grande */
+    position: relative;
+    padding-bottom: 0.8rem; /* Espacio para la línea */
+}
+
+.course-info-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px; /* Ancho de la línea */
+    height: 4px; /* Grosor de la línea */
+    background: var(--ifap-accent); /* Color de la línea */
+    border-radius: 2px;
 }
 
 .course-info-section .info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Min-width ajustado */
+    gap: 2rem; /* Mayor gap */
     text-align: center;
 }
 
 .course-info-section .info-item {
-    background: #f8fafc;
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid #e0e7ff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    background: var(--ifap-bg); /* Fondo más claro */
+    padding: 1.5rem; /* Mayor padding */
+    border-radius: var(--ifap-radius);
+    border: 1px solid rgba(16,24,40,0.05); /* Borde más sutil */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra más definida */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-info-section .info-item:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Sombra más pronunciada */
 }
 
 .course-info-section .info-item h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem; /* Fuente más grande */
     color: var(--ifap-primary-600);
     margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem; /* Mayor margen inferior */
 }
 
 .course-info-section .info-item i {
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Icono más grande */
     color: var(--ifap-accent);
     margin-right: 0.5rem;
 }
 
 .course-info-section .info-item p {
-    font-size: 0.95rem;
-    color: var(--ifap-muted);
+    font-size: 1rem; /* Fuente más grande */
+    color: var(--ifap-muted-2); /* Color más oscuro */
     margin: 0;
+    line-height: 1.6; /* Mayor interlineado */
 }
 
 /* Sección de malla curricular */
 .course-curriculum-section {
-    padding: 2rem;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    margin-bottom: 2rem;
+    padding: 2.5rem;
+    background: var(--ifap-card);
+    border-radius: var(--ifap-radius-lg);
+    box-shadow: var(--ifap-elev-1);
+    margin-bottom: 2.5rem;
 }
 
 .course-curriculum-section h2 {
     text-align: center;
     color: var(--ifap-primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.course-curriculum-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--ifap-accent);
+    border-radius: 2px;
 }
 
 .course-curriculum-section ul {
@@ -116,67 +175,98 @@
 }
 
 .course-curriculum-section ul li {
-    background: #f0f4f8;
-    border-radius: 8px;
-    padding: 1rem 1.2rem;
+    background: var(--ifap-bg); /* Fondo más claro */
+    border-radius: var(--ifap-radius); /* Bordes redondeados */
+    padding: 1.2rem 1.5rem; /* Mayor padding */
     margin-bottom: 0.8rem;
-    font-size: 1rem;
+    font-size: 1.05rem; /* Fuente ligeramente más grande */
     color: var(--ifap-text);
-    border-left: 4px solid var(--ifap-accent);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 5px solid var(--ifap-primary); /* Borde izquierdo más pronunciado */
+    transition: all 0.3s ease; /* Transición más suave */
+    display: flex; /* Para alinear icono y texto */
+    align-items: center;
+    gap: 0.8rem; /* Espacio entre icono y texto */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03); /* Sombra sutil */
 }
 
 .course-curriculum-section ul li:hover {
-    transform: translateX(5px);
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
+    transform: translateX(8px); /* Deslizamiento más pronunciado */
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.08); /* Sombra más grande al pasar el ratón */
+    border-left-color: var(--ifap-accent); /* Cambiar color del borde al pasar el ratón */
+}
+.course-curriculum-section ul li i {
+    color: var(--ifap-primary); /* Color de icono */
+    font-size: 1.3rem; /* Tamaño de icono */
 }
 
 /* Sección del profesor */
 .course-professor-section {
-    padding: 2rem;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    margin-bottom: 2rem;
+    padding: 2.5rem;
+    background: var(--ifap-card);
+    border-radius: var(--ifap-radius-lg);
+    box-shadow: var(--ifap-elev-1);
+    margin-bottom: 2.5rem;
 }
 
 .course-professor-section h2 {
     text-align: center;
     color: var(--ifap-primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.course-professor-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--ifap-accent);
+    border-radius: 2px;
 }
 
 .professor-card {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    background: #f8fafc;
-    border-radius: 12px;
-    padding: 1.5rem;
-    border: 1px solid #e0e7ff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    gap: 1.8rem; /* Mayor espacio */
+    background: var(--ifap-bg);
+    border-radius: var(--ifap-radius-lg);
+    padding: 2rem; /* Mayor padding */
+    border: 1px solid rgba(16,24,40,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.professor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
 .professor-card img {
-    width: 100px;
-    height: 100px;
+    width: 120px; /* Mayor tamaño */
+    height: 120px; /* Mayor tamaño */
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--ifap-primary);
-    box-shadow: 0 2px 8px rgba(37,99,235,0.2);
+    border: 4px solid var(--ifap-primary); /* Borde más grueso */
+    box-shadow: 0 4px 15px rgba(37,99,235,0.3); /* Sombra más pronunciada */
 }
 
 .professor-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem; /* Fuente más grande */
     color: var(--ifap-primary-600);
     margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
 }
 
 .professor-card p {
-    font-size: 0.95rem;
-    color: var(--ifap-muted);
+    font-size: 1rem; /* Fuente más grande */
+    color: var(--ifap-muted-2);
     margin: 0;
+    line-height: 1.6; /* Mayor interlineado */
 }
 
 /* Responsive adjustments */
