@@ -27,6 +27,8 @@
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
+    align-items: center; /* Centrar horizontalmente los elementos hijos */
+    text-align: center; /* Centrar el texto si el botón fuera inline */
 }
 .nuestro-card-content h4, .noticia-card-content h4 {
     font-size: 1.13rem;
@@ -275,15 +277,44 @@
 }
 
 .btn-primary {
-    background: linear-gradient(90deg,var(--ifap-primary),var(--ifap-primary-600));
+    background: linear-gradient(90deg, var(--ifap-primary), var(--ifap-accent)); /* Gradient más vibrante */
     color: #fff;
     border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 10px;
-    box-shadow: var(--ifap-elev-1);
+    padding: 0.8rem 1.8rem; /* Mayor padding */
+    border-radius: 50px; /* Más redondeado (pastilla) */
+    font-size: 1.05rem; /* Fuente ligeramente más grande */
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25); /* Sombra más pronunciada */
+    transition: all 0.3s cubic-bezier(.2, .8, .2, 1); /* Transición más suave y elástica */
+    letter-spacing: 0.5px; /* Pequeño espaciado entre letras */
+    text-transform: uppercase; /* Texto en mayúsculas */
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--ifap-elev-2); }
-.btn-ghost { background: transparent; border: 1px solid rgba(15,23,42,0.06); color: var(--ifap-text); }
+.btn-primary:hover {
+    transform: translateY(-4px) scale(1.02); /* Efecto de elevación y ligero crecimiento */
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4); /* Sombra más grande al pasar el ratón */
+    background: linear-gradient(90deg, var(--ifap-primary-600), var(--ifap-primary)); /* Invertir o cambiar el gradiente */
+}
+.btn-primary:active {
+    transform: translateY(-1px) scale(0.98); /* Efecto de "presionado" */
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.2);
+}
+.btn-ghost {
+    background: transparent;
+    border: 1px solid rgba(15,23,42,0.1);
+    color: var(--ifap-text);
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.btn-ghost:hover {
+    background: rgba(15,23,42,0.03);
+    border-color: rgba(15,23,42,0.15);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
 
 /* Focus states */
 a:focus, button:focus, .sidebar a:focus { outline: 3px solid rgba(59,130,246,0.14); outline-offset: 2px; }
@@ -1877,20 +1908,28 @@ footer p {
 }
 
 .herramienta-btn {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    background: linear-gradient(135deg, var(--ifap-primary), var(--ifap-accent)); /* Unificar con primarios */
     color: #fff;
     border: none;
-    border-radius: 8px;
-    padding: 0.8rem 1.5rem;
-    font-size: 0.95rem;
-    font-weight: 600;
+    border-radius: 50px; /* Consistente con primarios */
+    padding: 0.8rem 1.8rem; /* Consistente con primarios */
+    font-size: 1.05rem; /* Consistente con primarios */
+    font-weight: 700;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s cubic-bezier(.2, .8, .2, 1); /* Transición suave y elástica */
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25); /* Sombra pronunciada */
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .herramienta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    transform: translateY(-4px) scale(1.02); /* Efecto de elevación y ligero crecimiento */
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4); /* Sombra más grande al pasar el ratón */
+    background: linear-gradient(135deg, var(--ifap-primary-600), var(--ifap-primary)); /* Invertir o cambiar el gradiente */
+}
+.herramienta-btn:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.2);
 }
 
 /* === ESTILOS PARA PROGRESO DEL ESTUDIANTE === */
@@ -2090,23 +2129,31 @@ footer p {
 }
 
 .btn-nuevo-tema {
-    background: linear-gradient(135deg, #10b981, #059669);
+    background: linear-gradient(135deg, #10b981, #059669); /* Color verde vibrante */
     color: #fff;
     border: none;
-    border-radius: 8px;
-    padding: 0.8rem 1.5rem;
-    font-size: 0.95rem;
-    font-weight: 600;
+    border-radius: 50px; /* Más redondeado */
+    padding: 0.8rem 1.8rem; /* Consistente con primarios */
+    font-size: 1.05rem; /* Consistente con primarios */
+    font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.25); /* Sombra pronunciada */
+    transition: all 0.3s cubic-bezier(.2, .8, .2, 1); /* Transición suave y elástica */
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .btn-nuevo-tema:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    transform: translateY(-4px) scale(1.02); /* Efecto de elevación y ligero crecimiento */
+    box-shadow: 0 12px 30px rgba(16, 185, 129, 0.4); /* Sombra más grande al pasar el ratón */
+    background: linear-gradient(135deg, #059669, #10b981); /* Invertir o cambiar el gradiente */
+}
+.btn-nuevo-tema:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 3px 10px rgba(16, 185, 129, 0.2);
 }
 
 .foro-filtros {
