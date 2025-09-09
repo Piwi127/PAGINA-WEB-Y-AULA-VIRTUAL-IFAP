@@ -31,7 +31,6 @@
                             <ul>
                                 <li><a href="carreras.html">Carreras Archivísticas</a></li>
                                 <li><a href="cursos.html">Cursos Especializados</a></li>
-                                <li><a href="talleres.html">Talleres y Seminarios</a></li>
                             </ul>
                         </div>
                     </li>
@@ -81,12 +80,16 @@
     <main>
         <section class="course-detail-hero">
             <div class="course-image-placeholder">
-                <img src="" alt="Imagen del Curso" id="course-hero-image">
+                <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-documentos_114360-1037.jpg" alt="Gestión Documental">
             </div>
             <div class="hero-content">
-                <h1 id="course-title"></h1>
-                <p id="course-description"></p>
-                <button class="btn-primary" id="enroll-button">Inscribirse ahora</button>
+                <h1>Gestión Documental en el Sector Público Peruano</h1>
+                <p>Curso especializado en las mejores prácticas para la gestión documental en entidades estatales, cumpliendo estrictamente con la normativa peruana vigente y estándares internacionales.</p>
+                <div class="promotion-banner">
+                    <span class="discount">¡40% OFF!</span>
+                    <span class="promo-text">Inscríbete antes del 20 de octubre y ahorra S/ 300</span>
+                </div>
+                <button class="btn-primary" onclick="document.getElementById('enrollment-form').scrollIntoView();">Inscribirse ahora</button>
             </div>
         </section>
 
@@ -95,34 +98,217 @@
             <div class="info-grid">
                 <div class="info-item">
                     <h3><i class="fas fa-clock"></i> Duración</h3>
-                    <p id="course-duration"></p>
+                    <p>50 horas (10 semanas)</p>
                 </div>
                 <div class="info-item">
                     <h3><i class="fas fa-laptop-code"></i> Modalidad</h3>
-                    <p id="course-modality"></p>
+                    <p>100% Online - Clases en vivo via Google Meet y Zoom</p>
                 </div>
                 <div class="info-item">
-                    <h3><i class="fas fa-calendar-alt"></i> Inicio</h3>
-                    <p id="course-start"></p>
+                    <h3><i class="fas fa-calendar-alt"></i> Horario</h3>
+                    <p>Lunes y Miércoles de 6:00 PM a 8:00 PM (Hora Perú)</p>
+                </div>
+                <div class="info-item">
+                    <h3><i class="fas fa-calendar-check"></i> Inicio</h3>
+                    <p>Próximo inicio: 25 de octubre de 2025</p>
                 </div>
             </div>
         </section>
 
+        <section class="section course-schedule-section">
+            <h2>Horario y Días de Clases</h2>
+            <div class="schedule-grid">
+                <div class="schedule-item">
+                    <h4>Lunes</h4>
+                    <p>6:00 PM - 8:00 PM</p>
+                    <p>Clases en vivo via Google Meet</p>
+                </div>
+                <div class="schedule-item">
+                    <h4>Miércoles</h4>
+                    <p>6:00 PM - 8:00 PM</p>
+                    <p>Clases en vivo via Zoom</p>
+                </div>
+                <div class="schedule-item">
+                    <h4>Domingos</h4>
+                    <p>11:00 AM - 1:00 PM</p>
+                    <p>Clases de apoyo opcionales</p>
+                </div>
+            </div>
+            <p class="note">* Todas las clases quedan grabadas y disponibles por 45 días para revisión.</p>
+        </section>
+
         <section class="section course-curriculum-section">
-            <h2>Malla Curricular</h2>
-            <ul id="course-curriculum">
-                <!-- Módulos se inyectarán aquí -->
-            </ul>
+            <h2>Malla Curricular Detallada</h2>
+            <div class="curriculum-container">
+                <div class="curriculum-module">
+                    <h3>Módulo 1: Marco Normativo de la Gestión Documental en Perú</h3>
+                    <ul>
+                        <li>Ley del Sistema Nacional de Archivos</li>
+                        <li>Normas técnicas del Archivo General de la Nación</li>
+                        <li>Regulaciones sectoriales específicas</li>
+                        <li>Estándares internacionales aplicables</li>
+                    </ul>
+                </div>
+                <div class="curriculum-module">
+                    <h3>Módulo 2: Planificación y Organización de Archivos de Gestión</h3>
+                    <ul>
+                        <li>Evaluación de necesidades documentales</li>
+                        <li>Diseño de sistemas de archivo</li>
+                        <li>Implementación de tablas de retención</li>
+                        <li>Organización física y digital</li>
+                    </ul>
+                </div>
+                <div class="curriculum-module">
+                    <h3>Módulo 3: Procesos Archivísticos: Recepción, Distribución y Trámite</h3>
+                    <ul>
+                        <li>Flujo documental en entidades públicas</li>
+                        <li>Protocolos de recepción y registro</li>
+                        <li>Sistemas de distribución interna</li>
+                        <li>Seguimiento y control de trámites</li>
+                    </ul>
+                </div>
+                <div class="curriculum-module">
+                    <h3>Módulo 4: Sistema de Trámite Documentario (STD) y su Implementación</h3>
+                    <ul>
+                        <li>Conceptos básicos del STD</li>
+                        <li>Implementación en entidades públicas</li>
+                        <li>Integración con sistemas electrónicos</li>
+                        <li>Casos de éxito en Perú</li>
+                    </ul>
+                </div>
+                <div class="curriculum-module">
+                    <h3>Módulo 5: Valoración, Selección y Eliminación Documental</h3>
+                    <ul>
+                        <li>Criterios de valoración documental</li>
+                        <li>Tablas de retención y disposición</li>
+                        <li>Procesos de eliminación segura</li>
+                        <li>Documentación de decisiones</li>
+                    </ul>
+                </div>
+                <div class="curriculum-module">
+                    <h3>Módulo 6: Auditoría y Control de la Gestión Documental</h3>
+                    <ul>
+                        <li>Principios de auditoría documental</li>
+                        <li>Indicadores de calidad</li>
+                        <li>Corrección de no conformidades</li>
+                        <li>Reportes y seguimiento</li>
+                    </ul>
+                </div>
+                <div class="curriculum-module">
+                    <h3>Módulo 7: Gestión de Documentos Electrónicos en el Sector Público</h3>
+                    <ul>
+                        <li>Firma digital y certificados</li>
+                        <li>Archivos electrónicos seguros</li>
+                        <li>Preservación digital a largo plazo</li>
+                        <li>Interoperabilidad de sistemas</li>
+                    </ul>
+                </div>
+                <div class="curriculum-module">
+                    <h3>Módulo 8: Casos Prácticos y Buenas Prácticas Internacionales</h3>
+                    <ul>
+                        <li>Análisis de casos reales en Perú</li>
+                        <li>Experiencias internacionales</li>
+                        <li>Lecciones aprendidas</li>
+                        <li>Tendencias futuras</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section course-support-section">
+            <h2>Clases de Apoyo y Recursos Adicionales</h2>
+            <div class="support-grid">
+                <div class="support-item">
+                    <i class="fas fa-question-circle"></i>
+                    <h4>Sesiones de Consultoría</h4>
+                    <p>Mentorías individuales cada 15 días</p>
+                </div>
+                <div class="support-item">
+                    <i class="fas fa-book"></i>
+                    <h4>Biblioteca Digital</h4>
+                    <p>Acceso a normas, leyes y casos prácticos</p>
+                </div>
+                <div class="support-item">
+                    <i class="fas fa-users"></i>
+                    <h4>Comunidad Profesional</h4>
+                    <p>Networking con gestores documentales</p>
+                </div>
+                <div class="support-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Certificación</h4>
+                    <p>Diploma oficial reconocido por el MINEDU</p>
+                </div>
+            </div>
         </section>
 
         <section class="section course-professor-section">
-            <h2>Sobre el Profesor</h2>
+            <h2>Sobre el Docente</h2>
             <div class="professor-card">
-                <img src="" alt="Foto del Profesor" id="professor-photo">
-                <div>
-                    <h3 id="professor-name"></h3>
-                    <p id="professor-bio"></p>
+                <img src="https://via.placeholder.com/150x150/00FFFF/FFFFFF?text=Lic.Carlos+Ruiz" alt="Lic. Carlos Ruiz">
+                <div class="professor-info">
+                    <h3>Lic. Carlos Ruiz</h3>
+                    <p class="professor-title">Licenciado en Ciencias de la Información</p>
+                    <p class="professor-bio">Licenciado en Ciencias de la Información con especialización en Gestión Documental Pública. Consultor independiente con más de 12 años de experiencia en implementación de sistemas documentales en ministerios y entidades públicas. Ha liderado proyectos de modernización documental en el Poder Judicial y diversos ministerios del Gobierno Peruano.</p>
+                    <div class="professor-credentials">
+                        <span><i class="fas fa-graduation-cap"></i> Lic. Ciencias Información - UNMSM</span>
+                        <span><i class="fas fa-certificate"></i> Consultor Certificado</span>
+                        <span><i class="fas fa-briefcase"></i> 12+ años experiencia</span>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="section enrollment-section" id="enrollment-form">
+            <h2>Inscríbete en el Curso</h2>
+            <div class="enrollment-container">
+                <div class="pricing-info">
+                    <div class="price-card">
+                        <h4>Precio Regular</h4>
+                        <span class="price">S/ 750</span>
+                    </div>
+                    <div class="price-card featured">
+                        <h4>Precio con Descuento</h4>
+                        <span class="price">S/ 450</span>
+                        <span class="discount-badge">40% OFF</span>
+                    </div>
+                </div>
+                <form class="enrollment-form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="institution">Institución/Empresa</label>
+                        <input type="text" id="institution" name="institution">
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Experiencia en Gestión Documental</label>
+                        <select id="experience" name="experience">
+                            <option value="">Seleccionar</option>
+                            <option value="none">Ninguna</option>
+                            <option value="basic">Básica</option>
+                            <option value="intermediate">Intermedia</option>
+                            <option value="advanced">Avanzada</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="motivation">¿Por qué te interesa este curso?</label>
+                        <textarea id="motivation" name="motivation" rows="4"></textarea>
+                    </div>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">Acepto los términos y condiciones *</label>
+                    </div>
+                    <button type="submit" class="btn-primary">Inscribirme Ahora</button>
+                </form>
             </div>
         </section>
     </main>
@@ -215,42 +401,14 @@
                 }
             }
         ];
+    </script>
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const courseId = urlParams.get('id');
-            const course = coursesData.find(c => c.id === courseId);
-
-            if (course) {
-                document.getElementById('course-hero-image').src = course.image;
-                document.getElementById('course-title').textContent = course.title;
-                document.getElementById('course-description').textContent = course.description;
-
-                document.getElementById('course-duration').textContent = course.schedule.duration;
-                document.getElementById('course-modality').textContent = course.schedule.modality;
-                document.getElementById('course-start').textContent = course.schedule.start;
-
-                const curriculumList = document.getElementById('course-curriculum');
-                course.curriculum.forEach(item => {
-                    const li = document.createElement('li');
-                    li.textContent = item;
-                    curriculumList.appendChild(li);
-                });
-
-                document.getElementById('professor-photo').src = course.professor.photo;
-                document.getElementById('professor-name').textContent = course.professor.name;
-                document.getElementById('professor-bio').textContent = course.professor.bio;
-
-                document.getElementById('enroll-button').addEventListener('click', () => {
-                    alert(`Te has inscrito al curso: ${course.title}`);
-                    // Aquí podrías redirigir a una página de confirmación o un formulario de inscripción real
-                    window.location.href = 'inscribirse.html';
-                });
-
-            } else {
-                // Redirigir o mostrar un mensaje de error si el curso no se encuentra
-                document.querySelector('main').innerHTML = '<section class="section"><h1>Curso no encontrado</h1><p>Lo sentimos, el curso que buscas no está disponible.</p><a href="cursos.html" class="btn-primary">Volver a Cursos</a></section>';
-            }
+    <script>
+        // Script para manejar el envío del formulario
+        document.querySelector('.enrollment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu inscripción! Te contactaremos pronto con más detalles.');
+            // Aquí podrías enviar los datos a un servidor
         });
     </script>
 </body>
