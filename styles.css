@@ -854,6 +854,17 @@ body, html { font-family: var(--ifap-font-sans); color: var(--ifap-text); backgr
     filter: brightness(0.6); /* Oscurece la imagen para que el texto sea legible */
 }
 
+.carousel-item video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.6); /* Oscurece el video para que el texto sea legible */
+}
+
 .carousel-caption {
     position: relative;
     z-index: 2;
