@@ -1151,7 +1151,7 @@ footer { text-align: center; padding: 1.6rem; color: var(--ifap-muted); backgrou
     box-shadow: 0 8px 30px rgba(0,0,0,0.12); /* Sombra más moderna */
     border-radius: 12px; /* Radio de borde ajustado */
     padding: 0.8rem; /* Padding ajustado */
-    z-index: 10;
+    z-index: 200;
     border: 1px solid rgba(16,24,40,0.05); /* Borde más claro */
 
     /* Propiedades de animación para una apariencia suave */
@@ -1884,7 +1884,7 @@ footer p {
 
 .noticia-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 12px 40px rgba(59, 130, 246,  0.2);
     border-left-color: #2563eb;
 }
 
@@ -2894,4 +2894,178 @@ footer p {
     border-radius: 10px;
     overflow: hidden;
     background: #e0e7ff;
+}
+
+/* === MEJORAS DE OPTIMIZACIÓN PARA EL MENÚ === */
+
+/* Mejorar transiciones y animaciones */
+.menu-navegacion > li > a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-navegacion > li > a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.menu-navegacion > li > a:hover::before {
+    left: 100%;
+}
+
+.menu-navegacion > li > a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Animación para el menú hamburguesa */
+.menu-hamburger span {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: center;
+}
+
+#menu-toggle:checked ~ .menu-hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#menu-toggle:checked ~ .menu-hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle:checked ~ .menu-hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mejorar submenús con animaciones suaves */
+.submenu-desplegable {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submenu:hover .submenu-desplegable,
+.submenu:focus-within .submenu-desplegable {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Estilos de foco para accesibilidad */
+.menu-navegacion > li > a:focus,
+.search-box input:focus,
+.search-box button:focus {
+    outline: 2px solid #60a5fa;
+    outline-offset: 2px;
+}
+
+/* Mejorar la barra de búsqueda */
+.search-box {
+    transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+    transform: scale(1.02);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* Animación de entrada para el menú móvil */
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#menu-toggle:checked ~ .nav-menu {
+    animation: slideInFromTop 0.4s ease-out;
+}
+
+/* Optimizar para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .menu-barra {
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .logo-titulo {
+        font-size: 1.1rem;
+    }
+    
+    .menu-navegacion > li > a {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .search-box {
+        width: 180px;
+    }
+    
+    .search-box input {
+        font-size: 0.85rem;
+    }
+}
+
+/* Estilos para impresión */
+@media print {
+    .menu-superior,
+    .menu-hamburger,
+    .search-box {
+        display: none;
+    }
+}
+
+/* === CLASES DE ACCESIBILIDAD === */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* === MEJORAS ADICIONALES PARA SUBMENÚS === */
+.submenu > a {
+    position: relative;
+}
+
+.flecha {
+    transition: transform 0.3s ease;
+}
+
+.submenu:hover .flecha,
+.submenu:focus-within .flecha {
+    transform: rotate(180deg);
+}
+
+/* Mejorar el z-index para submenús */
+.submenu-desplegable {
+    z-index: 200;
+}
+
+/* Estilos para el estado activo del menú */
+.menu-navegacion > li.active > a {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+/* Optimizar el gradiente del header con animación sutil */
+.menu-superior {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
 }

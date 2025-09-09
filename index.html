@@ -9,66 +9,69 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="menu-superior">
+    <header class="menu-superior" role="banner">
         <div class="menu-barra">
             <div class="logo-menu">
-                <i class="fas fa-archive logo-img"></i>
-                <span class="logo-titulo">IFAP</span>
+                <a href="index.html" aria-label="Ir a la página principal de IFAP">
+                    <i class="fas fa-archive logo-img" aria-hidden="true"></i>
+                    <span class="logo-titulo">IFAP</span>
+                </a>
             </div>
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="menu-hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Alternar menú de navegación">
+            <label for="menu-toggle" class="menu-hamburger" aria-label="Abrir menú de navegación">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </label>
-            <nav class="nav-menu">
+            <nav class="nav-menu" role="navigation" aria-label="Menú principal">
                 <ul class="menu-navegacion">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="index.html" aria-label="Ir a Inicio"><i class="fas fa-home" aria-hidden="true"></i> Inicio</a></li>
                     <li class="submenu">
-                        <a href="cursos.html"><i class="fas fa-book"></i> Cursos <span class="flecha">▼</span></a>
-                        <div class="submenu-desplegable">
+                        <a href="cursos.html" aria-label="Ver Cursos y submenús" aria-expanded="false"><i class="fas fa-book" aria-hidden="true"></i> Cursos <span class="flecha" aria-hidden="true">▼</span></a>
+                        <div class="submenu-desplegable" role="menu">
                             <ul>
-                                <li><a href="carreras.html">Carreras Archivísticas</a></li>
-                                <li><a href="cursos.html">Cursos Especializados</a></li>
-                                <li><a href="talleres.html">Talleres y Seminarios</a></li>
+                                <li><a href="carreras.html" role="menuitem">Carreras Archivísticas</a></li>
+                                <li><a href="cursos.html" role="menuitem">Cursos Especializados</a></li>
+                                <li><a href="talleres.html" role="menuitem">Talleres y Seminarios</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="submenu">
-                        <a href="#"><i class="fas fa-folder-open"></i> Recursos <span class="flecha">▼</span></a>
-                        <div class="submenu-desplegable">
+                        <a href="#" aria-label="Ver Recursos y submenús" aria-expanded="false"><i class="fas fa-folder-open" aria-hidden="true"></i> Recursos <span class="flecha" aria-hidden="true">▼</span></a>
+                        <div class="submenu-desplegable" role="menu">
                             <ul>
-                                <li><a href="biblioteca.html">Biblioteca Virtual</a></li>
-                                <li><a href="normas.html">Normas y Legislación</a></li>
-                                <li><a href="articulos.html">Artículos y Publicaciones</a></li>
-                                <li><a href="galeria.html">Galería</a></li>
+                                <li><a href="biblioteca.html" role="menuitem">Biblioteca Virtual</a></li>
+                                <li><a href="normas.html" role="menuitem">Normas y Legislación</a></li>
+                                <li><a href="articulos.html" role="menuitem">Artículos y Publicaciones</a></li>
+                                <li><a href="galeria.html" role="menuitem">Galería</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="submenu">
-                        <a href="#"><i class="fas fa-building"></i> Institución <span class="flecha">▼</span></a>
-                        <div class="submenu-desplegable">
+                        <a href="#" aria-label="Ver Institución y submenús" aria-expanded="false"><i class="fas fa-building" aria-hidden="true"></i> Institución <span class="flecha" aria-hidden="true">▼</span></a>
+                        <div class="submenu-desplegable" role="menu">
                             <ul>
-                                <li><a href="historia.html">Historia</a></li>
-                                <li><a href="equipo-docente.html">Equipo Docente</a></li>
+                                <li><a href="historia.html" role="menuitem">Historia</a></li>
+                                <li><a href="equipo-docente.html" role="menuitem">Equipo Docente</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+                    <li><a href="contacto.html" aria-label="Ir a Contacto"><i class="fas fa-envelope" aria-hidden="true"></i> Contacto</a></li>
                     <li class="submenu">
-                        <a href="#"><i class="fas fa-user-circle"></i> Acceso <span class="flecha">▼</span></a>
-                        <div class="submenu-desplegable">
+                        <a href="#" aria-label="Ver Acceso y submenús" aria-expanded="false"><i class="fas fa-user-circle" aria-hidden="true"></i> Acceso <span class="flecha" aria-hidden="true">▼</span></a>
+                        <div class="submenu-desplegable" role="menu">
                             <ul class="access-submenu-list">
-                                <li><a href="inscribirse.html">Inscríbete aquí</a></li>
-                                <li><a href="iniciar-sesion.html">Iniciar Sesión</a></li>
-                                <li><a href="aula-virtual.html">Aula Virtual</a></li>
+                                <li><a href="inscribirse.html" role="menuitem">Inscríbete aquí</a></li>
+                                <li><a href="iniciar-sesion.html" role="menuitem">Iniciar Sesión</a></li>
+                                <li><a href="aula-virtual.html" role="menuitem">Aula Virtual</a></li>
                             </ul>
                         </div>
                     </li>
                     <li>
-                        <div class="search-box">
-                            <input type="text" id="search-input" placeholder="Buscar...">
-                            <button id="search-button"><i class="fas fa-search"></i></button>
+                        <div class="search-box" role="search">
+                            <label for="search-input" class="sr-only">Buscar en el sitio</label>
+                            <input type="text" id="search-input" placeholder="Buscar..." aria-label="Buscar en el sitio">
+                            <button id="search-button" aria-label="Realizar búsqueda"><i class="fas fa-search" aria-hidden="true"></i></button>
                         </div>
                     </li>
                 </ul>
