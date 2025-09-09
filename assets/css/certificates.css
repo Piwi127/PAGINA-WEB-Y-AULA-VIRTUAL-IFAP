@@ -1,0 +1,974 @@
+/* === ESTILOS PARA EL SISTEMA DE CERTIFICADOS === */
+
+/* Modal de Certificados */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content.certificado-modal {
+    background: white;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e5e7eb;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+/* Pasos del proceso */
+.cert-paso {
+    display: none;
+    animation: fadeInStep 0.3s ease-out;
+}
+
+.cert-paso.active {
+    display: block;
+}
+
+@keyframes fadeInStep {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Información del curso */
+.curso-info-resumen {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #2563eb;
+}
+
+.curso-info-resumen h4 {
+    margin: 0 0 1rem 0;
+    color: #1f2937;
+}
+
+.curso-detalles {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.curso-detalles span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* Opciones de certificado */
+.cert-opciones h4 {
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.opciones-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.opcion-cert {
+    display: block;
+    cursor: pointer;
+}
+
+.opcion-cert input[type="radio"] {
+    display: none;
+}
+
+.opcion-content {
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.opcion-cert input[type="radio"]:checked + .opcion-content {
+    border-color: #2563eb;
+    background: #eff6ff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+.opcion-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.opcion-header i {
+    font-size: 1.5rem;
+    color: #2563eb;
+}
+
+.opcion-header h5 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.precio-opcion {
+    font-weight: bold;
+    color: #059669;
+    font-size: 1.1rem;
+}
+
+/* Formulario */
+.cert-form {
+    margin-bottom: 2rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Checkbox de términos */
+.terminos-check {
+    margin: 1.5rem 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-top: 0.25rem;
+    width: 18px;
+    height: 18px;
+}
+
+.checkmark {
+    position: relative;
+}
+
+/* Navegación entre pasos */
+.paso-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Resumen del pedido */
+.resumen-pedido {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #2563eb;
+}
+
+.resumen-pedido h5 {
+    margin: 0 0 1rem 0;
+    color: #1f2937;
+}
+
+.resumen-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.resumen-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resumen-item.total {
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+    font-size: 1.1rem;
+}
+
+/* Métodos de pago */
+.metodo-pago h5 {
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.metodos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.metodo-pago-item {
+    display: block;
+    cursor: pointer;
+}
+
+.metodo-pago-item input[type="radio"] {
+    display: none;
+}
+
+.metodo-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.metodo-pago-item input[type="radio"]:checked + .metodo-content {
+    border-color: #2563eb;
+    background: #eff6ff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+.metodo-content i {
+    font-size: 1.5rem;
+    color: #2563eb;
+}
+
+/* Información de transferencia */
+.transferencia-info,
+.paypal-info {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.banco-info p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.transferencia-nota {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #fef3c7;
+    border-radius: 8px;
+    color: #92400e;
+    font-size: 0.9rem;
+}
+
+/* Confirmación de éxito */
+.confirmacion-exito {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.exito-icon {
+    font-size: 4rem;
+    color: #059669;
+    margin-bottom: 1rem;
+}
+
+.confirmacion-exito h4 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.confirmacion-exito p {
+    color: #6b7280;
+    margin-bottom: 2rem;
+}
+
+/* Preview del certificado */
+.certificado-preview {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    border: 2px solid #e5e7eb;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.certificado-preview::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    border-radius: 15px;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.cert-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cert-header h5 {
+    color: #2563eb;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.cert-nombre {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.cert-nombre h3 {
+    color: #1f2937;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.cert-curso {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.cert-curso p {
+    margin: 0 0 1rem 0;
+    color: #6b7280;
+    font-style: italic;
+}
+
+.cert-curso h4 {
+    color: #2563eb;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.cert-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+    color: #6b7280;
+}
+
+/* Acciones de descarga */
+.acciones-descarga {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Sección de certificados en la página */
+.certificados-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 15px;
+}
+
+.certificaciones-container {
+    display: grid;
+    gap: 2rem;
+}
+
+/* Cursos disponibles para certificación */
+.cursos-certificacion h4 {
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+}
+
+.cursos-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.curso-cert-item {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.curso-cert-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.curso-cert-item.completado {
+    border-color: #059669;
+}
+
+.curso-cert-item.pendiente {
+    border-color: #d97706;
+    opacity: 0.8;
+}
+
+.curso-cert-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.curso-cert-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 1.2rem;
+}
+
+.curso-cert-info h5 {
+    margin: 0 0 0.5rem 0;
+    color: #1f2937;
+    font-size: 1.1rem;
+}
+
+.curso-cert-info p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.curso-status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.curso-status.completado {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.curso-status.pendiente {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.curso-cert-actions {
+    text-align: right;
+}
+
+/* Precios de certificación */
+.certificados-precios h4 {
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+}
+
+.precios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.precio-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.precio-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.precio-card.destacado {
+    border-color: #2563eb;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+}
+
+.precio-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.precio-header h5 {
+    margin: 0 0 0.5rem 0;
+    color: #1f2937;
+    font-size: 1.2rem;
+}
+
+.precio {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.precio-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.precio-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: #6b7280;
+}
+
+.precio-features li i {
+    color: #059669;
+    font-size: 0.9rem;
+}
+
+.recomendado {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2563eb;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Botones */
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-secondary {
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-secondary:hover {
+    background: #e5e7eb;
+    border-color: #9ca3af;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+/* Notificaciones */
+.notificacion {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 10001;
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+}
+
+.notificacion.show {
+    transform: translateX(0);
+}
+
+.notificacion.success {
+    border-left: 4px solid #059669;
+}
+
+.notificacion.success i {
+    color: #059669;
+}
+
+.notificacion.error {
+    border-left: 4px solid #dc2626;
+}
+
+.notificacion.error i {
+    color: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .modal-content.certificado-modal {
+        width: 95%;
+        margin: 1rem;
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .metodos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .precios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .paso-navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .acciones-descarga {
+        flex-direction: column;
+    }
+
+    .certificado-preview {
+        padding: 1.5rem;
+    }
+
+    .cert-nombre h3 {
+        font-size: 1.5rem;
+    }
+
+    .cert-curso h4 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-header {
+        padding: 1rem 1.5rem;
+    }
+
+    .modal-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+
+    .curso-detalles {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .opcion-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .precio {
+        font-size: 1.5rem;
+    }
+}
+
+/* === ESTILOS PARA CERTIFICACIONES EN PROGRESO === */
+
+.certificaciones-disponibles {
+    margin-top: 2rem;
+}
+
+.certificaciones-disponibles h4 {
+    margin-bottom: 1rem;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.cert-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cert-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.cert-card.disponible {
+    border-left: 4px solid #059669;
+}
+
+.cert-card.pendiente {
+    border-left: 4px solid #d97706;
+    opacity: 0.8;
+}
+
+.cert-card.disponible::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 30px 30px 0;
+    border-color: transparent #059669 transparent transparent;
+}
+
+.cert-card.disponible::after {
+    content: '✓';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.cert-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.cert-card.disponible .cert-icon {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.cert-card.pendiente .cert-icon {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.cert-info h5 {
+    margin: 0 0 0.5rem 0;
+    color: #1f2937;
+    font-size: 1.1rem;
+}
+
+.cert-info p {
+    margin: 0 0 0.5rem 0;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.cert-status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.cert-status.completado {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.cert-status.pendiente {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.btn-certificar {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-certificar:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-certificar.disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Responsive para certificaciones */
+@media (max-width: 768px) {
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-card {
+        padding: 1rem;
+    }
+
+    .cert-info h5 {
+        font-size: 1rem;
+    }
+}

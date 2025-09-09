@@ -1884,7 +1884,7 @@ footer p {
 
 .noticia-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 12px 40px rgba(59, 130, 246,  0.2);
+    box-shadow: 0 12px 40px rgba(59, 130, 246,   0.2);
     border-left-color: #2563eb;
 }
 
@@ -2161,7 +2161,7 @@ footer p {
 }
 
 .herramienta-btn {
-    background: linear-gradient(135deg, var(--ifap-primary), var(--ifap-accent)); /* Unificar con primarios */
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
     color: #fff;
     border: none;
     border-radius: 50px; /* Consistente con primarios */
@@ -2178,7 +2178,7 @@ footer p {
 .herramienta-btn:hover {
     transform: translateY(-4px) scale(1.02); /* Efecto de elevación y ligero crecimiento */
     box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4); /* Sombra más grande al pasar el ratón */
-    background: linear-gradient(135deg, var(--ifap-primary-600), var(--ifap-primary)); /* Invertir o cambiar el gradiente */
+    background: linear-gradient(135deg, #059669, #10b981); /* Invertir o cambiar el gradiente */
 }
 .herramienta-btn:active {
     transform: translateY(-1px) scale(0.98);
@@ -2884,10 +2884,6 @@ footer p {
     color: #374151;
 }
 
-.datos-alumno strong {
-    color: #1f2937;
-}
-
 /* === ESTILOS PARA BARRA DE PROGRESO ANIMADA === */
 #progress-bar-archivistica {
     height: 10px;
@@ -3068,4 +3064,167 @@ footer p {
     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
     background-size: 200% 200%;
     animation: gradientShift 8s ease infinite;
+}
+
+/* === ESTILOS PARA EL SISTEMA DE CERTIFICADOS === */
+/* Movidos a assets/css/certificates.css para mejor organización */
+/* === ESTILOS PARA CERTIFICACIONES EN PROGRESO === */
+
+.certificaciones-disponibles {
+    margin-top: 2rem;
+}
+
+.certificaciones-disponibles h4 {
+    margin-bottom: 1rem;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.cert-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cert-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.cert-card.disponible {
+    border-left: 4px solid #059669;
+}
+
+.cert-card.pendiente {
+    border-left: 4px solid #d97706;
+    opacity: 0.8;
+}
+
+.cert-card.disponible::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 30px 30px 0;
+    border-color: transparent #059669 transparent transparent;
+}
+
+.cert-card.disponible::after {
+    content: '✓';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.cert-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.cert-card.disponible .cert-icon {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.cert-card.pendiente .cert-icon {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.cert-info h5 {
+    margin: 0 0 0.5rem 0;
+    color: #1f2937;
+    font-size: 1.1rem;
+}
+
+.cert-info p {
+    margin: 0 0 0.5rem 0;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.cert-status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.cert-status.completado {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.cert-status.pendiente {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.btn-certificar {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-certificar:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-certificar.disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Responsive para certificaciones */
+@media (max-width: 768px) {
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-card {
+        padding: 1rem;
+    }
+
+    .cert-info h5 {
+        font-size: 1rem;
+    }
 }

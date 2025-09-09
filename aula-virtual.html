@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula Virtual - IFAP</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/certificates.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -121,6 +122,7 @@
                 <li><a href="#inicio" class="active"><i class="fas fa-home"></i> Inicio del Aula</a></li>
                 <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                 <li><a href="mis-cursos.html"><i class="fas fa-book"></i> Mis Cursos</a></li>
+                <li><a href="#certificados"><i class="fas fa-certificate"></i> Certificados</a></li>
                 <li><a href="tareas.html"><i class="fas fa-tasks"></i> Tareas</a></li>
                 <li><a href="foros.html"><i class="fas fa-comments"></i> Foros</a></li>
                 <li><a href="mensajes.html"><i class="fas fa-envelope"></i> Mensajes</a></li>
@@ -388,35 +390,193 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="certificaciones">
-                            <h4>Últimas Certificaciones</h4>
+                        <div class="certificaciones-disponibles">
+                            <h4><i class="fas fa-certificate"></i> Certificaciones Disponibles</h4>
                             <div class="cert-grid">
-                                <div class="cert-card">
+                                <div class="cert-card disponible" data-curso="archivistica-basica">
                                     <div class="cert-icon">
                                         <i class="fas fa-certificate"></i>
                                     </div>
                                     <div class="cert-info">
                                         <h5>Archivística Básica</h5>
                                         <p>Completado: 15 Sep 2025</p>
+                                        <span class="cert-status completado">Disponible para descarga</span>
                                     </div>
+                                    <button class="btn-certificar" onclick="abrirModalCertificado('archivistica-basica')">
+                                        <i class="fas fa-download"></i> Obtener Certificado
+                                    </button>
                                 </div>
-                                <div class="cert-card">
+                                <div class="cert-card disponible" data-curso="gestion-documental">
                                     <div class="cert-icon">
                                         <i class="fas fa-certificate"></i>
                                     </div>
                                     <div class="cert-info">
                                         <h5>Gestión Documental</h5>
                                         <p>Completado: 10 Sep 2025</p>
+                                        <span class="cert-status completado">Disponible para descarga</span>
                                     </div>
+                                    <button class="btn-certificar" onclick="abrirModalCertificado('gestion-documental')">
+                                        <i class="fas fa-download"></i> Obtener Certificado
+                                    </button>
                                 </div>
-                                <div class="cert-card">
+                                <div class="cert-card disponible" data-curso="preservacion-digital">
                                     <div class="cert-icon">
                                         <i class="fas fa-certificate"></i>
                                     </div>
                                     <div class="cert-info">
                                         <h5>Preservación Digital</h5>
                                         <p>Completado: 5 Sep 2025</p>
+                                        <span class="cert-status completado">Disponible para descarga</span>
                                     </div>
+                                    <button class="btn-certificar" onclick="abrirModalCertificado('preservacion-digital')">
+                                        <i class="fas fa-download"></i> Obtener Certificado
+                                    </button>
+                                </div>
+                                <div class="cert-card pendiente" data-curso="normativas-archivisticas">
+                                    <div class="cert-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="cert-info">
+                                        <h5>Normativas Archivísticas</h5>
+                                        <p>Progreso: 60%</p>
+                                        <span class="cert-status pendiente">Completar curso para obtener certificado</span>
+                                    </div>
+                                    <button class="btn-certificar disabled" disabled>
+                                        <i class="fas fa-lock"></i> Bloqueado
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección de Certificados Completa -->
+                <section id="certificados" class="certificados-section">
+                    <h3><i class="fas fa-certificate"></i> Centro de Certificaciones</h3>
+                    <p>Obtén tus certificados oficiales al completar cursos al 100%. Todos los certificados incluyen firma digital y código QR de verificación.</p>
+
+                    <div class="certificados-container">
+                        <!-- Cursos Disponibles para Certificación -->
+                        <div class="cursos-certificacion">
+                            <h4>Cursos Disponibles para Certificación</h4>
+                            <div class="cursos-grid">
+                                <div class="curso-cert-item completado" data-curso="archivistica-basica">
+                                    <div class="curso-cert-header">
+                                        <div class="curso-cert-icon">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+                                        <div class="curso-cert-info">
+                                            <h5>Curso de Archivística Básica</h5>
+                                            <p>Duración: 8 semanas | Créditos: 4</p>
+                                            <span class="curso-status completado">100% Completado</span>
+                                        </div>
+                                    </div>
+                                    <div class="curso-cert-actions">
+                                        <button class="btn-primary" onclick="abrirModalCertificado('archivistica-basica')">
+                                            <i class="fas fa-certificate"></i> Solicitar Certificado
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="curso-cert-item completado" data-curso="gestion-documental">
+                                    <div class="curso-cert-header">
+                                        <div class="curso-cert-icon">
+                                            <i class="fas fa-folder-open"></i>
+                                        </div>
+                                        <div class="curso-cert-info">
+                                            <h5>Gestión Documental Sector Público</h5>
+                                            <p>Duración: 12 semanas | Créditos: 6</p>
+                                            <span class="curso-status completado">100% Completado</span>
+                                        </div>
+                                    </div>
+                                    <div class="curso-cert-actions">
+                                        <button class="btn-primary" onclick="abrirModalCertificado('gestion-documental')">
+                                            <i class="fas fa-certificate"></i> Solicitar Certificado
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="curso-cert-item completado" data-curso="preservacion-digital">
+                                    <div class="curso-cert-header">
+                                        <div class="curso-cert-icon">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <div class="curso-cert-info">
+                                            <h5>Conservación y Preservación Digital</h5>
+                                            <p>Duración: 10 semanas | Créditos: 5</p>
+                                            <span class="curso-status completado">100% Completado</span>
+                                        </div>
+                                    </div>
+                                    <div class="curso-cert-actions">
+                                        <button class="btn-primary" onclick="abrirModalCertificado('preservacion-digital')">
+                                            <i class="fas fa-certificate"></i> Solicitar Certificado
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="curso-cert-item pendiente" data-curso="normativas-archivisticas">
+                                    <div class="curso-cert-header">
+                                        <div class="curso-cert-icon">
+                                            <i class="fas fa-gavel"></i>
+                                        </div>
+                                        <div class="curso-cert-info">
+                                            <h5>Normativas y Legislación Archivística</h5>
+                                            <p>Duración: 6 semanas | Créditos: 3</p>
+                                            <span class="curso-status pendiente">60% Completado</span>
+                                        </div>
+                                    </div>
+                                    <div class="curso-cert-actions">
+                                        <button class="btn-secondary disabled" disabled>
+                                            <i class="fas fa-lock"></i> Completar Curso
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Información de Precios -->
+                        <div class="certificados-precios">
+                            <h4>Precios de Certificación</h4>
+                            <div class="precios-grid">
+                                <div class="precio-card">
+                                    <div class="precio-header">
+                                        <h5>Certificado Digital</h5>
+                                        <span class="precio">S/ 25.00</span>
+                                    </div>
+                                    <ul class="precio-features">
+                                        <li><i class="fas fa-check"></i> PDF descargable</li>
+                                        <li><i class="fas fa-check"></i> Código QR de verificación</li>
+                                        <li><i class="fas fa-check"></i> Firma digital</li>
+                                        <li><i class="fas fa-times"></i> Sin envío físico</li>
+                                    </ul>
+                                </div>
+
+                                <div class="precio-card destacado">
+                                    <div class="precio-header">
+                                        <h5>Certificado Físico + Digital</h5>
+                                        <span class="precio">S/ 45.00</span>
+                                    </div>
+                                    <ul class="precio-features">
+                                        <li><i class="fas fa-check"></i> PDF descargable</li>
+                                        <li><i class="fas fa-check"></i> Código QR de verificación</li>
+                                        <li><i class="fas fa-check"></i> Firma digital</li>
+                                        <li><i class="fas fa-check"></i> Envío físico certificado</li>
+                                        <li><i class="fas fa-check"></i> Marco personalizado</li>
+                                    </ul>
+                                    <span class="recomendado">Más Popular</span>
+                                </div>
+
+                                <div class="precio-card">
+                                    <div class="precio-header">
+                                        <h5>Paquete Completo</h5>
+                                        <span class="precio">S/ 120.00</span>
+                                    </div>
+                                    <ul class="precio-features">
+                                        <li><i class="fas fa-check"></i> Todos los certificados</li>
+                                        <li><i class="fas fa-check"></i> Versión física y digital</li>
+                                        <li><i class="fas fa-check"></i> Cartera profesional</li>
+                                        <li><i class="fas fa-check"></i> 20% de descuento</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -516,6 +676,240 @@
             </section>
         </div>
         </main>
+
+    <!-- Modal de Certificación -->
+    <div id="certificado-modal" class="modal-overlay">
+        <div class="modal-content certificado-modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-certificate"></i> Solicitar Certificado</h3>
+                <button class="modal-close" onclick="cerrarModalCertificado()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <!-- Paso 1: Información del Curso -->
+                <div id="paso-1" class="cert-paso active">
+                    <div class="curso-info-resumen">
+                        <h4 id="curso-titulo">Curso de Archivística Básica</h4>
+                        <div class="curso-detalles">
+                            <span><i class="fas fa-clock"></i> Duración: 8 semanas</span>
+                            <span><i class="fas fa-star"></i> Créditos: 4</span>
+                            <span><i class="fas fa-calendar"></i> Completado: 15 Sep 2025</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-opciones">
+                        <h4>Selecciona el tipo de certificado:</h4>
+                        <div class="opciones-grid">
+                            <label class="opcion-cert">
+                                <input type="radio" name="tipo-certificado" value="digital" checked>
+                                <div class="opcion-content">
+                                    <div class="opcion-header">
+                                        <i class="fas fa-file-pdf"></i>
+                                        <h5>Certificado Digital</h5>
+                                        <span class="precio-opcion">S/ 25.00</span>
+                                    </div>
+                                    <p>PDF descargable con código QR de verificación</p>
+                                </div>
+                            </label>
+
+                            <label class="opcion-cert">
+                                <input type="radio" name="tipo-certificado" value="fisico">
+                                <div class="opcion-content">
+                                    <div class="opcion-header">
+                                        <i class="fas fa-scroll"></i>
+                                        <h5>Certificado Físico + Digital</h5>
+                                        <span class="precio-opcion">S/ 45.00</span>
+                                    </div>
+                                    <p>Versión impresa + digital con envío certificado</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="paso-navigation">
+                        <button class="btn-secondary" onclick="cerrarModalCertificado()">Cancelar</button>
+                        <button class="btn-primary" onclick="siguientePaso(2)">Continuar</button>
+                    </div>
+                </div>
+
+                <!-- Paso 2: Formulario de Datos -->
+                <div id="paso-2" class="cert-paso">
+                    <h4>Datos para el Certificado</h4>
+                    <form id="certificado-form" class="cert-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombres">Nombres *</label>
+                                <input type="text" id="nombres" name="nombres" value="Juan Carlos" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido-paterno">Apellido Paterno *</label>
+                                <input type="text" id="apellido-paterno" name="apellido-paterno" value="Pérez" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="apellido-materno">Apellido Materno *</label>
+                                <input type="text" id="apellido-materno" name="apellido-materno" value="Gómez" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dni">DNI *</label>
+                                <input type="text" id="dni" name="dni" value="12345678" maxlength="8" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fecha-nacimiento">Fecha de Nacimiento *</label>
+                                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" value="1995-06-15" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo">Correo Electrónico *</label>
+                                <input type="email" id="correo" name="correo" value="juan.perez@ifap.edu.pe" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="direccion">Dirección (para envío físico)</label>
+                            <textarea id="direccion" name="direccion" rows="3" placeholder="Ingresa tu dirección completa para envío físico..."></textarea>
+                        </div>
+
+                        <div class="terminos-check">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terminos" required>
+                                <span class="checkmark"></span>
+                                Acepto los términos y condiciones para la emisión del certificado
+                            </label>
+                        </div>
+                    </form>
+
+                    <div class="paso-navigation">
+                        <button class="btn-secondary" onclick="anteriorPaso(1)">Atrás</button>
+                        <button class="btn-primary" onclick="siguientePaso(3)">Continuar al Pago</button>
+                    </div>
+                </div>
+
+                <!-- Paso 3: Sistema de Pagos -->
+                <div id="paso-3" class="cert-paso">
+                    <h4>Información de Pago</h4>
+
+                    <div class="resumen-pedido">
+                        <h5>Resumen del Pedido</h5>
+                        <div class="resumen-items">
+                            <div class="resumen-item">
+                                <span>Certificado Digital - Archivística Básica</span>
+                                <span id="precio-resumen">S/ 25.00</span>
+                            </div>
+                            <div class="resumen-item total">
+                                <span><strong>Total a Pagar</strong></span>
+                                <span id="total-resumen"><strong>S/ 25.00</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metodo-pago">
+                        <h5>Método de Pago</h5>
+                        <div class="metodos-grid">
+                            <label class="metodo-pago-item">
+                                <input type="radio" name="metodo-pago" value="tarjeta" checked>
+                                <div class="metodo-content">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Tarjeta de Crédito/Débito</span>
+                                </div>
+                            </label>
+
+                            <label class="metodo-pago-item">
+                                <input type="radio" name="metodo-pago" value="paypal">
+                                <div class="metodo-content">
+                                    <i class="fab fa-paypal"></i>
+                                    <span>PayPal</span>
+                                </div>
+                            </label>
+
+                            <label class="metodo-pago-item">
+                                <input type="radio" name="metodo-pago" value="transferencia">
+                                <div class="metodo-content">
+                                    <i class="fas fa-university"></i>
+                                    <span>Transferencia Bancaria</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de Pago (Simulado) -->
+                    <div id="formulario-pago" class="pago-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="numero-tarjeta">Número de Tarjeta *</label>
+                                <input type="text" id="numero-tarjeta" placeholder="1234 5678 9012 3456" maxlength="19">
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha-expiracion">Fecha de Expiración *</label>
+                                <input type="text" id="fecha-expiracion" placeholder="MM/AA" maxlength="5">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cvv">CVV *</label>
+                                <input type="text" id="cvv" placeholder="123" maxlength="4">
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre-tarjeta">Nombre en la Tarjeta *</label>
+                                <input type="text" id="nombre-tarjeta" placeholder="JUAN CARLOS PEREZ">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="paso-navigation">
+                        <button class="btn-secondary" onclick="anteriorPaso(2)">Atrás</button>
+                        <button class="btn-primary" onclick="procesarPago()">
+                            <i class="fas fa-lock"></i> Pagar y Descargar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Paso 4: Confirmación y Descarga -->
+                <div id="paso-4" class="cert-paso">
+                    <div class="confirmacion-exito">
+                        <div class="exito-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h4>¡Pago Procesado Exitosamente!</h4>
+                        <p>Tu certificado ha sido generado y está listo para descargar.</p>
+
+                        <div class="certificado-preview">
+                            <div class="cert-header">
+                                <h5>Instituto de Formación Archivística del Perú</h5>
+                                <p>Certifica que</p>
+                            </div>
+                            <div class="cert-nombre">
+                                <h3 id="cert-nombre-preview">Juan Carlos Pérez Gómez</h3>
+                            </div>
+                            <div class="cert-curso">
+                                <p>Ha completado satisfactoriamente el curso de</p>
+                                <h4 id="cert-curso-preview">Archivística Básica</h4>
+                            </div>
+                            <div class="cert-footer">
+                                <p>Lima, <span id="cert-fecha">15 de septiembre de 2025</span></p>
+                            </div>
+                        </div>
+
+                        <div class="acciones-descarga">
+                            <button class="btn-success" onclick="descargarCertificado()">
+                                <i class="fas fa-download"></i> Descargar Certificado PDF
+                            </button>
+                            <button class="btn-secondary" onclick="cerrarModalCertificado()">
+                                <i class="fas fa-times"></i> Cerrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     <footer>
         <p>&copy; 2025 IFAP - Instituto de Formación Archivística del Perú. Todos los derechos reservados.</p>
@@ -779,8 +1173,13 @@
             backToTop.addEventListener('click', function() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
+
+            // Funcionalidad de Certificados - Ahora en assets/js/certificates.js
         });
     </script>
+
+    <!-- Funcionalidades de Certificados -->
+    <script src="assets/js/certificates.js"></script>
 </body>
 </html>
 
