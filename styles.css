@@ -2969,55 +2969,365 @@ footer p {
     background: linear-gradient(90deg, #1d4ed8, #2563eb);
 }
 
-/* === ESTILOS RESPONSIVOS PARA FORMULARIO DE CONTACTO === */
+/* === ESTILOS PARA FORMULARIO DE CONTACTO === */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+.contact-info {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+}
+
+.contact-info h2 {
+    color: #2563eb;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.info-item:hover {
+    transform: translateY(-2px);
+}
+
+.info-item i {
+    color: #2563eb;
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+}
+
+.info-item h3 {
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.info-item p {
+    color: #64748b;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.contact-form-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(59, 130, 246, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.contact-form-section h2 {
+    color: #2563eb;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input,
+.input-wrapper select,
+.input-wrapper textarea {
+    width: 100%;
+    padding: 0.95rem 3rem 0.95rem 1rem;
+    border: 1.5px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+    color: #1e293b;
+    box-sizing: border-box;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus,
+.input-wrapper textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    background: white;
+}
+
+.input-wrapper textarea {
+    resize: vertical;
+    min-height: 120px;
+    padding-right: 3rem;
+}
+
+.input-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 1.1rem;
+    pointer-events: none;
+    transition: color 0.3s;
+}
+
+.input-wrapper input:focus + .input-icon,
+.input-wrapper select:focus + .input-icon,
+.input-wrapper textarea:focus + .input-icon {
+    color: #2563eb;
+}
+
+.textarea-icon {
+    top: 1rem;
+    transform: none;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Responsive para contacto */
 @media (max-width: 768px) {
     .contact-container {
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding: 2rem 1rem;
     }
+    
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
     .info-item {
         flex-direction: column;
         text-align: center;
+        gap: 0.5rem;
     }
-    #contact-hero h1 { /* Este estilo estaba en contacto.html, lo mantengo aquí */
-        font-size: 2rem;
+    
+    .info-item i {
+        align-self: center;
     }
 }
 
-/* === ESTILOS PARA FORMULARIO DE REGISTRO (inscribirse.html) === */
+/* === ESTILOS PARA INDICADOR DE PROGRESO === */
+.progress-container {
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.progress-steps::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #e5e7eb;
+    z-index: 1;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.step.active .step-number {
+    background: #2563eb;
+    color: white;
+}
+
+.step.completed .step-number {
+    background: #10b981;
+    color: white;
+}
+
+.step-label {
+    font-size: 0.8rem;
+    color: #6b7280;
+    text-align: center;
+    font-weight: 500;
+}
+
+.step.active .step-label {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.step.completed .step-label {
+    color: #10b981;
+}
+
+/* === ESTILOS PARA NAVEGACIÓN DE PASOS === */
+.step-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.btn-secondary {
+    background: #6b7280;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #4b5563;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+/* === MEJORAS PARA FORMULARIOS DE REGISTRO === */
 .registro-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 3rem 1rem;
     background: #fff;
     border-radius: 18px;
     box-shadow: 0 4px 24px rgba(59, 130, 246, 0.10);
 }
+
 .registro-container h2 {
     text-align: center;
     color: #2563eb;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.form-description {
+    text-align: center;
+    color: #64748b;
     margin-bottom: 2rem;
+    font-size: 1.1rem;
 }
-.form-row {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+
+.input-wrapper {
+    position: relative;
 }
-.form-row .form-group {
-    flex: 1;
+
+.input-wrapper input,
+.input-wrapper select {
+    width: 100%;
+    padding: 0.95rem 3rem 0.95rem 1rem;
+    border: 1.5px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+    color: #1e293b;
+    box-sizing: border-box;
 }
-.checkbox-group {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    background: white;
 }
-.checkbox-group input[type="checkbox"] {
-    width: auto;
-    margin-top: 0.2rem;
+
+.input-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 1.1rem;
+    pointer-events: none;
+    transition: color 0.3s;
 }
-.checkbox-group label {
-    margin-bottom: 0;
-    line-height: 1.4;
+
+.input-wrapper input:focus + .input-icon,
+.input-wrapper select:focus + .input-icon {
+    color: #2563eb;
 }
 
 /* === ESTILOS RESPONSIVOS PARA FORMULARIO DE REGISTRO === */
@@ -3569,5 +3879,183 @@ footer p {
 
     .cert-info h5 {
         font-size: 1rem;
+    }
+}
+
+/* === ESTILOS PARA FORMULARIO DE LOGIN === */
+.login-container {
+    max-width: 400px;
+    margin: 2.5rem auto;
+    padding: 2.5rem 2rem 2rem 2rem;
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 8px 32px 0 rgba(37,99,235,0.13), 0 1.5px 8px 0 rgba(59,130,246,0.07);
+    border: 1.5px solid #e0e7ef;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInLogin 0.8s cubic-bezier(.4,0,.2,1) 0.1s forwards;
+}
+
+@keyframes fadeInLogin {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container h2 {
+    color: #2563eb;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.login-container .form-group {
+    margin-bottom: 1.3rem;
+    position: relative;
+    text-align: left;
+}
+
+.login-container .form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    color: #1e293b;
+    font-size: 1rem;
+}
+
+.login-container .form-group input {
+    width: 100%;
+    padding: 0.95rem 2.7rem 0.95rem 1rem;
+    border: 1.5px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-family: 'Roboto', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background: #f8fafc;
+    color: #222;
+    box-sizing: border-box;
+}
+
+.login-container .form-group input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.13);
+    background: #fff;
+}
+
+.login-container .input-icon {
+    position: absolute;
+    right: 1.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 1.25rem;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.login-container .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.2rem 0 1.7rem 0;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.login-container .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.98rem;
+}
+
+.login-container .checkbox-group input[type="checkbox"] {
+    accent-color: #2563eb;
+    width: 1.1em;
+    height: 1.1em;
+    margin-right: 0.2em;
+}
+
+.login-container .forgot-password {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.97rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.login-container .forgot-password:hover {
+    text-decoration: underline;
+    color: #1d4ed8;
+}
+
+.login-container .btn-submit {
+    background: linear-gradient(90deg, #2563eb 60%, #3b82f6 100%);
+    color: #fff;
+    border: none;
+    padding: 1.1rem 2.5rem;
+    border-radius: 12px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+    width: 100%;
+    margin-top: 0.7rem;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+}
+
+.login-container .btn-submit:hover {
+    background: linear-gradient(90deg, #1d4ed8 60%, #2563eb 100%);
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 4px 16px rgba(37,99,235,0.18);
+}
+
+.login-container .login-footer {
+    margin-top: 2.2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #f1f5f9;
+}
+
+.login-container .login-footer p {
+    margin: 0;
+    color: #64748b;
+    font-size: 1rem;
+}
+
+.login-container .login-footer a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.login-container .login-footer a:hover {
+    text-decoration: underline;
+    color: #1d4ed8;
+}
+
+/* Responsive para login */
+@media (max-width: 600px) {
+    .login-container {
+        padding: 1.5rem 0.5rem 1.2rem 0.5rem;
+        margin: 1.2rem auto;
+    }
+    .login-container h2 {
+        font-size: 1.3rem;
+    }
+    .login-container .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
     }
 }
