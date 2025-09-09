@@ -112,6 +112,10 @@
             <span class="dot"></span>
         </div>
     </section>
+    <!-- Botón para mostrar el formulario de contacto rápido -->
+    <button class="open-form-btn" id="open-form-btn" aria-label="Abrir formulario de información rápida">
+        <i class="fas fa-info-circle"></i> Más Información
+    </button>
     <main>
         <section id="about">
             <h1>Bienvenidos al IFAP - Instituto de Formación Archivística del Perú</h1>
@@ -248,5 +252,140 @@
     <script src="assets/js/carousel.js"></script>
     <script src="assets/js/search.js"></script>
     <script src="assets/js/search-advanced.js"></script>
+    <!-- Incluir el formulario de contacto rápido -->
+    <div class="form-overlay" id="form-overlay">
+        <div class="form-container">
+            <button class="close-btn" id="close-form-btn">&times;</button>
+            <div class="form-header">
+                <h3>¡Más información AQUI!</h3>
+                <p>Accede a <span class="highlight">matrícula gratuita</span> y hasta <span class="highlight">78% dscto*</span></p>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="nombres" class="sr-only">Nombres</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="nombres" name="nombres" placeholder="Nombres" required>
+                        <i class="fas fa-user input-icon"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="apellido-paterno" class="sr-only">Apellido Paterno</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="apellido-paterno" name="apellidoPaterno" placeholder="Apellido Paterno" required>
+                        <i class="fas fa-user input-icon"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="apellido-materno" class="sr-only">Apellido Materno</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="apellido-materno" name="apellidoMaterno" placeholder="Apellido materno" required>
+                        <i class="fas fa-user input-icon"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="dni" class="sr-only">DNI</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="dni" name="dni" placeholder="DNI" pattern="\d{8}" title="El DNI debe contener 8 dígitos" required>
+                        <i class="fas fa-id-card input-icon"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="telefono" class="sr-only">Teléfono / Celular</label>
+                    <div class="input-wrapper">
+                        <input type="tel" id="telefono" name="telefono" placeholder="Teléfono / Celular" required>
+                        <i class="fas fa-phone input-icon"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="sr-only">Correo electrónico</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                        <i class="fas fa-envelope input-icon"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="carrera" class="sr-only">Selecciona una carrera</label>
+                    <div class="input-wrapper">
+                        <select id="carrera" name="carrera" required>
+                            <option value="">Selecciona una carrera</option>
+                            <option value="gestion-documental">Gestión Documental en el Sector Público</option>
+                            <option value="conservacion-preventiva">Conservación Preventiva de Documentos</option>
+                            <option value="archivistica-basica">Archivística Básica</option>
+                        </select>
+                        <i class="fas fa-chevron-down input-icon"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="sede" class="sr-only">Selecciona una sede</label>
+                    <div class="input-wrapper">
+                        <select id="sede" name="sede" required>
+                            <option value="">Selecciona una sede</option>
+                            <option value="lima">Lima</option>
+                            <option value="arequipa">Arequipa</option>
+                            <option value="trujillo">Trujillo</option>
+                        </select>
+                        <i class="fas fa-chevron-down input-icon"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contacto-preferido" class="sr-only">¿Por dónde quieres ser contactado?</label>
+                    <div class="input-wrapper">
+                        <select id="contacto-preferido" name="contactoPreferido" required>
+                            <option value="">¿Por dónde quieres ser contactado?</option>
+                            <option value="telefono">Teléfono</option>
+                            <option value="email">Correo electrónico</option>
+                            <option value="whatsapp">WhatsApp</option>
+                        </select>
+                        <i class="fas fa-chevron-down input-icon"></i>
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="acepto-privacidad" name="aceptoPrivacidad" required>
+                    <label for="acepto-privacidad">Acepto la <a href="#" class="modal-link">política de privacidad del instituto SISE</a>.</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="autorizo-contacto" name="autorizoContacto">
+                    <label for="autorizo-contacto">Autorizo al instituto SISE a contactarme y enviarme información.</label>
+                </div>
+
+                <p class="form-note">* Válido solo para Lima</p>
+                <p class="form-note">*El descuento aplica solo para la primera cuota y varia según carrera.</p>
+
+                <button type="submit" class="btn-submit">Solicitar información</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const openFormBtn = document.getElementById('open-form-btn');
+            const closeFormBtn = document.getElementById('close-form-btn');
+            const formOverlay = document.getElementById('form-overlay');
+
+            if (openFormBtn && formOverlay) {
+                openFormBtn.addEventListener('click', function() {
+                    formOverlay.classList.add('active');
+                });
+            }
+
+            if (closeFormBtn && formOverlay) {
+                closeFormBtn.addEventListener('click', function() {
+                    formOverlay.classList.remove('active');
+                });
+            }
+
+            if (formOverlay) {
+                formOverlay.addEventListener('click', function(event) {
+                    if (event.target === formOverlay) {
+                        formOverlay.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

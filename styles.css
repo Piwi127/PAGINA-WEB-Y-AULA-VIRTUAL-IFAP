@@ -4059,3 +4059,317 @@ footer p {
         gap: 0.8rem;
     }
 }
+
+/* === ESTILOS PARA EL FORMULARIO DE CONTACTO RÁPIDO (form_contacto_rapido.html) === */
+.form-overlay {
+    display: flex;
+    justify-content: flex-end; /* Alinea el contenido a la derecha */
+    align-items: flex-start; /* Alinea el contenido arriba */
+    position: fixed;
+    top: 0;
+    right: 0; /* Cambiado de left: 0 a right: 0 */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.form-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.form-container {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    padding: 2rem 1.5rem; /* Ajuste de padding */
+    width: 320px; /* Ancho base para el formulario */
+    max-width: 90%; /* Máximo 90% del ancho de la vista */
+    max-height: 95vh; /* Limita la altura máxima a 95% de la altura de la vista */
+    overflow-y: auto; /* Permite scroll si el contenido es largo */
+    position: relative;
+    transform: translateX(100%); /* Empieza fuera de la pantalla a la derecha */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Animación suave */
+    border: 1px solid #e0e7ff;
+    padding-top: 4rem; /* Espacio para el botón de cerrar */
+    margin-right: 20px; /* Margen a la derecha para que no esté pegado al borde */
+    box-sizing: border-box; /* Incluye padding y border en el width/height */
+}
+
+/* Animación para cuando el formulario está activo */
+.form-overlay.active .form-container {
+    transform: translateX(0); /* Se desliza a la posición visible */
+}
+
+/* Ajustes para el botón de cerrar */
+.close-btn {
+    position: absolute; /* Cambiado a absolute para que se posicione dentro del form-container */
+    top: 15px;
+    right: 15px; /* Posicionado dentro del form-container */
+    background: none; /* Fondo transparente */
+    border: none;
+    font-size: 2rem; /* Tamaño más grande para visibilidad */
+    color: #888; /* Color suave */
+    cursor: pointer;
+    transition: color 0.2s ease;
+    z-index: 10; /* Asegura que esté encima del contenido del formulario */
+}
+
+.close-btn:hover {
+    background: #d81b60;
+    transform: rotate(90deg);
+}
+
+/* Ajustes responsivos para el botón de cerrar */
+@media (max-width: 480px) {
+    .close-btn {
+        right: 20px; /* Ajusta para pantallas pequeñas, dentro del overlay */
+        top: 20px;
+        z-index: 1001; /* Asegura que esté por encima del formulario */
+    }
+    .form-container {
+        width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+        max-width: none;
+        border-radius: 0; /* Sin bordes redondeados en móviles */
+    }
+}
+
+/* Ajustes para el botón "Más Información" */
+.open-form-btn {
+    position: fixed;
+    bottom: 50%; /* Centrado verticalmente */
+    right: 0; /* Pegado al lado derecho */
+    transform: translateY(50%); /* Ajuste para centrado perfecto */
+    background: linear-gradient(90deg, #e91e63 0%, #ff4081 100%); /* Gradiente horizontal */
+    color: #fff;
+    border: none;
+    border-top-left-radius: 10px; /* Esquinas redondeadas solo en el lado izquierdo */
+    border-bottom-left-radius: 10px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: -5px 5px 20px rgba(233, 30, 99, 0.3); /* Sombra hacia la izquierda */
+    transition: all 0.3s ease;
+    z-index: 999; /* Debajo del formulario pero encima del contenido */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    writing-mode: vertical-rl; /* Texto vertical */
+    text-orientation: mixed; /* Permite que el texto se lea verticalmente */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.open-form-btn:hover {
+    transform: translateY(50%) translateX(-5px); /* Desplazamiento al pasar el ratón */
+    box-shadow: -8px 8px 30px rgba(233, 30, 99, 0.4);
+}
+
+/* Ocultar el botón cuando el formulario está activo */
+.form-overlay.active + .open-form-btn {
+    display: none;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.form-overlay.active .form-container {
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    z-index: 10;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-header h3 {
+    font-size: 1.8rem;
+    color: #e91e63; /* Color de acento para el título */
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.form-header p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.form-header .highlight {
+    color: #e91e63;
+    font-weight: 600;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.contact-form .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.contact-form .input-wrapper input,
+.contact-form .input-wrapper select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    padding-right: 2.5rem; /* Espacio para el icono */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.2s ease;
+    background: #f9f9f9;
+    color: #333;
+}
+
+.contact-form .input-wrapper input:focus,
+.contact-form .input-wrapper select:focus {
+    outline: none;
+    border-color: #e91e63;
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.2);
+    background: #fff;
+}
+
+.contact-form .input-icon {
+    position: absolute;
+    right: 10px;
+    color: #aaa;
+    font-size: 0.9rem;
+    pointer-events: none; /* Permite hacer clic a través del icono */
+}
+
+.contact-form .checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.contact-form .checkbox-group input[type="checkbox"] {
+    margin-top: 4px;
+    margin-right: 8px;
+    accent-color: #e91e63;
+    width: 18px;
+    height: 18px;
+}
+
+.contact-form .checkbox-group label {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.contact-form .checkbox-group label a {
+    color: #e91e63;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-form .checkbox-group label a:hover {
+    text-decoration: underline;
+}
+
+.form-note {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 0.5rem;
+    line-height: 1.3;
+}
+
+.contact-form .btn-submit {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(45deg, #e91e63, #ff4081); /* Gradiente vibrante */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+    box-shadow: 0 5px 20px rgba(233, 30, 99, 0.3);
+}
+
+.contact-form .btn-submit:hover {
+    background: linear-gradient(45deg, #d81b60, #e91e63);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
+}
+
+/* Responsive adjustments for the quick contact form */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 1.5rem 1rem;
+        max-width: 95%;
+        margin-right: 0; /* Elimina el margen derecho en pantallas muy pequeñas */
+        max-height: 100vh; /* Ocupa toda la altura en móviles */
+    }
+
+    .form-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .form-header p {
+        font-size: 0.85rem;
+    }
+
+    .contact-form .input-wrapper input,
+    .contact-form .input-wrapper select {
+        padding: 0.7rem 1rem;
+        padding-right: 2.2rem;
+        font-size: 0.9rem;
+    }
+
+    .contact-form .input-icon {
+        font-size: 0.8rem;
+        right: 8px;
+    }
+
+    .contact-form .checkbox-group label {
+        font-size: 0.8rem;
+    }
+
+    .form-note {
+        font-size: 0.75rem;
+    }
+
+    .contact-form .btn-submit {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+}
