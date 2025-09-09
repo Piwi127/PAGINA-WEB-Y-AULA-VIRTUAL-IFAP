@@ -189,3 +189,147 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// === FUNCIONALIDAD DE MODALES ===
+document.addEventListener('DOMContentLoaded', () => {
+    // Funciones para manejar modales
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+        }
+    }
+
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto'; // Restaurar scroll del body
+        }
+    }
+
+    // Event listeners para abrir modales
+    const terminosLink = document.getElementById('terminos-link');
+    const privacidadLink = document.getElementById('privacidad-link');
+
+    if (terminosLink) {
+        terminosLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('terminos-modal');
+        });
+    }
+
+    if (privacidadLink) {
+        privacidadLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('privacidad-modal');
+        });
+    }
+
+    // Event listeners para cerrar modales
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('modal-close') || e.target.classList.contains('modal')) {
+            const modalId = e.target.getAttribute('data-modal') || e.target.id;
+            if (modalId) {
+                closeModal(modalId);
+            } else if (e.target.classList.contains('modal')) {
+                // Cerrar modal al hacer click en el overlay
+                e.target.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        }
+    });
+
+    // Cerrar modal con tecla Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const openModal = document.querySelector('.modal.show');
+            if (openModal) {
+                openModal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        }
+    });
+
+    // Funciones para aceptar términos
+    window.aceptarTerminos = function() {
+        const checkbox = document.getElementById('terminos');
+        if (checkbox) {
+            checkbox.checked = true;
+        }
+        closeModal('terminos-modal');
+    };
+
+    window.aceptarPrivacidad = function() {
+        closeModal('privacidad-modal');
+    };
+});
+
+// === FUNCIONALIDAD DE BARRA DE FORTALEZA DE CONTRASEÑA ===
+document.addEventListener('DOMContentLoaded', () => {
+    const passwordInput = document.getElementById('password');
+    const strengthBar = document.querySelector('.strength-bar');
+    const strengthText = document.querySelector('.strength-text');
+
+    if (passwordInput && strengthBar && strengthText) {
+        passwordInput.addEventListener('input', () => {
+            const password = passwordInput.value;
+            const strength = calculatePasswordStrength(password);
+            updateStrengthIndicator(strength);
+        });
+    }
+
+    function calculatePasswordStrength(password) {
+        let score = 0;
+
+        // Longitud
+        if (password.length >= 8) score += 20;
+        if (password.length >= 12) score += 10;
+
+        // Minúsculas
+        if (/[a-z]/.test(password)) score += 15;
+
+        // Mayúsculas
+        if (/[A-Z]/.test(password)) score += 15;
+
+        // Números
+        if (/\d/.test(password)) score += 15;
+
+        // Caracteres especiales
+        if (/[@$!%*?&]/.test(password)) score += 15;
+
+        // Variedad de caracteres
+        if (password.length >= 10 && /[a-z]/.test(password) && /[A-Z]/.test(password) && /\d/.test(password) && /[@$!%*?&]/.test(password)) {
+            score += 10;
+        }
+
+        return Math.min(score, 100);
+    }
+
+    function updateStrengthIndicator(strength) {
+        strengthBar.style.width = strength + '%';
+
+        if (strength < 30) {
+            strengthBar.style.background = '#ef4444'; // Rojo
+            strengthText.textContent = 'Muy débil';
+            strengthText.style.color = '#ef4444';
+        } else if (strength < 50) {
+            strengthBar.style.background = '#f59e0b'; // Naranja
+            strengthText.textContent = 'Débil';
+            strengthText.style.color = '#f59e0b';
+        } else if (strength < 70) {
+            strengthBar.style.background = '#eab308'; // Amarillo
+            strengthText.textContent = 'Regular';
+            strengthText.style.color = '#eab308';
+        } else if (strength < 90) {
+            strengthBar.style.background = '#10b981'; // Verde claro
+            strengthText.textContent = 'Fuerte';
+            strengthText.style.color = '#10b981';
+        } else {
+            strengthBar.style.background = '#059669'; // Verde oscuro
+            strengthText.textContent = 'Muy fuerte';
+            strengthText.style.color = '#059669';
+        }
+    }
+});
