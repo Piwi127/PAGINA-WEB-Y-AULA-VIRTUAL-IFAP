@@ -43,9 +43,14 @@
     position: relative;
     z-index: 2;
     max-width: 900px; /* Aumentar ancho máximo */
-    padding: 3rem 2rem; /* Mayor padding */
+    padding: 4rem 2rem 2rem 2rem; /* Mayor padding superior para bajar el contenido */
     text-shadow: 0 3px 10px rgba(0,0,0,0.8); /* Sombra de texto más intensa */
     animation: fadeInScale 0.8s ease-out forwards; /* Animación de entrada */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px; /* Altura mínima para mejor centrado */
 }
 
 @keyframes fadeInScale {
@@ -55,28 +60,54 @@
 
 .course-detail-hero h1 {
     font-size: 3.2rem; /* Fuente más grande para el título */
-    margin: 0 0 1rem 0; /* Ajustar margen */
+    margin: 1rem 0 1.5rem 0; /* Mayor margen superior e inferior */
     color: #fff;
     font-weight: 900; /* Más audaz */
     line-height: 1.1;
+    text-align: center; /* Asegurar centrado */
 }
 
 .course-detail-hero p {
     font-size: 1.3rem; /* Fuente más grande para la descripción */
     color: rgba(255,255,255,0.9); /* Ligeramente más transparente */
-    margin-bottom: 2rem; /* Mayor margen inferior */
+    margin-bottom: 2.5rem; /* Mayor margen inferior */
+    text-align: center; /* Centrar el texto */
+    max-width: 700px; /* Limitar ancho para mejor legibilidad */
+    line-height: 1.4; /* Mejor interlineado */
 }
 
-/* Responsive adjustments for images */
 @media (max-width: 768px) {
     .course-detail-hero {
         height: 300px; /* Reduce height for tablets */
+    }
+    .course-detail-hero .hero-content {
+        padding: 3rem 1.5rem 1.5rem 1.5rem; /* Ajustar padding para tablets */
+    }
+    .course-detail-hero h1 {
+        font-size: 2.5rem; /* Reducir tamaño para tablets */
+        margin: 0.5rem 0 1rem 0; /* Ajustar márgenes */
+    }
+    .course-detail-hero p {
+        font-size: 1.1rem; /* Reducir tamaño para tablets */
+        margin-bottom: 2rem;
     }
 }
 
 @media (max-width: 480px) {
     .course-detail-hero {
-        height: 250px; /* Further reduce height for mobile */
+        height: 280px; /* Further reduce height for mobile */
+    }
+    .course-detail-hero .hero-content {
+        padding: 2.5rem 1rem 1rem 1rem; /* Ajustar padding para móviles */
+        min-height: 150px; /* Altura mínima ajustada */
+    }
+    .course-detail-hero h1 {
+        font-size: 2rem; /* Reducir tamaño para móviles */
+        margin: 0.5rem 0 1rem 0; /* Ajustar márgenes */
+    }
+    .course-detail-hero p {
+        font-size: 1rem; /* Reducir tamaño para móviles */
+        margin-bottom: 1.5rem;
     }
 }
 
