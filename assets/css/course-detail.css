@@ -2,18 +2,18 @@
 .course-detail-hero {
     position: relative;
     width: 100%;
-    height: 400px; /* Aumentar altura para mayor impacto */
+    height: 450px; /* Altura aumentada para mejor distribución */
     overflow: hidden;
-    background: linear-gradient(135deg, var(--ifap-primary-600), var(--ifap-accent)); /* Usar gradiente de tema */
+    background: linear-gradient(135deg, var(--ifap-primary-600), var(--ifap-accent));
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: #fff;
-    margin-bottom: 2.5rem; /* Aumentar margen inferior */
-    border-bottom-left-radius: var(--ifap-radius-lg); /* Bordes redondeados */
+    margin-bottom: 2.5rem;
+    border-bottom-left-radius: var(--ifap-radius-lg);
     border-bottom-right-radius: var(--ifap-radius-lg);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.2); /* Sombra más pronunciada */
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
 }
 
 .course-image-placeholder img {
@@ -24,8 +24,7 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    /* Usar un overlay rgba para un control más preciso del brillo y color */
-    filter: brightness(0.7) grayscale(0.2); /* Ligeramente más brillante y con tono gris */
+    filter: brightness(0.7) grayscale(0.2);
 }
 
 .course-detail-hero::before {
@@ -35,22 +34,25 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(37, 99, 235, 0.6); /* Overlay de color azul semi-transparente */
+    background: rgba(37, 99, 235, 0.6);
     z-index: 1;
 }
 
 .course-detail-hero .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 900px; /* Aumentar ancho máximo */
-    padding: 4rem 2rem 2rem 2rem; /* Mayor padding superior para bajar el contenido */
-    text-shadow: 0 3px 10px rgba(0,0,0,0.8); /* Sombra de texto más intensa */
-    animation: fadeInScale 0.8s ease-out forwards; /* Animación de entrada */
+    max-width: 1000px; /* Ancho aumentado */
+    padding: 2rem; /* Padding más equilibrado */
+    text-shadow: 0 3px 10px rgba(0,0,0,0.8);
+    animation: fadeInScale 0.8s ease-out forwards;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between; /* Mejor distribución vertical */
     align-items: center;
-    min-height: 200px; /* Altura mínima para mejor centrado */
+    min-height: 300px; /* Altura mínima aumentada */
+    width: 100%;
+    box-sizing: border-box;
+    gap: 1rem; /* Espacio entre elementos */
 }
 
 @keyframes fadeInScale {
@@ -59,55 +61,110 @@
 }
 
 .course-detail-hero h1 {
-    font-size: 3.2rem; /* Fuente más grande para el título */
-    margin: 1rem 0 1.5rem 0; /* Mayor margen superior e inferior */
+    font-size: 2.2rem; /* Tamaño optimizado */
+    margin: 0 0 0.5rem 0; /* Márgenes reducidos */
     color: #fff;
-    font-weight: 900; /* Más audaz */
-    line-height: 1.1;
-    text-align: center; /* Asegurar centrado */
+    font-weight: 800; /* Peso optimizado */
+    line-height: 1.3; /* Mejor interlineado */
+    text-align: center;
+    max-width: 95%; /* Ancho máximo optimizado */
+    margin-left: auto;
+    margin-right: auto;
+    flex-shrink: 0; /* Evitar compresión */
 }
 
 .course-detail-hero p {
-    font-size: 1.3rem; /* Fuente más grande para la descripción */
-    color: rgba(255,255,255,0.9); /* Ligeramente más transparente */
-    margin-bottom: 2.5rem; /* Mayor margen inferior */
-    text-align: center; /* Centrar el texto */
-    max-width: 700px; /* Limitar ancho para mejor legibilidad */
-    line-height: 1.4; /* Mejor interlineado */
+    font-size: 1rem; /* Tamaño optimizado */
+    color: rgba(255,255,255,0.95); /* Mejor contraste */
+    margin: 0 0 1rem 0; /* Márgenes optimizados */
+    text-align: center;
+    max-width: 85%; /* Ancho optimizado */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5; /* Mejor interlineado */
+    flex-shrink: 0; /* Evitar compresión */
 }
 
 @media (max-width: 768px) {
     .course-detail-hero {
-        height: 300px; /* Reduce height for tablets */
+        height: 380px; /* Altura optimizada para tablets */
     }
     .course-detail-hero .hero-content {
-        padding: 3rem 1.5rem 1.5rem 1.5rem; /* Ajustar padding para tablets */
+        padding: 1.5rem; /* Padding optimizado */
+        min-height: 280px; /* Altura mínima optimizada */
+        gap: 0.8rem; /* Espacio reducido */
     }
     .course-detail-hero h1 {
-        font-size: 2.5rem; /* Reducir tamaño para tablets */
-        margin: 0.5rem 0 1rem 0; /* Ajustar márgenes */
+        font-size: 1.9rem; /* Tamaño optimizado para tablets */
+        margin: 0 0 0.3rem 0; /* Márgenes optimizados */
+        line-height: 1.3;
+        max-width: 98%; /* Ancho máximo optimizado */
     }
     .course-detail-hero p {
-        font-size: 1.1rem; /* Reducir tamaño para tablets */
-        margin-bottom: 2rem;
+        font-size: 0.95rem; /* Tamaño optimizado */
+        margin: 0 0 0.8rem 0; /* Márgenes optimizados */
+        max-width: 90%; /* Ancho optimizado */
+        line-height: 1.4;
+    }
+    .promotion-banner {
+        padding: 0.7rem 1.2rem; /* Padding optimizado */
+        margin: 0.3rem 0; /* Márgenes optimizados */
+        min-width: 180px; /* Ancho mínimo optimizado */
+    }
+    .discount {
+        font-size: 1rem; /* Tamaño optimizado */
+        margin-bottom: 0.2rem;
+    }
+    .promo-text {
+        font-size: 0.75rem; /* Tamaño optimizado */
+    }
+    .btn-primary {
+        padding: 0.9rem 2rem; /* Padding optimizado */
+        font-size: 1rem; /* Tamaño optimizado */
+        min-width: 180px; /* Ancho mínimo optimizado */
+        margin-top: 0.3rem;
     }
 }
 
 @media (max-width: 480px) {
     .course-detail-hero {
-        height: 280px; /* Further reduce height for mobile */
+        height: 350px; /* Altura optimizada para móviles */
     }
     .course-detail-hero .hero-content {
-        padding: 2.5rem 1rem 1rem 1rem; /* Ajustar padding para móviles */
-        min-height: 150px; /* Altura mínima ajustada */
+        padding: 1.2rem; /* Padding optimizado */
+        min-height: 260px; /* Altura mínima optimizada */
+        gap: 0.6rem; /* Espacio reducido */
     }
     .course-detail-hero h1 {
-        font-size: 2rem; /* Reducir tamaño para móviles */
-        margin: 0.5rem 0 1rem 0; /* Ajustar márgenes */
+        font-size: 1.6rem; /* Tamaño optimizado para móviles */
+        margin: 0 0 0.2rem 0; /* Márgenes optimizados */
+        line-height: 1.3;
+        max-width: 100%; /* Ancho completo */
+        font-weight: 700; /* Peso optimizado */
     }
     .course-detail-hero p {
-        font-size: 1rem; /* Reducir tamaño para móviles */
-        margin-bottom: 1.5rem;
+        font-size: 0.9rem; /* Tamaño optimizado */
+        margin: 0 0 0.6rem 0; /* Márgenes optimizados */
+        max-width: 95%; /* Ancho optimizado */
+        line-height: 1.4;
+    }
+    .promotion-banner {
+        padding: 0.6rem 1rem; /* Padding optimizado */
+        margin: 0.2rem 0; /* Márgenes optimizados */
+        min-width: 160px; /* Ancho mínimo optimizado */
+    }
+    .discount {
+        font-size: 0.9rem; /* Tamaño optimizado */
+        margin-bottom: 0.2rem;
+    }
+    .promo-text {
+        font-size: 0.7rem; /* Tamaño optimizado */
+    }
+    .btn-primary {
+        padding: 0.8rem 1.8rem; /* Padding optimizado */
+        font-size: 0.95rem; /* Tamaño optimizado */
+        min-width: 160px; /* Ancho mínimo optimizado */
+        margin-top: 0.2rem;
     }
 }
 
@@ -355,24 +412,36 @@
 .promotion-banner {
     background: linear-gradient(45deg, #ff6b6b, #feca57);
     color: white;
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1.5rem; /* Padding optimizado */
     border-radius: 50px;
-    margin: 1rem 0;
-    display: inline-block;
+    margin: 0.5rem 0; /* Márgenes equilibrados */
+    display: inline-flex; /* Mejor alineación */
+    flex-direction: column; /* Elementos en columna */
+    align-items: center; /* Centrar elementos */
+    justify-content: center; /* Centrar verticalmente */
     box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
     animation: pulse 2s infinite;
+    position: relative;
+    z-index: 3;
+    min-width: 200px; /* Ancho mínimo para consistencia */
+    text-align: center; /* Centrar texto */
+    flex-shrink: 0; /* Evitar compresión */
 }
 
 .discount {
-    font-size: 1.5rem;
+    font-size: 1.1rem; /* Tamaño optimizado */
     font-weight: bold;
     display: block;
+    margin-bottom: 0.3rem; /* Espacio optimizado */
+    line-height: 1.2; /* Mejor interlineado */
 }
 
 .promo-text {
-    font-size: 0.9rem;
+    font-size: 0.8rem; /* Tamaño optimizado */
     display: block;
-    margin-top: 0.5rem;
+    margin: 0; /* Sin márgenes extra */
+    line-height: 1.3; /* Mejor interlineado */
+    opacity: 0.95; /* Mejor legibilidad */
 }
 
 @keyframes pulse {
@@ -579,21 +648,6 @@
 
 .form-group.checkbox input {
     width: auto;
-}
-
-.btn-primary {
-    background: var(--ifap-primary);
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.btn-primary:hover {
-    background: var(--ifap-primary-600);
 }
 
 /* Responsive */
