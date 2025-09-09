@@ -518,7 +518,7 @@ body, html { font-family: var(--ifap-font-sans); color: var(--ifap-text); backgr
 }
 
 .logo-img {
-    font-size: 2.2rem; /* Tamaño del icono */
+    font-size: 2rem; /* Tamaño del icono */
     color: #fff; /* Color blanco */
     padding: 0.2rem; /* Pequeño padding */
     transition: transform 0.2s ease; /* Transición para un efecto al pasar el ratón */
@@ -602,6 +602,56 @@ body, html { font-family: var(--ifap-font-sans); color: var(--ifap-text); backgr
 }
 .nav-menu {
     display: flex;
+}
+
+.search-box {
+    width: 220px; /* Ancho más compacto para pantallas grandes */
+    flex-shrink: 0; /* Evitar que se encoja */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    color: #fff;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.95rem;
+    width: calc(100% - 40px);
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-box input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.search-box button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box button:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 /* Responsive header: show hamburger on small screens */
@@ -700,9 +750,9 @@ body, html { font-family: var(--ifap-font-sans); color: var(--ifap-text); backgr
     /* Responsive adjustments for menu items */
     .menu-navegacion {
         flex-direction: column;
-        gap: 0.8rem; /* Tighter gap for mobile */
+        gap: 1rem; /* Espacio más consistente en móviles */
         width: 100%;
-        align-items: flex-start; /* Align text to the left */
+        align-items: flex-start; /* Alinear texto a la izquierda */
     }
 
     .menu-navegacion > li {
@@ -710,26 +760,26 @@ body, html { font-family: var(--ifap-font-sans); color: var(--ifap-text); backgr
     }
 
     .menu-navegacion > li > a {
-        padding: 0.8rem 1rem; /* Adjust padding for mobile links */
+        padding: 0.8rem 1.2rem; /* Enlaces más fáciles de tocar */
         font-size: 1rem;
-        justify-content: flex-start; /* Align text to the left */
+        justify-content: flex-start; /* Alinear texto a la izquierda */
     }
 
     .submenu-desplegable {
-        position: static; /* Submenus stack below parent on mobile */
+        position: static; /* Los submenús se apilan debajo del padre en móvil */
         width: 100%;
-        min-width: unset; /* Remove min-width constraint */
-        box-shadow: none; /* Remove shadow */
-        border: none; /* Remove border */
-        background: rgba(255, 255, 255, 0.1); /* Lighter background for nested mobile submenus */
-        border-radius: var(--ifap-radius); /* Use theme variable */
-        padding: 0.5rem 1rem; /* Adjusted padding */
-        margin-top: 0.5rem; /* Space from parent */
-        animation: none; /* No animation for nested submenus */
+        min-width: unset; /* Eliminar restricción de ancho mínimo */
+        box-shadow: none; /* Eliminar sombra */
+        border: none; /* Eliminar borde */
+        background: rgba(255, 255, 255, 0.1); /* Fondo más claro para submenús anidados en móvil */
+        border-radius: var(--ifap-radius); /* Usar variable de tema */
+        padding: 1rem; /* Padding ajustado */
+        margin-top: 0.8rem; /* Espacio desde el padre */
+        animation: none; /* Sin animación para submenús anidados */
     }
 
     .submenu-desplegable ul li a {
-        padding: 0.6rem 0.8rem; /* Adjusted padding for submenu items */
+        padding: 0.6rem 0.8rem; /* Padding ajustado para elementos del submenú */
         font-size: 0.9rem;
     }
 
@@ -746,23 +796,6 @@ body, html { font-family: var(--ifap-font-sans); color: var(--ifap-text); backgr
         font-size: 1.2rem; /* Smaller title for mobile */
     }
 
-    /* Search box adjustments for mobile */
-    .search-box {
-        width: 100%;
-        margin-left: 0;
-        margin-top: 1rem;
-        padding: 6px 12px;
-    }
-
-    .search-box input {
-        font-size: 0.9rem;
-    }
-
-    .search-box button {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
 }
 
 /* Further adjustments for very small screens */
@@ -1026,7 +1059,7 @@ footer { text-align: center; padding: 1.6rem; color: var(--ifap-muted); backgrou
 .menu-navegacion {
     display: flex;
     align-items: center;
-    gap: 1.5rem; /* Adjusted gap for a more spacious look */
+    gap: 1rem; /* Ajustar gap para un look más compacto */
     list-style: none;
     margin: 0;
     padding: 0;
@@ -1040,17 +1073,17 @@ footer { text-align: center; padding: 1.6rem; color: var(--ifap-muted); backgrou
 
 .menu-navegacion > li > a {
     color: #fff;
-    font-size: 1.05rem; /* Slightly smaller for a cleaner look */
-    font-weight: 500;
+    font-size: 1rem; /* Ajustado para un look más limpio */
+    font-weight: 600; /* Más negrita para mejor legibilidad */
     text-decoration: none;
-    padding: 0.7rem 1rem; /* Adjusted padding */
+    padding: 0.8rem 1.2rem; /* Ajustado para más espacio */
     border-radius: 8px;
-    transition: all 0.3s ease; /* Smoother transitions */
+    transition: all 0.3s ease; /* Transiciones más suaves */
     display: flex;
     align-items: center;
     gap: 0.5rem;
     position: relative;
-    overflow: hidden; /* For the animated underline effect */
+    overflow: hidden; /* Para el efecto de subrayado animado */
 }
 
 /* Animated Underline Effect */
@@ -1072,16 +1105,17 @@ footer { text-align: center; padding: 1.6rem; color: var(--ifap-muted); backgrou
 }
 
 .menu-navegacion > li > a:hover {
-    background: rgba(255, 255, 255, 0.15); /* Slightly more prominent hover background */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.25)); /* Gradiente sutil para hover */
     color: #fff;
-    transform: translateY(-2px); /* Subtle lift effect */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Subtle shadow on hover */
+    transform: translateY(-2px); /* Efecto de elevación sutil */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* Sombra más pronunciada al pasar el ratón */
 }
 
 .menu-navegacion > li.active > a {
-    background: rgba(255, 255, 255, 0.2); /* More prominent active background */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3)); /* Gradiente más pronunciado para activo */
     color: #fff;
-    font-weight: 600; /* Bolder for active state */
+    font-weight: 700; /* Más negrita para el estado activo */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* Sombra más pronunciada para el estado activo */
 }
 
 .menu-navegacion > li > a i {
@@ -1100,21 +1134,21 @@ footer { text-align: center; padding: 1.6rem; color: var(--ifap-muted); backgrou
     position: absolute;
     top: 100%;
     left: 0;
-    background: var(--ifap-card); /* Use theme variable for background */
-    color: var(--ifap-text); /* Use theme variable for text color */
-    min-width: 240px; /* Slightly smaller min-width */
-    box-shadow: var(--ifap-elev-1); /* Use theme variable for shadow */
-    border-radius: var(--ifap-radius-lg); /* Use theme variable for border-radius */
-    padding: 1rem; /* Adjusted padding */
+    background: var(--ifap-card); /* Usar variable de tema para el fondo */
+    color: var(--ifap-text); /* Usar variable de tema para el color de texto */
+    min-width: 220px; /* Ancho mínimo ligeramente más pequeño */
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12); /* Sombra más moderna */
+    border-radius: 12px; /* Radio de borde ajustado */
+    padding: 0.8rem; /* Padding ajustado */
     z-index: 10;
-    border: 1px solid rgba(16,24,40,0.05); /* Lighter border */
+    border: 1px solid rgba(16,24,40,0.05); /* Borde más claro */
 
-    /* Animation properties for smooth appearance */
+    /* Propiedades de animación para una apariencia suave */
     opacity: 0;
     transform: translateY(10px);
     visibility: hidden;
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    pointer-events: none; /* Disable interaction when hidden */
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1); /* Transición más elástica y suave */
+    pointer-events: none; /* Deshabilitar interacción cuando está oculto */
 }
 
 /* Show submenu on hover/focus */
@@ -1132,7 +1166,7 @@ footer { text-align: center; padding: 1.6rem; color: var(--ifap-muted); backgrou
     padding: 0; /* Remove padding from ul, apply to li a */
     display: grid;
     grid-template-columns: 1fr; /* Single column for all submenus */
-    gap: 0.4rem; /* Tighter gap between submenu items */
+    gap: 0.3rem; /* Espacio más ajustado entre elementos del submenú */
 }
 
 .submenu-desplegable ul li {
@@ -1142,18 +1176,18 @@ footer { text-align: center; padding: 1.6rem; color: var(--ifap-muted); backgrou
 .submenu-desplegable ul li a {
     color: var(--ifap-text);
     text-decoration: none;
-    font-size: 0.95rem; /* Slightly smaller font size */
+    font-size: 0.9rem; /* Tamaño de fuente ligeramente más pequeño */
     font-weight: 500;
-    padding: 0.6rem 0.8rem; /* Adjusted padding */
-    border-radius: 6px; /* Slightly smaller border-radius */
-    display: block; /* Make the whole area clickable */
+    padding: 0.5rem 0.7rem; /* Padding ajustado */
+    border-radius: 8px; /* Radio de borde ligeramente más grande */
+    display: block; /* Hacer que toda el área sea clicable */
     transition: all 0.2s ease;
 }
 
 .submenu-desplegable ul li a:hover {
-    background: rgba(37,99,235,0.08); /* Subtle blue background on hover */
-    color: var(--ifap-primary-600); /* Darker blue text on hover */
-    transform: translateX(3px); /* Subtle slide effect */
+    background: rgba(37,99,235,0.1); /* Fondo azul sutil al pasar el ratón */
+    color: var(--ifap-primary); /* Texto azul más oscuro al pasar el ratón */
+    transform: translateX(2px); /* Efecto de deslizamiento sutil */
 }
 
 .submenu-desplegable ul li {
