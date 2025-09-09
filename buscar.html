@@ -80,10 +80,14 @@
 
     <main>
         <section class="section">
-            <h1>Resultados de Búsqueda</h1>
+            <h1><i class="fas fa-search"></i> Resultados de Búsqueda</h1>
+            <p class="search-intro">Encuentra cursos, recursos, información institucional y más contenido en nuestro sitio web.</p>
+
+            <!-- Espacio para filtros (se insertarán aquí por JavaScript) -->
+
             <div id="search-results-container">
                 <!-- Los resultados de la búsqueda se inyectarán aquí por JavaScript -->
-                <p id="no-results" style="display: none;">No se encontraron resultados para su búsqueda.</p>
+                <div id="no-results" style="display: none;"></div>
             </div>
         </section>
     </main>
@@ -94,5 +98,6 @@
         <p>Correo: contacto@ifap.edu.pe | Teléfono: +123 456 789</p>
     </footer>
     <script src="assets/js/search.js"></script>
+    <script src="assets/js/search-advanced.js"></script>
 </body>
 </html>
