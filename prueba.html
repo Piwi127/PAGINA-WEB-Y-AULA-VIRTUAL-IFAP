@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Prueba - IFAP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="menu-superior">
+        <div class="menu-barra">
+            <div class="logo-menu">
+                <i class="fas fa-archive logo-img"></i>
+                <span class="logo-titulo">IFAP</span>
+            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="nav-menu">
+                <ul class="menu-navegacion">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="submenu">
+                        <a href="cursos.html"><i class="fas fa-book"></i> Cursos <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul>
+                                <li><a href="carreras.html">Carreras Archivísticas</a></li>
+                                <li><a href="cursos.html">Cursos Especializados</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-folder-open"></i> Recursos <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul>
+                                <li><a href="biblioteca.html">Biblioteca Virtual</a></li>
+                                <li><a href="normas.html">Normas y Legislación</a></li>
+                                <li><a href="articulos.html">Artículos y Publicaciones</a></li>
+                                <li><a href="galeria.html">Galería</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-building"></i> Institución <span class="flecha">▼</span></a>
+                        <div class="submenu-desplegable">
+                            <ul>
+                                <li><a href="historia.html">Historia</a></li>
+                                <li><a href="equipo-docente.html">Equipo Docente</a></li>
+                                <li><a href="contacto.html">Contacto</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="prueba.html"><i class="fas fa-flask"></i> Botón de Prueba</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding: 4rem 2rem; text-align: center; min-height: 60vh; display: flex; align-items: center; justify-content: center;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h1 style="color: var(--ifap-primary); margin-bottom: 2rem; font-size: 3rem;">
+                <i class="fas fa-flask" style="margin-right: 1rem;"></i>
+                Página de Prueba
+            </h1>
+
+            <div style="background: white; padding: 3rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h2 style="color: var(--ifap-primary); margin-bottom: 1.5rem;">¡Hola! Esta es una página de prueba</h2>
+
+                <p style="font-size: 1.2rem; line-height: 1.6; color: var(--ifap-text); margin-bottom: 2rem;">
+                    Esta página fue creada para probar la funcionalidad del sitio web IFAP.
+                    Si puedes ver este texto, significa que la sincronización está funcionando correctamente.
+                </p>
+
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="index.html" style="background: var(--ifap-primary); color: white; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 500; transition: all 0.3s ease;">
+                        <i class="fas fa-home" style="margin-right: 0.5rem;"></i>
+                        Volver al Inicio
+                    </a>
+
+                    <a href="cursos.html" style="background: var(--ifap-accent); color: white; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 500; transition: all 0.3s ease;">
+                        <i class="fas fa-book" style="margin-right: 0.5rem;"></i>
+                        Ver Cursos
+                    </a>
+                </div>
+
+                <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, var(--ifap-primary-50), var(--ifap-accent-50)); border-radius: 10px;">
+                    <h3 style="color: var(--ifap-primary); margin-bottom: 1rem;">
+                        <i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>
+                        Estado de la Prueba
+                    </h3>
+                    <ul style="text-align: left; color: var(--ifap-text);">
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--ifap-accent); margin-right: 0.5rem;"></i> Página HTML creada correctamente</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--ifap-accent); margin-right: 0.5rem;"></i> Navegación funcionando</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--ifap-accent); margin-right: 0.5rem;"></i> Estilos aplicados</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--ifap-accent); margin-right: 0.5rem;"></i> Sincronización con servidor</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background: var(--ifap-primary); color: white; padding: 2rem 0; text-align: center; margin-top: auto;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <p>&copy; 2025 IFAP - Instituto de Formación Archivística del Perú. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
