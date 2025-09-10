@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IFAP - Archivística Básica: Fundamentos y Prácticas</title>
+    <meta name="description" content="Curso completo de Archivística Básica del IFAP. Aprende los fundamentos de la gestión documental, preservación y organización de archivos.">
+    <meta name="keywords" content="archivística, gestión documental, preservación, archivos, IFAP, curso online">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="assets/css/course-detail.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
         <header class="menu-superior">
@@ -76,176 +76,649 @@
         </div>
     </header>
 
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="cursos.html">Cursos</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Archivística Básica</li>
+            </ol>
+        </div>
+    </nav>
 
     <main>
+        <!-- Enhanced Hero Section -->
         <section class="course-detail-hero">
             <div class="course-image-placeholder">
-                <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-archivo-digital_114360-1012.jpg" alt="Archivística Básica">
+                <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-archivo-digital_114360-1012.jpg" alt="Archivística Básica - IFAP">
+                <div class="hero-overlay"></div>
             </div>
             <div class="hero-content">
+                <div class="course-badge">
+                    <span class="badge-level">BÁSICO</span>
+                    <span class="badge-popular">⭐ MÁS POPULAR</span>
+                </div>
                 <h1>Archivística Básica: Fundamentos y Prácticas</h1>
-                <p>Introducción completa a los principios fundamentales de la archivística, incluyendo clasificación, organización, descripción y preservación de documentos. Ideal para quienes inician en el campo.</p>
+                <p class="course-subtitle">Introducción completa a los principios fundamentales de la archivística moderna</p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>+150 estudiantes</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.8/5 valoración</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Certificación oficial</span>
+                    </div>
+                </div>
                 <div class="promotion-banner">
                     <span class="discount">¡50% OFF!</span>
                     <span class="promo-text">Inscríbete antes del 15 de octubre y ahorra S/ 250</span>
+                    <span class="countdown">⏰ Quedan 5 días</span>
                 </div>
-                <button class="btn-primary" onclick="document.getElementById('enrollment-form').scrollIntoView();">Inscribirse ahora</button>
-            </div>
-        </section>
-
-        <section class="section course-info-section">
-            <h2>Información General del Curso</h2>
-            <div class="info-grid">
-                <div class="info-item">
-                    <h3><i class="fas fa-clock"></i> Duración</h3>
-                    <p>40 horas (8 semanas)</p>
-                </div>
-                <div class="info-item">
-                    <h3><i class="fas fa-laptop-code"></i> Modalidad</h3>
-                    <p>100% Online - Clases en vivo</p>
-                </div>
-                <div class="info-item">
-                    <h3><i class="fas fa-calendar-alt"></i> Horarios</h3>
-                    <p>Mar y Jue: 7-9 PM | Sáb: 10-12 PM</p>
-                </div>
-                <div class="info-item">
-                    <h3><i class="fas fa-calendar-check"></i> Próximo Inicio</h3>
-                    <p>20 de octubre de 2025</p>
+                <div class="hero-actions">
+                    <button class="btn-primary btn-large" onclick="document.getElementById('enrollment-form').scrollIntoView({behavior: 'smooth'});">
+                        <i class="fas fa-graduation-cap"></i> Inscribirse ahora
+                    </button>
+                    <button class="btn-secondary" onclick="toggleVideoModal()">
+                        <i class="fas fa-play"></i> Ver video introductorio
+                    </button>
                 </div>
             </div>
         </section>
 
+        <!-- Quick Info Bar -->
+        <section class="quick-info-bar">
+            <div class="container">
+                <div class="info-bar-grid">
+                    <div class="info-bar-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>40 horas</strong>
+                            <span>8 semanas</span>
+                        </div>
+                    </div>
+                    <div class="info-bar-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <div>
+                            <strong>100% Online</strong>
+                            <span>Clases en vivo</span>
+                        </div>
+                    </div>
+                    <div class="info-bar-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div>
+                            <strong>Próximo inicio</strong>
+                            <span>20 Oct 2025</span>
+                        </div>
+                    </div>
+                    <div class="info-bar-item">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div>
+                            <strong>S/ 500</strong>
+                            <span>S/ 250 con descuento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Course Overview Section -->
+        <section class="section course-overview">
+            <div class="container">
+                <div class="overview-grid">
+                    <div class="overview-content">
+                        <h2>¿Qué aprenderás en este curso?</h2>
+                        <p class="overview-description">
+                            Este curso te proporcionará los conocimientos fundamentales para comprender y aplicar los principios de la archivística moderna. Desde los conceptos básicos hasta las prácticas más avanzadas, aprenderás a gestionar, preservar y organizar documentos de manera profesional.
+                        </p>
+                        <div class="learning-objectives">
+                            <h3>Objetivos de aprendizaje:</h3>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Comprender los principios fundamentales de la archivística</li>
+                                <li><i class="fas fa-check-circle"></i> Aprender técnicas de clasificación y organización documental</li>
+                                <li><i class="fas fa-check-circle"></i> Conocer normas internacionales de descripción archivística</li>
+                                <li><i class="fas fa-check-circle"></i> Desarrollar habilidades en preservación documental</li>
+                                <li><i class="fas fa-check-circle"></i> Entender la legislación archivística peruana</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overview-stats">
+                        <div class="stats-card">
+                            <h4>Habilidades que desarrollarás</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">Gestión Documental</span>
+                                <span class="skill-tag">Preservación</span>
+                                <span class="skill-tag">Organización</span>
+                                <span class="skill-tag">Normas ISAD(G)</span>
+                                <span class="skill-tag">Digitalización</span>
+                            </div>
+                        </div>
+                        <div class="stats-card">
+                            <h4>Requisitos previos</h4>
+                            <ul class="requirements-list">
+                                <li>Educación secundaria completa</li>
+                                <li>Conocimientos básicos de computación</li>
+                                <li>Interés en gestión documental</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Curriculum Section -->
         <section class="section course-curriculum-section">
-            <h2>Malla Curricular - Archivística Básica</h2>
-            <div class="curriculum-container">
-                <div class="curriculum-module">
-                    <h3><i class="fas fa-book-open"></i> Módulo 1: Introducción a la Archivística</h3>
-                    <p>Conceptos básicos, historia y tipos de archivos</p>
+            <div class="container">
+                <h2>Malla Curricular Detallada</h2>
+                <p class="section-description">Un programa completo dividido en 8 módulos progresivos</p>
+
+                <div class="curriculum-container">
+                    <div class="curriculum-module" data-module="1">
+                        <div class="module-header">
+                            <div class="module-number">01</div>
+                            <div class="module-content">
+                                <h3><i class="fas fa-book-open"></i> Introducción a la Archivística</h3>
+                                <span class="module-duration">4 horas</span>
+                            </div>
+                        </div>
+                        <p>Conceptos básicos, historia de la archivística y tipos de archivos. Evolución histórica y importancia social de los archivos.</p>
+                        <div class="module-topics">
+                            <span>Historia de la archivística</span>
+                            <span>Tipos de archivos</span>
+                            <span>Importancia social</span>
+                        </div>
+                    </div>
+
+                    <div class="curriculum-module" data-module="2">
+                        <div class="module-header">
+                            <div class="module-number">02</div>
+                            <div class="module-content">
+                                <h3><i class="fas fa-recycle"></i> Ciclo Vital de los Documentos</h3>
+                                <span class="module-duration">5 horas</span>
+                            </div>
+                        </div>
+                        <p>Fases documentales: creación, uso, conservación y disposición final. Gestión integral del ciclo de vida documental.</p>
+                        <div class="module-topics">
+                            <span>Ciclo documental</span>
+                            <span>Gestión integral</span>
+                            <span>Disposición final</span>
+                        </div>
+                    </div>
+
+                    <div class="curriculum-module" data-module="3">
+                        <div class="module-header">
+                            <div class="module-number">03</div>
+                            <div class="module-content">
+                                <h3><i class="fas fa-sort"></i> Clasificación y Ordenación</h3>
+                                <span class="module-duration">6 horas</span>
+                            </div>
+                        </div>
+                        <p>Principios de organización física y lógica. Sistemas de clasificación, ordenación y recuperación de información.</p>
+                        <div class="module-topics">
+                            <span>Sistemas de clasificación</span>
+                            <span>Organización física</span>
+                            <span>Recuperación de información</span>
+                        </div>
+                    </div>
+
+                    <div class="curriculum-module" data-module="4">
+                        <div class="module-header">
+                            <div class="module-number">04</div>
+                            <div class="module-content">
+                                <h3><i class="fas fa-file-alt"></i> Descripción Archivística</h3>
+                                <span class="module-duration">5 horas</span>
+                            </div>
+                        </div>
+                        <p>Normas ISAD(G) para descripción archivística. Creación de inventarios, catálogos y guías de archivo.</p>
+                        <div class="module-topics">
+                            <span>Normas ISAD(G)</span>
+                            <span>Inventarios</span>
+                            <span>Catálogos</span>
+                        </div>
+                    </div>
+
+                    <div class="curriculum-module" data-module="5">
+                        <div class="module-header">
+                            <div class="module-number">05</div>
+                            <div class="module-content">
+                                <h3><i class="fas fa-shield-alt"></i> Preservación Documental</h3>
+                                <span class="module-duration">6 horas</span>
+                            </div>
+                        </div>
+                        <p>Agentes de deterioro y medidas preventivas. Técnicas de conservación y restauración de documentos.</p>
+                        <div class="module-topics">
+                            <span>Agentes de deterioro</span>
+                            <span>Conservación preventiva</span>
+                            <span>Restauración</span>
+                        </div>
+                    </div>
+
+                    <div class="curriculum-module" data-module="6">
+                        <div class="module-header">
+                            <div class="module-number">06</div>
+                            <div class="module-content">
+                                <h3><i class="fas fa-digital-tachograph"></i> Digitalización y Archivos Electrónicos</h3>
+                                <span class="module-duration">4 horas</span>
+                            </div>
+                        </div>
+                        <p>Proceso de digitalización, gestión de archivos electrónicos y preservación digital a largo plazo.</p>
+                        <div class="module-topics">
+                            <span>Digitalización</span>
+                            <span>Archivos electrónicos</span>
+                            <span>Preservación digital</span>
+                        </div>
+                    </div>
+
+                    <div class="curriculum-module" data-module="7">
+                        <div class="module-header">
+                            <div class="module-number">07</div>
+                            <div class="module-content">
+                                <h3><i class="fas fa-gavel"></i> Legislación Archivística Peruana</h3>
+                                <span class="module-duration">5 horas</span>
+                            </div>
+                        </div>
+                        <p>Ley del Sistema Nacional de Archivos, normas técnicas y marco legal para la gestión documental en Perú.</p>
+                        <div class="module-topics">
+                            <span>Ley Nacional de Archivos</span>
+                            <span>Normas técnicas</span>
+                            <span>Marco legal</span>
+                        </div>
+                    </div>
+
+                    <div class="curriculum-module" data-module="8">
+                        <div class="module-header">
+                            <div class="module-number">08</div>
+                            <div class="module-content">
+                                <h3><i class="fas fa-balance-scale"></i> Ética Profesional</h3>
+                                <span class="module-duration">3 horas</span>
+                            </div>
+                        </div>
+                        <p>Código de ética del archivista, responsabilidades profesionales y mejores prácticas en la gestión documental.</p>
+                        <div class="module-topics">
+                            <span>Código de ética</span>
+                            <span>Responsabilidades</span>
+                            <span>Mejores prácticas</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="curriculum-module">
-                    <h3><i class="fas fa-recycle"></i> Módulo 2: Ciclo Vital de los Documentos</h3>
-                    <p>Fases documentales: creación, uso, conservación y disposición</p>
-                </div>
-                <div class="curriculum-module">
-                    <h3><i class="fas fa-sort"></i> Módulo 3: Clasificación y Ordenación</h3>
-                    <p>Principios de organización física y lógica de documentos</p>
-                </div>
-                <div class="curriculum-module">
-                    <h3><i class="fas fa-file-alt"></i> Módulo 4: Descripción Archivística</h3>
-                    <p>Normas ISAD(G), inventarios y catálogos</p>
-                </div>
-                <div class="curriculum-module">
-                    <h3><i class="fas fa-shield-alt"></i> Módulo 5: Preservación Documental</h3>
-                    <p>Agentes de deterioro y medidas preventivas</p>
-                </div>
-                <div class="curriculum-module">
-                    <h3><i class="fas fa-digital-tachograph"></i> Módulo 6: Digitalización y Archivos Electrónicos</h3>
-                    <p>Proceso de digitalización y gestión digital</p>
-                </div>
-                <div class="curriculum-module">
-                    <h3><i class="fas fa-gavel"></i> Módulo 7: Legislación Archivística Peruana</h3>
-                    <p>Ley del Sistema Nacional de Archivos y normas técnicas</p>
-                </div>
-                <div class="curriculum-module">
-                    <h3><i class="fas fa-balance-scale"></i> Módulo 8: Ética Profesional</h3>
-                    <p>Código de ética y responsabilidades del archivista</p>
+
+                <div class="curriculum-summary">
+                    <div class="summary-item">
+                        <i class="fas fa-clock"></i>
+                        <span><strong>40 horas</strong> de contenido teórico-práctico</span>
+                    </div>
+                    <div class="summary-item">
+                        <i class="fas fa-book"></i>
+                        <span><strong>8 módulos</strong> progresivos</span>
+                    </div>
+                    <div class="summary-item">
+                        <i class="fas fa-tasks"></i>
+                        <span><strong>25+ actividades</strong> prácticas</span>
+                    </div>
+                    <div class="summary-item">
+                        <i class="fas fa-users"></i>
+                        <span><strong>Clases en vivo</strong> semanales</span>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Instructor Section -->
         <section class="section course-professor-section">
-            <h2>Docente Principal</h2>
-            <div class="professor-card">
-                <img src="https://via.placeholder.com/150x150/FF00FF/FFFFFF?text=Dra.Ana+Lopez" alt="Dra. Ana López">
-                <div class="professor-info">
-                    <h3>Dra. Ana López</h3>
-                    <p class="professor-title">Doctora en Historia y Archivística</p>
-                    <p class="professor-bio">Especialista con 15+ años en gestión de archivos históricos. Doctora por la UNMSM, consultora para entidades públicas y autora de publicaciones sobre preservación documental.</p>
-                    <div class="professor-credentials">
-                        <span><i class="fas fa-graduation-cap"></i> PhD UNMSM</span>
-                        <span><i class="fas fa-certificate"></i> Certificada</span>
-                        <span><i class="fas fa-briefcase"></i> 15+ años</span>
+            <div class="container">
+                <h2>Conoce a tu docente</h2>
+                <div class="professor-card">
+                    <div class="professor-image">
+                        <img src="https://via.placeholder.com/200x200/2563eb/ffffff?text=Dra.+Ana+López" alt="Dra. Ana López">
+                        <div class="professor-badge">
+                            <i class="fas fa-star"></i>
+                            <span>4.9/5</span>
+                        </div>
+                    </div>
+                    <div class="professor-info">
+                        <h3>Dra. Ana López García</h3>
+                        <p class="professor-title">Doctora en Historia y Archivística</p>
+                        <p class="professor-bio">
+                            Especialista con más de 15 años en gestión de archivos históricos y contemporáneos.
+                            Doctora por la Universidad Nacional Mayor de San Marcos (UNMSM), consultora para
+                            entidades públicas y privadas, y autora de múltiples publicaciones sobre preservación
+                            documental y gestión de archivos.
+                        </p>
+                        <div class="professor-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">15+</span>
+                                <span class="stat-label">Años de experiencia</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Estudiantes formados</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">25+</span>
+                                <span class="stat-label">Publicaciones</span>
+                            </div>
+                        </div>
+                        <div class="professor-credentials">
+                            <span class="credential-tag"><i class="fas fa-graduation-cap"></i> PhD UNMSM</span>
+                            <span class="credential-tag"><i class="fas fa-certificate"></i> Certificada ICA</span>
+                            <span class="credential-tag"><i class="fas fa-briefcase"></i> Consultora</span>
+                            <span class="credential-tag"><i class="fas fa-award"></i> Premio Nacional</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Testimonials Section -->
+        <section class="section testimonials-section">
+            <div class="container">
+                <h2>¿Qué dicen nuestros estudiantes?</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Excelente curso para quienes inician en archivística. La Dra. López explica
+                            los conceptos de manera clara y práctica. Las clases en vivo son muy
+                            enriquecedoras."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://via.placeholder.com/50x50/10b981/ffffff?text=ML" alt="María López">
+                            <div>
+                                <h4>María López</h4>
+                                <span>Archivista Municipal</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "El curso superó mis expectativas. Aprendí no solo teoría sino también
+                            herramientas prácticas para mi trabajo diario. Altamente recomendado."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://via.placeholder.com/50x50/f59e0b/ffffff?text=JR" alt="Juan Rodríguez">
+                            <div>
+                                <h4>Juan Rodríguez</h4>
+                                <span>Gestor Documental</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Como profesional que quería actualizarse, este curso fue perfecto.
+                            Combina teoría actualizada con práctica real. La certificación tiene
+                            mucho valor."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://via.placeholder.com/50x50/ef4444/ffffff?text=CS" alt="Carmen Sánchez">
+                            <div>
+                                <h4>Carmen Sánchez</h4>
+                                <span>Historiadora</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Support Section -->
         <section class="section course-support-section">
-            <h2>Recursos y Apoyo</h2>
-            <div class="support-grid">
-                <div class="support-item">
-                    <i class="fas fa-question-circle"></i>
-                    <h4>Preguntas y Respuestas</h4>
-                    <p>Sesiones Q&A cada viernes</p>
-                </div>
-                <div class="support-item">
-                    <i class="fas fa-book"></i>
-                    <h4>Material Complementario</h4>
-                    <p>Bibliografía y recursos en línea</p>
-                </div>
-                <div class="support-item">
-                    <i class="fas fa-users"></i>
-                    <h4>Foro de Discusión</h4>
-                    <p>Interacción con compañeros</p>
-                </div>
-                <div class="support-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h4>Tutorías Individuales</h4>
-                    <p>Sesiones personalizadas</p>
+            <div class="container">
+                <h2>Recursos y Apoyo Académico</h2>
+                <div class="support-grid">
+                    <div class="support-item">
+                        <div class="support-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h4>Sesiones Q&A</h4>
+                        <p>Sesiones de preguntas y respuestas cada viernes con la docente principal</p>
+                    </div>
+                    <div class="support-item">
+                        <div class="support-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h4>Biblioteca Digital</h4>
+                        <p>Acceso completo a bibliografía especializada y recursos complementarios</p>
+                    </div>
+                    <div class="support-item">
+                        <div class="support-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Foro de Discusión</h4>
+                        <p>Espacio para interactuar con compañeros y compartir experiencias</p>
+                    </div>
+                    <div class="support-item">
+                        <div class="support-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Tutorías Individuales</h4>
+                        <p>Sesiones personalizadas de refuerzo académico</p>
+                    </div>
+                    <div class="support-item">
+                        <div class="support-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h4>Grabaciones Disponibles</h4>
+                        <p>Todas las clases quedan grabadas para revisión posterior</p>
+                    </div>
+                    <div class="support-item">
+                        <div class="support-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h4>Certificación Oficial</h4>
+                        <p>Diploma avalado por el IFAP y registrado en SUNEDU</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section enrollment-section" id="enrollment-form">
-            <h2>Inscríbete en el Curso</h2>
-            <div class="enrollment-container">
-                <div class="pricing-info">
-                    <div class="price-card">
-                        <h4>Precio Regular</h4>
-                        <span class="price">S/ 500</span>
+        <!-- FAQ Section -->
+        <section class="section faq-section">
+            <div class="container">
+                <h2>Preguntas Frecuentes</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Necesito experiencia previa en archivística?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No, este curso está diseñado para principiantes. Solo necesitas educación secundaria completa y conocimientos básicos de computación.</p>
+                        </div>
                     </div>
-                    <div class="price-card featured">
-                        <h4>Precio con Descuento</h4>
-                        <span class="price">S/ 250</span>
-                        <span class="discount-badge">50% OFF</span>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Las clases son obligatorias?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, las clases en vivo son obligatorias. Sin embargo, todas quedan grabadas para que puedas revisarlas si no puedes asistir.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Cuánto tiempo tengo para completar el curso?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>El curso tiene una duración de 8 semanas, pero tienes hasta 6 meses adicionales para completar todas las actividades y evaluaciones.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿La certificación tiene validez oficial?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, el diploma está avalado por el IFAP y registrado en SUNEDU, con validez oficial en Perú y reconocimiento internacional.</p>
+                        </div>
                     </div>
                 </div>
-                <form class="enrollment-form" action="#" method="post">
-                    <div class="form-group">
-                        <label for="name">Nombre Completo *</label>
-                        <input type="text" id="name" name="name" required>
+            </div>
+        </section>
+
+        <!-- Enhanced Enrollment Section -->
+        <section class="section enrollment-section" id="enrollment-form">
+            <div class="container">
+                <div class="enrollment-wrapper">
+                    <div class="enrollment-content">
+                        <h2>¡Inscríbete ahora y comienza tu formación!</h2>
+                        <p class="enrollment-description">
+                            Únete a más de 150 profesionales que ya han transformado su carrera con nuestros cursos.
+                            Aprovecha la promoción especial y comienza hoy mismo.
+                        </p>
+
+                        <div class="enrollment-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Acceso inmediato al aula virtual</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Material didáctico completo incluido</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Soporte académico personalizado</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Certificación oficial reconocida</span>
+                            </div>
+                        </div>
+
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <span class="original-price">S/ 500</span>
+                                <span class="discounted-price">S/ 250</span>
+                                <span class="discount-badge">50% OFF</span>
+                            </div>
+                            <p class="pricing-note">Precio especial por tiempo limitado</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Correo Electrónico *</label>
-                        <input type="email" id="email" name="email" required>
+
+                    <div class="enrollment-form-container">
+                        <form class="enrollment-form" id="course-enrollment-form">
+                            <h3>Formulario de Inscripción</h3>
+
+                            <div class="form-group">
+                                <label for="full-name">Nombre completo *</label>
+                                <input type="text" id="full-name" name="fullName" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Correo electrónico *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Teléfono *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="document-type">Tipo de documento</label>
+                                <select id="document-type" name="documentType">
+                                    <option value="dni">DNI</option>
+                                    <option value="ce">Carnet de Extranjería</option>
+                                    <option value="passport">Pasaporte</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="document-number">Número de documento *</label>
+                                <input type="text" id="document-number" name="documentNumber" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="education-level">Nivel de educación</label>
+                                <select id="education-level" name="educationLevel">
+                                    <option value="secondary">Secundaria completa</option>
+                                    <option value="technical">Técnico</option>
+                                    <option value="university">Universitario</option>
+                                    <option value="postgraduate">Postgrado</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="work-experience">Experiencia laboral</label>
+                                <select id="work-experience" name="workExperience">
+                                    <option value="none">Sin experiencia</option>
+                                    <option value="1-2">1-2 años</option>
+                                    <option value="3-5">3-5 años</option>
+                                    <option value="5+">Más de 5 años</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="terms" required>
+                                    <span class="checkmark"></span>
+                                    Acepto los <a href="#" target="_blank">términos y condiciones</a> y la <a href="#" target="_blank">política de privacidad</a>
+                                </label>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Deseo recibir información sobre nuevos cursos y promociones
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn-primary btn-large btn-full">
+                                <i class="fas fa-graduation-cap"></i> Inscribirme ahora
+                            </button>
+
+                            <p class="form-note">
+                                <i class="fas fa-info-circle"></i>
+                                Al inscribirte, recibirás un correo de confirmación con las instrucciones de acceso al aula virtual.
+                            </p>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Teléfono</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="experience">Experiencia en Archivística</label>
-                        <select id="experience" name="experience">
-                            <option value="">Seleccionar</option>
-                            <option value="none">Ninguna</option>
-                            <option value="basic">Básica</option>
-                            <option value="intermediate">Intermedia</option>
-                            <option value="advanced">Avanzada</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="motivation">¿Por qué te interesa este curso?</label>
-                        <textarea id="motivation" name="motivation" rows="4"></textarea>
-                    </div>
-                    <div class="form-group checkbox">
-                        <input type="checkbox" id="terms" name="terms" required>
-                        <label for="terms">Acepto los términos y condiciones *</label>
-                    </div>
-                    <button type="submit" class="btn-primary">Inscribirme Ahora</button>
-                </form>
+                </div>
             </div>
         </section>
     </main>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeVideoModal()">&times;</span>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 IFAP - Instituto de Formación Archivística del Perú. Todos los derechos reservados.</p>
@@ -254,12 +727,107 @@
     </footer>
 
     <script>
-        // Script para manejar el envío del formulario
-        document.querySelector('.enrollment-form').addEventListener('submit', function(e) {
+        // FAQ Toggle Functionality
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = element.querySelector('i');
+
+            // Close all other FAQs
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                if (ans !== answer) {
+                    ans.style.display = 'none';
+                    ans.parentElement.querySelector('i').className = 'fas fa-chevron-down';
+                }
+            });
+
+            // Toggle current FAQ
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                icon.className = 'fas fa-chevron-down';
+            } else {
+                answer.style.display = 'block';
+                icon.className = 'fas fa-chevron-up';
+            }
+        }
+
+        // Video Modal Functionality
+        function toggleVideoModal() {
+            const modal = document.getElementById('video-modal');
+            modal.style.display = 'block';
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('video-modal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Form validation and submission
+        document.getElementById('course-enrollment-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('¡Gracias por tu inscripción! Te contactaremos pronto con más detalles.');
-            // Aquí podrías enviar los datos a un servidor
+
+            // Basic validation
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('error');
+                    isValid = false;
+                } else {
+                    field.classList.remove('error');
+                }
+            });
+
+            if (isValid) {
+                // Show success message
+                alert('¡Inscripción enviada exitosamente! Recibirás un correo de confirmación en las próximas horas.');
+                this.reset();
+            } else {
+                alert('Por favor, completa todos los campos obligatorios.');
+            }
         });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add error styling for form validation
+        const style = document.createElement('style');
+        style.textContent = `
+            .form-group input.error,
+            .form-group select.error,
+            .form-group textarea.error {
+                border-color: #ef4444;
+                box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+            }
+
+            .form-group input.error:focus,
+            .form-group select.error:focus,
+            .form-group textarea.error:focus {
+                border-color: #ef4444;
+                box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
