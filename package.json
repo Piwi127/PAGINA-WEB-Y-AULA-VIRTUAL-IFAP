@@ -1,0 +1,15 @@
+{
+  "name": "pagina-web-ifap",
+  "version": "1.0.0",
+  "description": "Página web y aula virtual del IFAP",
+  "type": "module",
+  "scripts": {
+  },
+  "keywords": [
+    "ifap",
+    "educacion",
+    "aula-virtual"
+  ],
+  "author": "IFAP",
+  "license": "MIT"
+}
