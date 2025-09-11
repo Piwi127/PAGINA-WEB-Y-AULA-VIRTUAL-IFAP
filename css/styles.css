@@ -274,25 +274,30 @@
     margin-bottom: 1.2em;
 }
 :root {
+    /* Colores principales */
     --ifap-primary: #2563eb;
     --ifap-primary-600: #1d4ed8;
     --ifap-accent: #3b82f6;
     --ifap-bg: #f8fafc;
     --ifap-card: #ffffff;
     --ifap-muted: #64748b;
-    --ifap-radius: 12px;
-    --max-width: 1200px;
-}
-
-/* UI enhancements */
-:root {
-    --ifap-font-sans: 'Roboto', system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Arial;
     --ifap-text: #0f172a;
     --ifap-muted-2: #6b7280;
     --ifap-surface: #ffffff;
+    
+    /* Tipografía */
+    --ifap-font-sans: 'Roboto', system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Arial;
+    
+    /* Espaciado y formas */
+    --ifap-radius: 12px;
+    --ifap-radius-lg: 16px;
+    --max-width: 1200px;
+    
+    /* Sombras y elevaciones */
     --ifap-elev-1: 0 4px 20px rgba(16,24,40,0.06);
     --ifap-elev-2: 0 10px 40px rgba(16,24,40,0.08);
-    --ifap-radius-lg: 16px;
+    
+    /* Transiciones */
     --ifap-transition-fast: 180ms cubic-bezier(.4,0,.2,1);
 }
 
@@ -413,8 +418,6 @@ a:focus, button:focus, .sidebar a:focus { outline: 3px solid rgba(59,130,246,0.1
 
 /* Small improvements for readability */
 body, html { font-family: var(--ifap-font-sans); color: var(--ifap-text); background: var(--ifap-bg); }
-
-
 /* Sidebar */
 .aula-main {
     display: flex;

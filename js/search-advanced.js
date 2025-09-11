@@ -162,7 +162,7 @@ function setupVoiceSearch() {
         };
 
         recognition.onerror = (event) => {
-            console.error('Error en reconocimiento de voz:', event.error);
+            // Error silencioso en reconocimiento de voz
             voiceButton.innerHTML = '<i class="fas fa-microphone"></i>';
             voiceButton.classList.remove('listening');
         };

@@ -42,7 +42,120 @@ Este proyecto es una **plataforma educativa completa** desarrollada para el **In
 ## 📁 Estructura del Proyecto
 
 ```
+# 🏛️ Instituto de Formación Archivística del Perú (IFAP)
+
+Plataforma educativa moderna para formación en archivística y gestión documental.
+
+## 📁 Estructura del Proyecto
+
+```
 PAGINA-WEB-Y-AULA-VIRTUAL-IFAP/
+├── html/                          # Archivos HTML organizados
+│   ├── index.html                # Página principal
+│   ├── cursos.html               # Catálogo de cursos
+│   ├── aula-virtual.html         # Aula virtual
+│   ├── contacto.html             # Formulario de contacto
+│   ├── iniciar-sesion.html       # Login
+│   └── inscribirse.html          # Registro
+├── assets/                       # Recursos estáticos organizados
+│   ├── css/                      # Hojas de estilo
+│   │   ├── styles.css           # Estilos principales
+│   │   ├── certificates.css     # Estilos de certificados
+│   │   ├── course-detail.css    # Detalles de cursos
+│   │   ├── gallery.css          # Galería
+│   │   └── search.css           # Búsqueda
+│   ├── js/                      # JavaScript
+│   │   ├── carousel.js          # Carrusel de imágenes
+│   │   ├── certificates.js      # Sistema de certificados
+│   │   ├── formValidation.js    # Validación de formularios
+│   │   ├── gallery.js           # Galería interactiva
+│   │   ├── search.js            # Búsqueda básica
+│   │   └── search-advanced.js   # Búsqueda avanzada
+│   └── images/                  # Imágenes y recursos visuales
+│       ├── placeholder.svg      # Placeholder genérico
+│       ├── imagen2.jpg          # Imagen del hero
+│       ├── imagen3.webp         # Imagen adicional
+│       └── library-facebook-cover.jpg
+├── dist/                        # Build de producción (Vite)
+├── node_modules/                # Dependencias de Node.js
+├── index.html                   # Redirección a html/index.html
+├── package.json                 # Configuración de Node.js
+├── vite.config.js              # Configuración de Vite
+├── server.py                    # Servidor Python de desarrollo
+├── manifest.json               # PWA
+└── sw.js                       # Service Worker
+```
+
+## 🚀 Inicio Rápido
+
+### Opción 1: Servidor Python (Recomendado para desarrollo)
+```bash
+cd /home/jorge/Desktop/PAGINA-WEB-Y-AULA-VIRTUAL-IFAP
+python3 server.py 8126
+```
+Accede a: http://localhost:8126
+
+### Opción 2: Vite (Desarrollo moderno con hot reload)
+```bash
+cd /home/jorge/Desktop/PAGINA-WEB-Y-AULA-VIRTUAL-IFAP
+npm install
+npm run dev
+```
+Accede a: http://localhost:8127
+
+## 🎯 Características
+
+- ✅ **Estructura organizada** por tipo de archivo
+- ✅ **Optimización automática** con Vite
+- ✅ **Hot reload** en desarrollo
+- ✅ **PWA** lista para instalación
+- ✅ **Responsive design** para móviles y desktop
+- ✅ **SEO optimizado** con meta tags apropiados
+
+## 📱 Páginas Principales
+
+- **/** - Página principal con información institucional
+- **/html/cursos.html** - Catálogo completo de cursos
+- **/html/aula-virtual.html** - Plataforma de aprendizaje
+- **/html/contacto.html** - Formulario de contacto
+- **/html/iniciar-sesion.html** - Autenticación de usuarios
+- **/html/inscribirse.html** - Registro de nuevos estudiantes
+
+## 🛠️ Tecnologías Utilizadas
+
+- **HTML5** - Estructura semántica
+- **CSS3** - Estilos modernos con variables CSS
+- **JavaScript ES6+** - Interactividad
+- **Vite** - Build tool y dev server
+- **Python** - Servidor de desarrollo alternativo
+
+## 📊 Rendimiento Optimizado
+
+- ✅ Archivos organizados por tipo
+- ✅ CSS y JS minificados en producción
+- ✅ Imágenes optimizadas
+- ✅ Carga diferida (lazy loading)
+- ✅ Service Worker para cache offline
+
+## 🔧 Scripts Disponibles
+
+```bash
+npm run dev      # Inicia servidor de desarrollo con Vite
+npm run build    # Genera build de producción
+npm run preview  # Vista previa del build
+```
+
+## 📈 Estado del Proyecto
+
+- ✅ Estructura completamente organizada
+- ✅ Servidores funcionando correctamente
+- ✅ Rendimiento optimizado
+- ✅ PWA funcional
+- 🔄 Backend en desarrollo (FastAPI + MongoDB)
+
+---
+
+**Instituto de Formación Archivística del Perú** © 2025
 ├── 📄 index.html                    # Página principal
 ├── 📄 styles.css                    # Estilos globales (4376 líneas)
 ├── 📄 clean_styles.py               # Script Python para limpieza de estilos

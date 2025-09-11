@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { url: 'index.html', title: 'Inicio', category: 'principal', tags: ['inicio', 'home', 'principal'] },
         { url: 'cursos.html', title: 'Cursos', category: 'cursos', tags: ['cursos', 'educación', 'formación'] },
         { url: 'carreras.html', title: 'Carreras Archivísticas', category: 'cursos', tags: ['carreras', 'archivística', 'profesional'] },
-        { url: 'talleres.html', title: 'Talleres y Seminarios', category: 'cursos', tags: ['talleres', 'seminarios', 'capacitación'] },
 
         // Recursos y biblioteca
         { url: 'biblioteca.html', title: 'Biblioteca Virtual', category: 'recursos', tags: ['biblioteca', 'libros', 'documentos'] },
@@ -27,9 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { url: 'curso-archivistica-basica.html', title: 'Curso Archivística Básica', category: 'cursos', tags: ['archivística', 'básico', 'introducción'] },
         { url: 'curso-conservacion-preventiva.html', title: 'Curso Conservación Preventiva', category: 'cursos', tags: ['conservación', 'preventiva', 'preservación'] },
         { url: 'curso-gestion-documental-sector-publico.html', title: 'Curso Gestión Documental Sector Público', category: 'cursos', tags: ['gestión', 'documental', 'público'] },
-        { url: 'diplomado-archivistica-digital.html', title: 'Diplomado Archivística Digital', category: 'cursos', tags: ['diplomado', 'digital', 'avanzado'] },
-        { url: 'licenciatura-archivistica.html', title: 'Licenciatura en Archivística', category: 'cursos', tags: ['licenciatura', 'universitario', 'grado'] },
-        { url: 'maestria-gestion-documental.html', title: 'Maestría Gestión Documental', category: 'cursos', tags: ['maestría', 'posgrado', 'especialización'] },
 
         // Otras páginas
         { url: 'iniciar-sesion.html', title: 'Iniciar Sesión', category: 'acceso', tags: ['login', 'sesión', 'acceder'] },
@@ -104,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     description: description
                 });
             } catch (error) {
-                console.error(`Error cargando ${page.url}:`, error);
+                // Error silencioso para evitar spam en consola
             }
         }
 

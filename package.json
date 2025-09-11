@@ -4,6 +4,9 @@
   "description": "Página web y aula virtual del IFAP",
   "type": "module",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [
     "ifap",
@@ -11,5 +14,8 @@
     "aula-virtual"
   ],
   "author": "IFAP",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^7.1.5"
+  }
 }
