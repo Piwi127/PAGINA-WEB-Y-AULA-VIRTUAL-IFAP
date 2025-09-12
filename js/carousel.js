@@ -62,6 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Event listeners for btn-hero buttons to pause on hover
+    const btnHeroes = document.querySelectorAll('.btn-hero');
+    btnHeroes.forEach(btn => {
+        btn.addEventListener('mouseenter', stopAutoSlide);
+        btn.addEventListener('mouseleave', () => setTimeout(startAutoSlide, 500));
+    });
+
     // Initialize carousel
     updateCarousel();
     startAutoSlide();
