@@ -55,14 +55,6 @@
     gap: 1rem; /* Espacio entre elementos */
 }
 
-/* Estilo específico para centrar el botón principal en hero */
-.course-detail-hero .btn-primary {
-    margin: 0 auto; /* Centrado horizontal */
-    display: block; /* Para que margin auto funcione */
-    width: fit-content; /* Ajustar ancho al contenido */
-    text-align: center;
-}
-
 @keyframes fadeInScale {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
@@ -422,19 +414,18 @@
     color: white;
     padding: 0.8rem 1.5rem; /* Padding optimizado */
     border-radius: 50px;
-    margin: 0.5rem auto; /* Centrado horizontal */
-    display: flex; /* Cambiar a flex para mejor control */
-    flex-direction: column; /* Alinear verticalmente */
-    align-items: center; /* Centrar contenido */
-    justify-content: center;
-    text-align: center; /* Centrar texto */
+    margin: 0.5rem 0; /* Márgenes equilibrados */
+    display: inline-flex; /* Mejor alineación */
+    flex-direction: column; /* Elementos en columna */
+    align-items: center; /* Centrar elementos */
+    justify-content: center; /* Centrar verticalmente */
     box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
     animation: pulse 2s infinite;
     position: relative;
     z-index: 3;
     min-width: 200px; /* Ancho mínimo para consistencia */
+    text-align: center; /* Centrar texto */
     flex-shrink: 0; /* Evitar compresión */
-    width: fit-content; /* Ajustar ancho al contenido */
 }
 
 .discount {
@@ -443,25 +434,6 @@
     display: block;
     margin-bottom: 0.3rem; /* Espacio optimizado */
     line-height: 1.2; /* Mejor interlineado */
-}
-
-/* Nuevo estilo para el botón de descuento dentro del hero */
-.btn-discount {
-    background: linear-gradient(90deg, #ff8a65, #ff6b6b);
-    color: #fff;
-    border: none;
-    padding: 0.55rem 1.4rem;
-    border-radius: 30px;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 0 6px 18px rgba(255,107,107,0.25);
-    font-size: 1.05rem;
-    display: inline-block;
-    text-align: center;
-}
-
-.btn-discount:active {
-    transform: translateY(1px);
 }
 
 .promo-text {
@@ -478,12 +450,7 @@
     100% { transform: scale(1); }
 }
 
-/* Estilo específico para btn-primary en hero */
-.course-detail-hero .btn-primary {
-    margin: 0.5rem auto; /* Centrar horizontalmente */
-    display: block; /* Para que margin auto funcione */
-    width: fit-content; /* Ajustar ancho al contenido */
-}
+
 
 /* Estilos para horario */
 .schedule-grid {
@@ -702,115 +669,3 @@
     }
 }
 
-/* Estilos para la publicidad flotante */
-.floating-ad {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 350px; /* Aumentado de 300px a 350px */
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-    z-index: 10000;
-    overflow: hidden;
-    animation: slideInRight 0.8s ease-out;
-    border: 3px solid var(--ifap-primary);
-}
-
-.floating-ad img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-.ad-content {
-    padding: 15px;
-    text-align: center;
-    position: relative;
-}
-
-.discount-badge {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 14px;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-    animation: pulse 2s infinite;
-}
-
-.ad-content h3 {
-    margin-top: 20px;
-    color: var(--ifap-primary);
-    font-size: 18px;
-}
-
-.ad-content p {
-    color: #666;
-    font-size: 14px;
-    margin: 10px 0;
-}
-
-.ad-btn {
-    background: linear-gradient(45deg, var(--ifap-primary), var(--ifap-accent));
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 10px;
-}
-
-.ad-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-}
-
-.close-ad {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(0,0,0,0.5);
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease;
-}
-
-.close-ad:hover {
-    background: rgba(0,0,0,0.8);
-}
-
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: translateX(-50%) scale(1);
-    }
-    50% {
-        transform: translateX(-50%) scale(1.05);
-    }
-}
