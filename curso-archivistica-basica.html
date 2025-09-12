@@ -76,6 +76,17 @@
         </div>
     </header>
 
+    <!-- Publicidad flotante -->
+    <div class="floating-ad">
+        <img src="/images/Archivística Básica Fundamentos y Prácticas.png" alt="Publicidad Archivística Básica">
+        <div class="ad-content">
+            <div class="discount-badge">25% OFF</div>
+            <h3>¡Oferta Especial!</h3>
+            <p>Inscríbete ahora y ahorra en el curso de Archivística Básica</p>
+            <button class="ad-btn" onclick="document.getElementById('enrollment-form').scrollIntoView();">Inscribirse</button>
+        </div>
+        <button class="close-ad" onclick="this.parentElement.style.display='none';">&times;</button>
+    </div>
 
     <main>
         <section class="course-detail-hero">
@@ -86,8 +97,8 @@
                 <h1>Archivística Básica: Fundamentos y Prácticas</h1>
                 <p>Introducción completa a los principios fundamentales de la archivística, incluyendo clasificación, organización, descripción y preservación de documentos. Ideal para quienes inician en el campo.</p>
                 <div class="promotion-banner">
-                    <span class="discount">¡50% OFF!</span>
-                    <span class="promo-text">Inscríbete antes del 15 de octubre y ahorra S/ 250</span>
+                    <button class="btn-discount" type="button">¡25% OFF!</button>
+                    <span class="promo-text">Inscríbete antes del 15 de octubre y ahorra S/ 125</span>
                 </div>
                 <button class="btn-primary" onclick="document.getElementById('enrollment-form').scrollIntoView();">Inscribirse ahora</button>
             </div>
@@ -206,8 +217,8 @@
                     </div>
                     <div class="price-card featured">
                         <h4>Precio con Descuento</h4>
-                        <span class="price">S/ 250</span>
-                        <span class="discount-badge">50% OFF</span>
+                        <span class="price">S/ 375</span>
+                        <span class="discount-badge">25% OFF</span>
                     </div>
                 </div>
                 <form class="enrollment-form" action="#" method="post">
