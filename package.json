@@ -2,20 +2,11 @@
   "name": "pagina-web-ifap",
   "version": "1.0.0",
   "description": "Página web y aula virtual del IFAP",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
   "keywords": [
     "ifap",
     "educacion",
     "aula-virtual"
   ],
   "author": "IFAP",
-  "license": "MIT",
-  "devDependencies": {
-    "vite": "^7.1.5"
-  }
+  "license": "MIT"
 }
